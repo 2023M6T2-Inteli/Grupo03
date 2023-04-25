@@ -14,6 +14,6 @@
 
 # Matriz de riscos:
 
-[Matriz de Riscos](https://github.com/2023M6T2-Inteli/Splinters/src/assets/matriz_riscos.png)
+![Matriz de Riscos](https://github.com/2023M6T2-Inteli/Splinters/src/assets/matriz_riscos.png)
 
 - Uma matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar os riscos associados a um projeto, processo ou atividade. Ela é composta por duas dimensões: a primeira representa a probabilidade de ocorrência de um risco, geralmente classificada em baixa, média ou alta; a segunda dimensão representa o impacto que o risco pode ter caso ocorra, também classificado em baixo, médio ou alto. A matriz de riscos é uma ferramenta muito útil para a gestão de riscos, pois permite que os riscos sejam priorizados de acordo com sua probabilidade de ocorrência e impacto, facilitando a tomada de decisão sobre quais riscos devem ser tratados primeiro.

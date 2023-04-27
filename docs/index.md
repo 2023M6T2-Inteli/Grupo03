@@ -44,4 +44,4 @@
 
 ![Analise do Investimento](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Analise_Financeira.png)
 
-<a src="https://docs.google.com/spreadsheets/d/1lK-txT79qHuZfYMwxpR1C5zox9V9MTNEQukWj-0ohFg/edit?usp=sharing">Planilha<a>
+<a href="https://docs.google.com/spreadsheets/d/1lK-txT79qHuZfYMwxpR1C5zox9V9MTNEQukWj-0ohFg/edit?usp=sharing">Planilha<a>

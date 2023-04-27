@@ -33,3 +33,15 @@
 - Aumento exagerado do escopo do projeto: Pensando em conciliar o estudo necessário para desenvolver o projeto e o próprio desenvolvimento do projeto, deve-se tomar cuidado com as features que nós, como grupo que estamos desenvolvendo o projeto, iremos construir de forma que sejá entregue a melhor solução, pensando inclusive nos pontos anteriormente citados.
 
 - O vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Iremos isolar os circuitos para mitigar esse problema.
+
+# Analise Financeira
+
+![Investimento Inicial](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Investimento_Incial.png)
+
+![Economia](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Receita.png)
+
+![Despesas](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Despesas_Anuais.png)
+
+![Analise do Investimento](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Analise_Financeira.png)
+
+<a src="https://docs.google.com/spreadsheets/d/1lK-txT79qHuZfYMwxpR1C5zox9V9MTNEQukWj-0ohFg/edit?usp=sharing">Planilha<a>

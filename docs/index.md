@@ -38,29 +38,28 @@
 
 ## 2.1. Fatores mercadológicos
 
-- Nosso produto consiste no robô “TurtleBot 3 Buger’, programado para se locomover em ambientes confinados e coletar dados a partir de sensores, fazendo assim uma análise do ambiente e suas condições, a qual será enviada para uma interface onde essas informações poderão ser acessado pelo operador responsável a precificação é baseada em fatores como mão de obra (desenvolvimento e implementação) custo de hardware e sensores que serão utilizados, despesas anuais e o custo geral do projeto esses dados são retirados da análise financeira.
 
 
 
-- Em escala global, o uso de AGVs na manutenção industrial tem sido cada vez mais adotado por empresas que buscam aumentar sua eficiência e competitividade. Grandes empresas de manufatura, logística e transporte estão investindo em tecnologia de AGVs para automatizar seus processos de transporte e manutenção.
+- Em escala global, o uso de AGVs na manutenção industrial tem sido cada vez mais adotado por empresas que  buscam aumentar sua eficiência e competitividade. Grandes empresas de manufatura, logística e transporte estão investindo em tecnologia de AGVs para automatizar seus processos de transporte e manutenção.
 
-Em São Paulo, Brasil, o uso de AGVs na manutenção industrial ainda está em estágio inicial de adoção. Algumas empresas de grande porte já estão implementando essa tecnologia para automatizar seus processos de transporte e manutenção, mas a maioria ainda depende de operadores humanos para executar essas tarefas.
+ Em São Paulo, Brasil, o uso de AGVs na manutenção industrial ainda está em estágio inicial de adoção. Algumas empresas de grande porte já estão implementando essa tecnologia para automatizar seus processos de transporte e manutenção, mas a maioria ainda depende de operadores humanos para executar essas tarefas.
 
-No entanto, a crescente demanda por eficiência e redução de custos pode levar a uma maior adoção de AGVs na manutenção industrial em São Paulo e em outras regiões do Brasil. A falta de mão de obra qualificada na indústria também pode impulsionar a adoção de tecnologias de automação e robótica, incluindo AGVs.
+ No entanto, a crescente demanda por eficiência e redução de custos pode levar a uma maior adoção de AGVs na manutenção industrial em São Paulo e em outras regiões do Brasil. A falta de mão de obra qualificada na indústria também pode impulsionar a adoção de tecnologias de automação e robótica, incluindo AGVs.
 
-Nosso projeto se insere em um nicho bem específico, porém muito útil para empresas que prezam por segurança. Nosso projeto se insere em uso de robôs em indústrias, visando a manutenção e segurança de espaços confinados 
+ Nosso projeto se insere em um nicho bem específico, porém muito útil para empresas que prezam por segurança. Nosso projeto se insere em uso de robôs em indústrias, visando a manutenção e segurança de espaços confinados 
 
 
 
 - Nosso objetivo é criar um "Agv"( automated guided vehicle) que possa entrar em um espaço confinado e com sensores fazer uma análise dos gases presentes no ambiente. Enviada essas leituras para o operador.
 
-Em meu projeto temos bastante potencial de modernizar e automatizar alguns processos de segurança na Gerdau e melhorar a segurança nesse processo realizado.
+ Em meu projeto temos bastante potencial de modernizar e automatizar alguns processos de segurança na Gerdau e melhorar a segurança nesse processo realizado.
 
-No cenário local não há muitos "Agvs" sendo utilizados, porém há grande investimento no ramo de agvs no brasil de forma geral No Brasil, não há restrições específicas para o uso de “Agvs”. No entanto, existem algumas normas de segurança que devem ser seguidas para garantir a segurança dos trabalhadores e prevenir acidentes.
+ No cenário local não há muitos "Agvs" sendo utilizados, porém há grande investimento no ramo de agvs no brasil de forma geral No Brasil, não há restrições específicas para o uso de “Agvs”. No entanto, existem algumas normas de segurança que devem ser seguidas para garantir a segurança dos trabalhadores e prevenir acidentes.
 
-Nosso projeto será desenvolvido com intenção de solucionar problemas no processo de análise do ambiente e agregar segurança, em seu desenvolvimento levamos em consideração as restrições locais e o cenário brasileiro de "Agv's" focando em atender as necessidades de nosso cliente.
+ Nosso projeto será desenvolvido com intenção de solucionar problemas no processo de análise do ambiente e agregar segurança, em seu desenvolvimento levamos em consideração as restrições locais e o cenário brasileiro de "Agv's" focando em atender as necessidades de nosso cliente.
 
 
 
-- Nosso produto tem como objetivo ser ecoeficiente em seu desenvolvimento, utilizando fontes renováveis de energia, como baterias recarregáveis em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. O robô, por se tratar de um bem durável, apresenta bastante tempo de vida útil e pode ser utilizado em futuros projetos da empresa. Os sensores do robô analisam o ambiente para reduzir acidentes e prevenir falhas que possam afetar o meio ambiente, preservando a saúde dos trabalhadores que realizam as inspeções. Nós também temos como objetivo incluir os trabalhadores no processo, sem comprometer sua segurança ou saúde.
+- Nosso produto tem como objetivo ser ecoeficiente em seu desenvolvimento, utilizando fontes renováveis de  energia, como baterias recarregáveis em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. O robô, por se tratar de um bem durável, apresenta bastante tempo de vida útil e pode ser utilizado em futuros projetos da empresa. Os sensores do robô analisam o ambiente para reduzir acidentes e prevenir falhas que possam afetar o meio ambiente, preservando a saúde dos trabalhadores que realizam as inspeções. Nós também temos como objetivo incluir os trabalhadores no processo, sem comprometer sua segurança ou saúde.
 

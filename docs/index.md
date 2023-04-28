@@ -63,4 +63,4 @@ Nosso projeto será desenvolvido com intenção de solucionar problemas no proce
 
 
 - Nosso produto tem como objetivo ser ecoeficiente em seu desenvolvimento, utilizando fontes renováveis de energia, como baterias recarregáveis em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. O robô, por se tratar de um bem durável, apresenta bastante tempo de vida útil e pode ser utilizado em futuros projetos da empresa. Os sensores do robô analisam o ambiente para reduzir acidentes e prevenir falhas que possam afetar o meio ambiente, preservando a saúde dos trabalhadores que realizam as inspeções. Nós também temos como objetivo incluir os trabalhadores no processo, sem comprometer sua segurança ou saúde.
->>>>>>> Stashed changes
+

@@ -71,11 +71,17 @@ O Canvas da Proposta de Valor é uma ferramenta que pode ajudar a criar e posici
 ![Proposta de valor]()
 
 A partir da imagem acima, é possível descrever mais detalhadamente cada segmento do Value Propositions Canvas:
+
 **Tarefas do cliente (Customer Job)**: Primeiramente, é preciso descrever o que os funcionários da Gerdau estão tentando fazer, podendo ser tarefas que estão tentando realizar ou completar, problemas que estão tentando resolver ou necessidades que estão tentando satisfazer.
+
 **Dores (Pains)**: Em seguida, descrevemos as emoções negativas, custos e situações indesejadas, riscos e outras experiências ruins que a Gerdau pode vivenciar antes, durante ou após as tarefas listadas anteriormente.
+
 **Ganhos (Gains)**: Após as dores, descrevemos os benefícios que a Gerdau espera, deseja ou seria surpreendida positivamente se existisse, incluindo utilidade funcional, ganhos sociais, emoções positivas e redução de custos.
+
 **Produtos e serviços (Products and services)**: Com o perfil do consumidor já desenhado, listamos todos os produtos e serviços em que a proposta de valor esta baseada.
+
 **Aliviadores de dores (Pain Relievers)**: Em seguida, descrevemos como os produtos e serviços aliviam as dores da Gerdau, como eles eliminam ou reduzem emoções negativas, custos e situações indesejadas, riscos que eles vivenciam ou vivenciaram antes, durante ou depois de um job-to-be-done.
+
 **Criadores de ganho (Gain Creators)**: Por fim, descrevemos como nossos produtos e serviços criam ganhos para a Gerdau. 
 
 ## Matriz de Risco

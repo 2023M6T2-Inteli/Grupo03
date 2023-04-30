@@ -68,7 +68,7 @@ A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fo
 ## Proposta de valor (Value Proposition Canvas)
 O Canvas da Proposta de Valor é uma ferramenta que pode ajudar a criar e posicionar produtos ou serviço em torno do que o cliente realmente valoriza e precisa. É uma ferramenta que lhe ajuda a encontrar o encaixe produto-mercado de forma estruturada. Dessa maneira, ele é composto por 2 blocos: a Proposta de Valor e o Segmento de Clientes.
 
-![Proposta de valor]()
+<img src = "https://user-images.githubusercontent.com/99203402/235356192-02cacd2c-c330-4c2b-be36-7da9bef30557.png" width = "650" >
 
 A partir da imagem acima, é possível descrever mais detalhadamente cada segmento do Value Propositions Canvas:
 
@@ -107,7 +107,46 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 ## Matriz Oceano Azul
 A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa. 
 
-## Análise Financeira
+Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados.
+Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
+
+<img src= "https://user-images.githubusercontent.com/99203402/235355410-2ad1f997-1da9-464b-8c85-d765e4ebb36e.png" width = "600">
+
+Justificativa das pontuações referentes ao oceano azul:
+
+- Preço: Através da parceria entre Inteli e Gerdau e da análise financeira realizada pelo grupo, concluímos que nosso produto tem um preço mais acessível em comparação aos produtos já consolidados no mercado, o que resultou em uma nota 8 na matriz.
+
+- Qualidade: Considerando que o produto será desenvolvido por estudantes em um contexto educacional, a nota dada à qualidade é um pouco menor em relação aos concorrentes que possuem uma equipe de engenheiros já formados e uma empresa já estabelecida.
+
+- Tecnologia: Para o desenvolvimento do projeto, utilizaremos softwares importantes e requisitados no mercado, mas o hardware será fornecido pela faculdade, o que pode não ser ideal para a solução proposta. Isso ocorre devido ao contexto educacional do projeto.
+
+- Conforto: A parceria entre Inteli e Gerdau oferece ao cliente a possibilidade de sugerir e acompanhar de perto o desenvolvimento do produto, o que garante mais liberdade e conforto durante o processo.
+ 
+- Comodidade: A presença da Gerdau durante o desenvolvimento do produto garante que o serviço seja customizado de acordo com as necessidades do cliente, trazendo comodidade na hora de desenvolver a solução.
+
+- Praticidade: Embora não seja tão prático quanto simplesmente comprar um robô sob demanda, o produto será customizado para o cliente, o que resultará em facilidade de manutenção e utilização.
+
+Após análise cuidadosa do gráfico, identificamos fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Além disso, observamos que o nosso produto se encontra no mesmo quadrante que produtos já consolidados no mercado, o que nos leva a propor um projeto com similaridades. 
+
+Elimine
+- Robôs grandes e desajeitados que não podem manobrar em espaços estreitos
+- Robôs que não são seguros para uso em ambientes perigosos e confinados
+- Robôs que não têm sensores para ajudar na navegação e na análise de dados atmosféricos
+
+Reduza
+- Custo de fabricação de robôs, mantendo a qualidade e a segurança
+- Complexidade de operação do robô, tornando-o fácil de usar
+- Tempo necessário para a manutenção do robô
+
+Aumente
+- Agilidade e capacidade de manobra do robô em terrenos difíceis, bem como uma melhor análise e coleta de dados atmoféricos
+- Confiabilidade e durabilidade do robô
+- Capacidade de navegação autônoma em ambientes confinados
+
+Crie
+- Novas funcionalidades para o robô, como a capacidade de detectar e responder a emergências em tempo real
+- Novas formas de comunicação do robô com o operador
+- Criar uma nova feature integrável com o sistema da Gerdau
 
 
 # Entendimento do Metadesign
@@ -165,5 +204,10 @@ a) O projeto visa um produto ecoeficiente? Justifique.
 
 <a href="https://docs.google.com/spreadsheets/d/1lK-txT79qHuZfYMwxpR1C5zox9V9MTNEQukWj-0ohFg/edit?usp=sharing">Planilha<a>
 
+## Arquitetura do Sistema
 
+  ### Diagrama de blocos
+  <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
+
+  
 

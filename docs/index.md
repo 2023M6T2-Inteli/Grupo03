@@ -32,6 +32,10 @@ Simulação de robôs para aplicações diversas.
   - [Matriz de Risco](#matriz-de-risco)
   - [Matriz Oceano Azul](#matriz-oceano-azul)
   - [Análise Financeira](#análise-financeira)
+- [Entendimento do Metadesign](#entendimento-do-metadesign)
+  - [Fatores mercadológicos](#fatores-mercadologicos)
+  - [Sistema produto/design](#sistema-produto/design)
+  - [Sustentabilidade ambiental](#sustentabilidade-ambiental)
 - [Arquitetura da Solução](#arquitetura-da-solução)
   - [Requisitos](#requisitos)    
   - [Arquitetura da Solução - Versão 1](#arquitetura-da-solução---versão-1)
@@ -50,6 +54,8 @@ Simulação de robôs para aplicações diversas.
 # Visão geral do projeto
 
 ## Empresa
+Presente em 10 países, a Gerdau é pioneira no setor do aço na implantação de iniciativas de inovação digital. Esse é o resultado do trabalho conjunto de todos os mais de 30 mil colaboradores.
+A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fornecedoras de aços longos nas Américas e de aços especiais no mundo. No Brasil, também produz aços planos e minério de ferro. Além disso, é a maior recicladora da América Latina e, no mundo, transforma, anualmente, milhões de toneladas de sucata em aço, reforçando seu compromisso com o desenvolvimento sustentável das regiões onde atua. As ações das empresas Gerdau estão listadas nas bolsas de valores de São Paulo (B3), Nova Iorque (NYSE) e Madri (Latibex).
 ## Problema
 ## Objetivos
 ### Objetivos gerais
@@ -60,28 +66,58 @@ Simulação de robôs para aplicações diversas.
 # Análise do problema
 
 ## Proposta de valor (Value Proposition Canvas)
+O Canvas da Proposta de Valor é uma ferramenta que pode ajudar a criar e posicionar produtos ou serviço em torno do que o cliente realmente valoriza e precisa. É uma ferramenta que lhe ajuda a encontrar o encaixe produto-mercado de forma estruturada. Dessa maneira, ele é composto por 2 blocos: a Proposta de Valor e o Segmento de Clientes.
+
+![Proposta de valor]()
+
+A partir da imagem acima, é possível descrever mais detalhadamente cada segmento do Value Propositions Canvas:
+**Tarefas do cliente (Customer Job)**: Primeiramente, é preciso descrever o que os funcionários da Gerdau estão tentando fazer, podendo ser tarefas que estão tentando realizar ou completar, problemas que estão tentando resolver ou necessidades que estão tentando satisfazer.
+**Dores (Pains)**: Em seguida, descrevemos as emoções negativas, custos e situações indesejadas, riscos e outras experiências ruins que a Gerdau pode vivenciar antes, durante ou após as tarefas listadas anteriormente.
+**Ganhos (Gains)**: Após as dores, descrevemos os benefícios que a Gerdau espera, deseja ou seria surpreendida positivamente se existisse, incluindo utilidade funcional, ganhos sociais, emoções positivas e redução de custos.
+**Produtos e serviços (Products and services)**: Com o perfil do consumidor já desenhado, listamos todos os produtos e serviços em que a proposta de valor esta baseada.
+**Aliviadores de dores (Pain Relievers)**: Em seguida, descrevemos como os produtos e serviços aliviam as dores da Gerdau, como eles eliminam ou reduzem emoções negativas, custos e situações indesejadas, riscos que eles vivenciam ou vivenciaram antes, durante ou depois de um job-to-be-done.
+**Criadores de ganho (Gain Creators)**: Por fim, descrevemos como nossos produtos e serviços criam ganhos para a Gerdau. 
+
 ## Matriz de Risco
+A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar os riscos associados a um projeto, processo ou atividade. Desse modo, ela é composta por duas dimensões: a primeira representa a probabilidade de ocorrência de um risco, geralmente classificada como baixa, média ou alta; a segunda dimensão representa o impacto que o risco pode ter, caso ocorra, também classificado como baixo, médio ou alto. Por fim, a matriz de riscos é muito útil para a gestão de riscos, pois permite priorizar os riscos de acordo com sua probabilidade e impacto, facilitando a tomada de decisão sobre quais riscos devem ser tratados primeiro.
+
 ![Matriz de Riscos](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/matriz_de_riscos.png)
 
-- Uma matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar os riscos associados a um projeto, processo ou atividade. Ela é composta por duas dimensões: a primeira representa a probabilidade de ocorrência de um risco, geralmente classificada em baixa, média ou alta; a segunda dimensão representa o impacto que o risco pode ter caso ocorra, também classificado em baixo, médio ou alto. A matriz de riscos é uma ferramenta muito útil para a gestão de riscos, pois permite que os riscos sejam priorizados de acordo com sua probabilidade de ocorrência e impacto, facilitando a tomada de decisão sobre quais riscos devem ser tratados primeiro.
-
 ### Abordagens:
+- Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
 
-- Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco nós, como estudantes do Inteli que estamos desenvolvendo o projeto, vamos nos comprometer fazer todos os autoestudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
+- Manutenabilidade do Hardware: Como estamos lidando com uma implementação física, ela estará exposta às intempéries que podem diminuir a vida útil de seus componentes. Como plano de ação para esse risco, vamos considerar opções de proteção do hardware.
 
-- Manutenabilidade do Hardware: como estamos lidando com uma implementação física ela está estará exposta as intempéries que podem diminuir a vida útil dos seus componentes.
+- Falhas de comunicação na equipe que está desenvolvendo o projeto: Para mitigar esse risco, aplicaremos derivações da metodologia ágil para manter a comunicação entre os membros do grupo sempre alinhada e focada no consenso entre as partes. Além disso, definiremos claramente os papéis e responsabilidades de cada membro da equipe, a fim de evitar ambiguidades e conflitos.
 
-- Falhas de comunicação na equipe que está desenvolvendo o projeto: Aplicaremos derivações da metodologia ágil para manter a comunicação entre os membros do grupo sempre alinhada, pensando sempre no consenso entre as partes.
+- Falhas de comunicação na transmissão de dados: Estudaremos formas de manter a comunicação via wifi o mais estável possível, considerando a melhor eficiência do sistema implementado. Também estabeleceremos procedimentos para monitorar continuamente a qualidade da transmissão de dados e para solucionar rapidamente quaisquer problemas que possam surgir.
 
-- Falhas de comunicação na trasmissão de dados: Estudaremos formas de manter a comunicação via wifi o mais estável possível, pensando na melhor eficiência dos sistema implementado.
+- Falta de resistência do hardware a ambientes hostis: Para garantir a resistência do sistema a possíveis condições hostis, como temperaturas diferentes do ambiente, selecionaremos componentes de alta qualidade e resistência, além de considerar soluções de proteção adicionais, como caixas de proteção e materiais de vedação.
 
-- Faltas de resistência do harware à ambientes hostis: O sistema deve resistir a possíveis condições hostis como, por exemplo, condições de temperaturas diferentes da ambiente.
+- Aumento exagerado do escopo do projeto: Para garantir a entrega da melhor solução possível, pensando nos riscos anteriormente citados, definiremos claramente o escopo do projeto e as funcionalidades a serem desenvolvidas. Também implementaremos processos de gerenciamento de mudanças para avaliar qualquer nova solicitação de funcionalidade e garantir que ela seja consistente com os objetivos do projeto e viável em termos de prazo e recursos.
 
-- Aumento exagerado do escopo do projeto: Pensando em conciliar o estudo necessário para desenvolver o projeto e o próprio desenvolvimento do projeto, deve-se tomar cuidado com as features que nós, como grupo que estamos desenvolvendo o projeto, iremos construir de forma que sejá entregue a melhor solução, pensando inclusive nos pontos anteriormente citados.
-
-- O vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Iremos isolar os circuitos para mitigar esse problema.
+- Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
 
 ## Matriz Oceano Azul
+A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa. 
+
+## Análise Financeira
+
+
+# Entendimento do Metadesign
+
+## Fatores mercadológicos
+a) Qual é o seu produto e como ele se orienta ao mercado? Como ele é precificado? (Não é necessário definir um preço para o produto que o grupo está desenvolvendo. Espera-se que o grupo consiga explicar como é realizada esta precificação, apenas.)
+b) Qual é o cenário do mercado no qual o projeto se insere? (Apresente uma explicação resumida do cenário geral no mundo e do recorte regional do projeto.)
+c) Qual a visão do projeto proposto? (Qual a potencialidade projetual do trabalho a ser desenvolvido? O grupo pode se apoiar em fatores demográficos, atitudes dos consumidores, estilo de vida, regras de utilização e legislação vigente sobre o que será produzido. Reconhecendo os vínculos existentes entre esses elementos, projete a visão das possibilidades de execução do projeto.)
+
+## Sistema produto/design
+a) Qual a missão do projeto proposto? (Qual a missão do projeto? Ela está ligada à visão institucional da proposta?)
+b) Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda? (Qual a mensagem que o produto pretende passar e como se espera transmiti-la?)
+
+## Sustentabilidade ambiental
+a) O projeto visa um produto ecoeficiente? Justifique.
+
 ## Análise Financeira
 
 ### Custos:
@@ -122,4 +158,6 @@ Simulação de robôs para aplicações diversas.
 ![Analise do Investimento](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Analise_Financeira.png)
 
 <a href="https://docs.google.com/spreadsheets/d/1lK-txT79qHuZfYMwxpR1C5zox9V9MTNEQukWj-0ohFg/edit?usp=sharing">Planilha<a>
+
+
 

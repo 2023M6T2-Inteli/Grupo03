@@ -39,7 +39,7 @@
 ## 2.1. Fatores mercadológicos
 
 
--Nosso produto consiste no robô “TurtleBot 3 Buger’, programado para se locomover em ambientes confinados e coletar dados a partir de sensores, fazendo assim uma análise do ambiente e suas condições, a qual será enviada para uma interface onde essas informações poderão ser acessado pelo operador responsável a precificação é baseada em fatores como mão de obra (desenvolvimento e implementação) custo de hardware e sensores que serão utilizados, despesas anuais e o custo geral do projeto esses dados são retirados da análise financeira.
+- Nosso produto consiste no robô “TurtleBot 3 Buger’, programado para se locomover em ambientes confinados e coletar dados a partir de sensores, fazendo assim uma análise do ambiente e suas condições, a qual será enviada para uma interface onde essas informações poderão ser acessado pelo operador responsável a precificação é baseada em fatores como mão de obra (desenvolvimento e implementação) custo de hardware e sensores que serão utilizados, despesas anuais e o custo geral do projeto esses dados são retirados da análise financeira.
 
 
 

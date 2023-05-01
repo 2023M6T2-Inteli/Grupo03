@@ -161,7 +161,7 @@ A adoção de AGVs na manutenção industrial tem se tornado cada vez mais comum
 
 Por fim, o projeto que estamos desenvolvendo se insere em um nicho específico, mas de grande importância para empresas que priorizam a segurança em seus processos industriais. Nosso objetivo é utilizar robôs para a manutenção e segurança de espaços confinados, fornecendo informações precisas e em tempo real sobre as condições ambientais e evitando a exposição de operadores humanos a riscos.
 
-**Qual a visão do projeto proposto? **
+**Qual a visão do projeto proposto?**
 
 Assim, o projeto tem como objetivo criar um AGV (Automated Guided Vehicle) capaz de entrar em espaços confinados e, por meio de sensores, analisar a presença de gases no ambiente, enviando essas leituras para o operador. Acreditamos que nossa solução pode modernizar e automatizar processos de segurança na Gerdau, melhorando a segurança dos funcionários durante a realização desses procedimentos.
 
@@ -186,9 +186,9 @@ Equipado com sensores de última geração, o robô realiza análises precisas d
 Além disso, nosso objetivo é envolver os trabalhadores no processo, garantindo sua participação sem comprometer sua segurança ou saúde. Com isso, buscamos não apenas oferecer um produto eficiente, mas também promover uma cultura de responsabilidade ambiental e social dentro da empresa.
 
 ## Análise Financeira
+A Gerdau tem sedes industriais em 9 países nas Américas, mas consideraremos a implementação apenas para as unidades no Brasil. Segundo o site oficial da empresa, a Gerdau possui 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em território nacional. Considerando que para obter o resultado desejado seja necessário a implementação de 1 robô por unidade, seriam necessários 39 robôs, o que exigiria um investimento inicial de R$1.076.700,00. Para a manutenção da solução, estima-se um gasto anual de R$338.100,00, incluindo manutenção, custos operacionais e uma margem de aproximadamente 15% para possíveis problemas. A receita esperada com o projeto, como descrito anteriormente, é de R$3.942.900,00/ano, ou seja, é esperado já no primeiro ano um lucro de R$2.528.100,00. #(custo anual - receita anual)
 
 ### Custos:
-
   - Custo do hardware (TurtleBot, Raspberry Pi 3, câmera DobotMagical, sensores de gases)
     - TutleBot + raspberry Pi 3 -> R$17000/robo
     - Sensores de gases -> R$400/robo
@@ -202,19 +202,16 @@ Além disso, nosso objetivo é envolver os trabalhadores no processo, garantindo
     - Custo Operacional - R$5000/ano*robo
 
 ### Receitas:
-
   - Redução de custos com acidentes operacionais;
   - Melhoria da eficiência operacional.
 
-- Para estimar os valores específicos para cada aspecto, é necessário ter acesso aos dados financeiros da Gerdau, incluindo o histórico de custos relacionados a acidentes operacionais e a eficiência operacional antes e depois da implementação do robô. Como não temos acesso a estes dados faremos uma estimativa destes valores.
-  
-- Assumiremos que a Gerdau tem um custo anual médio de 0,001% do faturamento total com acidentes operacionais, o que em 2020 seria R$ 43,81M(<a href="https://valor.globo.com/empresas/noticia/2021/02/24/lucro-da-gerdau-sobe-939percent-no-quarto-trimestre.ghtml">*valor*</a>). Esse custo incluiria processos trabalhistas, perda de protução, custos de manutenção de espaço e equipamentos, etc.
+Para estimar os valores específicos para cada aspecto, é necessário ter acesso aos dados financeiros da Gerdau, incluindo o histórico de custos relacionados a acidentes operacionais e a eficiência operacional antes e depois da implementação do robô. Como não temos acesso a esses dados, faremos uma estimativa desses valores.
 
-- Com a implementação do robo, esperamos previnir 90% dos assidentes, sendo assim, podemos projetar uma economia anual de R$ 3.942.900,00.
+Assumiremos que a Gerdau tem um custo anual médio de 0,001% do faturamento total com acidentes operacionais, o que em 2020 seria de R$ 43,81 milhões (<a href="https://valor.globo.com/empresas/noticia/2021/02/24/lucro-da-gerdau-sobe-939percent-no-quarto-trimestre.ghtml">valor</a>). Esse custo incluiria processos trabalhistas, perda de produção, custos de manutenção de espaço e equipamentos, entre outros.
+
+Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos permitiria projetar uma economia anual de R$ 3.942.900,00.
 
 ### Análise do Investimento:
-
-- A Gerdau tem sedes industriais em 9 países, nas Américas, mas consideraremos a implementação apenas para as unidades no Brasil. Segundo o site oficial da empresa, a Gerdau tem 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em territorio nacional. Cosiderando que para obter o resultado desejado fosse nessario a implementação de 1 robo por unidade, devem ser produzidos 39 robos, o que exigiria um investimento incial de R$1.076.700,00. Para o matimento da solução estimasse um gasto anual de R$338.100,00 incluindo manutenção, custos operacionais e uma margem de aproximadamente 15% para possiveis problemas. A receita esperada com o projeto, como descrito anteriormente, é de R$3.942.900,00/ano, ou seja, é esperado já no primeiro ano um lucro de R$2.528.100,00. #(custo anual - receita anual)
 
 ![Investimento Inicial](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Investimento_Incial.png)
 
@@ -224,19 +221,17 @@ Além disso, nosso objetivo é envolver os trabalhadores no processo, garantindo
 
 ![Analise do Investimento](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/Analise_Financeira.png)
 
-<a href="https://docs.google.com/spreadsheets/d/1lK-txT79qHuZfYMwxpR1C5zox9V9MTNEQukWj-0ohFg/edit?usp=sharing">Planilha<a>
+# Arquitetura do Sistema
 
-## Arquitetura do Sistema
-
-### Diagrama de blocos
+## Diagrama de blocos - Versão 1
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
+ A imagem acima é o primeiro esboço da arquitetura da solução. Entretanto, para uma melhor visualização, criamos a arquitetura abaixo:
+ 
+### Descrição:
+Temos três componentes principais na arquitetura do sistema:
 
-#### Descrição:
+- O componente **embarcado** é responsável pela implementação do ROS2 (Robot Operating System) no sistema operacional Ubuntu, executado no microprocessador Raspberry Pi, que coordena os movimentos do robô por meio de comandos enviados para o microcontrolador Cortex M4 STM32F407. Além disso, alguns periféricos, como câmera, sensor de gás, sensor de temperatura e LIDAR (Light Detection and Ranging), serão acoplados ao sistema para melhorar sua eficiência e precisão. Todos os periféricos se comunicarão diretamente com o microprocessador, e a interface de comunicação escolhida para o robô é a pub/sub.
 
-- Temos três componentes principais na arquitetura do sistema:
+- O componente **backend** implementa a arquitetura ROS2 (Robot Operating System) para receber e enviar informações por meio dos tópicos pub/sub (publisher/subscriber), comunicando-se diretamente com o robô. Além disso, ele inclui um framework, um banco de dados e um ORM (Object-Relational Mapping). Além da interface pub/sub (publisher/subscriber), o backend também utiliza a comunicação HTTP (HyperText Transfer Protocol).
 
-  - O embarcado traz a implementação do ROS2 (Robot Operating System) sob o sistema operacional "UBUNTU" dentro do microprocessador Raspberry Pi contido no Turtlebot 3, coordenando o movimento do robô atravês de comandos enviados para o microcontrolador Cortex M4 STM32F407. Ainda falando sobre esse recorte do projeto, teremos alguns periféricos acoplados ao sistema tendo em vista a sua eficiência e precisão: Câmera, sensor de gás, sensor de temperatura e o LIDAR (Light Detection and Ranging). Todos os periiférios irão se comunicar diretamente com o microprocessador. A interface de comunicação escolhida para o robô é a pub/sub.
-
-  - O backend implementa a arquitetura ROS2 ( Robot Operating System ) para receber e enviar informações a partir de tópicos pub/sub (publisher/subscriber), comunicando-se diretamente com o robô. Além disso, esta também contido nele um framework e um banco de dados e uma ORM ( Object-Relational Mapping ). Além da interface pub/sub (publisher/subscriber), o backend também terá uma comunicação HTTP (HyperTextTransferProtocol).
-
-  - O frontend utiliza um framework para a paginação e CSS para a estilização. Este por sua vez se comunica com o resto do sistema a partir da interface http disponibilizada pelo backend.
+- O componente **frontend** utiliza um framework para a paginação e CSS para a estilização. Ele se comunica com o resto do sistema por meio da interface HTTP disponibilizada pelo backend.

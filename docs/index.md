@@ -61,7 +61,14 @@ A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fo
 ### Objetivos gerais
 ### Objetivos específicos
 ### Escopo macro
+Inicialmente, é esperado uma sensibilização da relevância do tema durante o curso. E as motivações para avançarmos no desenvolvimento de tecnologias disruptivas para redução da exposição a riscos. É desejável que os alunos tenham uma aula sobre algumas definições com relação a Segurança. (Ex: conceitos de Risco x Perigo,
+conceitos de gerenciamento de riscos, prevenção de acidentes ie: barreiras físicas, sistêmicas).
+É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável. 
+Este robô poderá ser utilizado por operadores e mantenedores em atividades de espaço confinado, utilizado como ferramenta para diagnóstico preliminar da atividade.
+A solução passará por uma avaliação de validação dos times de inovação, segurança e gestão de riscos. A solução também será apresentada aos líderes de negócio.
 ## Partes interessadas
+- Inteli
+- Gerdau
 
 # Análise do problema
 
@@ -225,8 +232,9 @@ Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos 
 
 ## Diagrama de blocos - Versão 1
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
- A imagem acima é o primeiro esboço da arquitetura da solução. Entretanto, para uma melhor visualização, criamos a arquitetura abaixo:
- 
+Embora a imagem acima represente o primeiro esboço da arquitetura da solução, criamos uma nova versão para uma melhor visualização, apresentada na imagem abaixo.
+![Arquitetura da Solução - v1]( https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/arquitetura%20da%20solu%C3%A7%C3%A3o%20v1.png) 
+
 ### Descrição:
 Temos três componentes principais na arquitetura do sistema:
 

@@ -161,7 +161,7 @@ A adoção de AGVs na manutenção industrial tem se tornado cada vez mais comum
 
 Por fim, o projeto que estamos desenvolvendo se insere em um nicho específico, mas de grande importância para empresas que priorizam a segurança em seus processos industriais. Nosso objetivo é utilizar robôs para a manutenção e segurança de espaços confinados, fornecendo informações precisas e em tempo real sobre as condições ambientais e evitando a exposição de operadores humanos a riscos.
 
-**c) Qual a visão do projeto proposto? **
+**Qual a visão do projeto proposto? **
 
 Assim, o projeto tem como objetivo criar um AGV (Automated Guided Vehicle) capaz de entrar em espaços confinados e, por meio de sensores, analisar a presença de gases no ambiente, enviando essas leituras para o operador. Acreditamos que nossa solução pode modernizar e automatizar processos de segurança na Gerdau, melhorando a segurança dos funcionários durante a realização desses procedimentos.
 

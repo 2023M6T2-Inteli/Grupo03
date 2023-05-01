@@ -152,44 +152,38 @@ Após análise cuidadosa do gráfico, identificamos fatores que devem ser elimin
 # Entendimento do Metadesign
 
 ## Fatores mercadológicos
-a) Qual é o seu produto e como ele se orienta ao mercado? Como ele é precificado? (Não é necessário definir um preço para o produto que o grupo está desenvolvendo. Espera-se que o grupo consiga explicar como é realizada esta precificação, apenas.)
 
-- Nosso produto consiste no robô “TurtleBot 3 Buger’, programado para se locomover em ambientes confinados e coletar dados a partir de sensores, fazendo assim uma análise do ambiente e suas condições, a qual será enviada para uma interface onde essas informações poderão ser acessado pelo operador responsável a precificação é baseada em fatores como mão de obra (desenvolvimento e implementação) custo de hardware e sensores que serão utilizados, despesas anuais e o custo geral do projeto esses dados são retirados da análise financeira.
+**Qual é o seu produto e como ele se orienta ao mercado? Como ele é precificado?**
+Nosso produto consiste no robô "TurtleBot 3 Burger", programado para operar em ambientes confinados e coletar dados a partir de sensores de alta precisão. Esses dados são analisados por um operador, por meio de uma interface, para fornecer informações valiosas sobre o ambiente e suas condições atmosféricas, ajudando a prevenir acidentes e melhorar a produtividade. Para determinar o preço do nosso produto, consideramos vários fatores, incluindo o custo dos componentes e sensores utilizados, mão de obra necessária para desenvolvimento e implementação, despesas anuais de manutenção e o custo geral do projeto. Esses fatores são avaliados por meio de uma análise financeira, que nos permite chegar a um preço justo e competitivo para o mercado. 
 
-b) Qual é o cenário do mercado no qual o projeto se insere? (Apresente uma explicação resumida do cenário geral no mundo e do recorte regional do projeto.)
+**Qual é o cenário do mercado no qual o projeto se insere?**
+A adoção de AGVs na manutenção industrial tem se tornado cada vez mais comum em escala global, principalmente em empresas de manufatura, logística e transporte que buscam aumentar sua eficiência e competitividade. No entanto, em São Paulo, Brasil, essa tecnologia ainda está em estágio inicial de adoção, com apenas algumas empresas de grande porte implementando AGVs em seus processos de transporte e manutenção. Apesar disso, a crescente demanda por eficiência e redução de custos pode levar a uma maior adoção de AGVs na manutenção industrial em São Paulo e em outras regiões do Brasil. Ademais, a falta de mão de obra qualificada na indústria pode impulsionar ainda mais a adoção de tecnologias de automação e robótica, incluindo AGVs.
 
-- Em escala global, o uso de AGVs na manutenção industrial tem sido cada vez mais adotado por empresas que buscam aumentar sua eficiência e competitividade. Grandes empresas de manufatura, logística e transporte estão investindo em tecnologia de AGVs para automatizar seus processos de transporte e manutenção.
+Por fim, o projeto que estamos desenvolvendo se insere em um nicho específico, mas de grande importância para empresas que priorizam a segurança em seus processos industriais. Nosso objetivo é utilizar robôs para a manutenção e segurança de espaços confinados, fornecendo informações precisas e em tempo real sobre as condições ambientais e evitando a exposição de operadores humanos a riscos.
 
-Em São Paulo, Brasil, o uso de AGVs na manutenção industrial ainda está em estágio inicial de adoção. Algumas empresas de grande porte já estão implementando essa tecnologia para automatizar seus processos de transporte e manutenção, mas a maioria ainda depende de operadores humanos para executar essas tarefas.
+**c) Qual a visão do projeto proposto? **
 
-No entanto, a crescente demanda por eficiência e redução de custos pode levar a uma maior adoção de AGVs na manutenção industrial em São Paulo e em outras regiões do Brasil. A falta de mão de obra qualificada na indústria também pode impulsionar a adoção de tecnologias de automação e robótica, incluindo AGVs.
+Assim, o projeto tem como objetivo criar um AGV (Automated Guided Vehicle) capaz de entrar em espaços confinados e, por meio de sensores, analisar a presença de gases no ambiente, enviando essas leituras para o operador. Acreditamos que nossa solução pode modernizar e automatizar processos de segurança na Gerdau, melhorando a segurança dos funcionários durante a realização desses procedimentos.
 
-Nosso projeto se insere em um nicho bem específico, porém muito útil para empresas que prezam por segurança. Nosso projeto se insere em uso de robôs em indústrias, visando a manutenção e segurança de espaços confinados 
+Embora o uso de AGVs na segurança industrial ainda seja incipiente em São Paulo, no Brasil como um todo há um grande investimento nessa tecnologia. Não há restrições específicas para o uso de AGVs no país, mas existem normas de segurança que devem ser seguidas para garantir a integridade física dos trabalhadores e evitar acidentes.
 
-
-
-c) Qual a visão do projeto proposto? (Qual a potencialidade projetual do trabalho a ser desenvolvido? O grupo pode se apoiar em fatores demográficos, atitudes dos consumidores, estilo de vida, regras de utilização e legislação vigente sobre o que será produzido. Reconhecendo os vínculos existentes entre esses elementos, projete a visão das possibilidades de execução do projeto.)
-
-- Nosso objetivo é criar um "Agv"( automated guided vehicle) que possa entrar em um espaço confinado e com sensores fazer uma análise dos gases presentes no ambiente. Enviada essas leituras para o operador.
-
- Em meu projeto temos bastante potencial de modernizar e automatizar alguns processos de segurança na Gerdau e melhorar a segurança nesse processo realizado.
-
- No cenário local não há muitos "Agvs" sendo utilizados, porém, há grande investimento no ramo de agvs no Brasil de forma geral No Brasil, não há restrições específicas para o uso de “Agvs”. No entanto, existem algumas normas de segurança que devem ser seguidas para garantir a segurança dos trabalhadores e prevenir acidentes.
-
- Nosso projeto será desenvolvido com intenção de solucionar problemas no processo de análise do ambiente e agregar segurança, em seu desenvolvimento consideramos as restrições locais e o cenário brasileiro de "Agv's" focando em atender as necessidades de nosso cliente.
-
-
+Ao desenvolvermos nosso projeto, consideramos as restrições locais e o cenário brasileiro de AGVs, focando em atender às necessidades específicas de nosso cliente e agregar segurança ao processo de análise do ambiente.
 
 ## Sistema produto/design
-a) Qual a missão do projeto proposto? (Qual a missão do projeto? Ela está ligada à visão institucional da proposta?)
-b) Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda? (Qual a mensagem que o produto pretende passar e como se espera transmiti-la?)
+
+**Qual a missão do projeto proposto?**
+O projeto tem como objetivo principal que um robô faça a inspeção das condições atmosféricas de um ambiente confinado, que por conceito, designa um espaço fechado que pode apresentar condições inapropriadas para a presença humana. Essa inspeção é necessária para garantir que uma pessoa adentre o ambiente sem sofrer danos à sua saúde, ou haver algum tipo de acidente decorrente das condições atmosféricas. Portanto, a principal missão do projeto é garantir a segurança dos funcionários da Gerdau, de modo a evitar acidentes e aumentar a produtividade.
+
+
+**Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda?**
+De uma maneira geral, o produto buscará compartilhar confiança em atuar na manutenção do setor, por meio de inovações tecnológicas na análise e mapeamento de zonas confinadas improprias a pessoas. A associação da marca ao propósito da solução buscará melhor reflexão do setor de segurança no trabalho ao contextos ao qual o robô irá se inserir, sendo relevante a demonstração da evolução do setor ao longos dos tempos ao momento de termos processos que não é mais necessário vidas humanas em serviços arriscados, sendo isso uma proposta de marketing e venda apresentada a partir de uma percepção evolutiva do problema e solução.
 
 ## Sustentabilidade ambiental
-a) O projeto visa um produto ecoeficiente? Justifique.
+Nosso produto é desenvolvido com foco na ecoeficiência, utilizando fontes renováveis de energia, como baterias recarregáveis, em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. Além disso, o robô é projetado para ter uma vida útil prolongada, permitindo seu uso em futuros projetos da empresa e reduzindo a necessidade de substituição constante.
 
+Equipado com sensores de última geração, o robô realiza análises precisas do ambiente, reduzindo acidentes e prevenindo falhas que possam afetar o meio ambiente. Isso garante a preservação da saúde dos trabalhadores envolvidos nas inspeções e contribui para um ambiente de trabalho mais seguro.
 
-- Nosso produto procura ser ecoeficiente em seu desenvolvimento, utilizando fontes renováveis de energia, como baterias recarregáveis em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. O robô, por se tratar de um bem durável, apresenta bastante tempo de vida útil e pode ser utilizado em futuros projetos da empresa. Os sensores do robô analisam o ambiente para reduzir acidentes e prevenir falhas que possam afetar o meio ambiente, preservando a saúde dos trabalhadores que realizam as inspeções. Nós também temos como objetivo incluir os trabalhadores no processo, sem comprometer sua segurança ou saúde.
-
+Além disso, nosso objetivo é envolver os trabalhadores no processo, garantindo sua participação sem comprometer sua segurança ou saúde. Com isso, buscamos não apenas oferecer um produto eficiente, mas também promover uma cultura de responsabilidade ambiental e social dentro da empresa.
 
 ## Análise Financeira
 

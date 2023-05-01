@@ -68,21 +68,21 @@ A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fo
 ## Proposta de valor (Value Proposition Canvas)
 O Canvas da Proposta de Valor é uma ferramenta que pode ajudar a criar e posicionar produtos ou serviço em torno do que o cliente realmente valoriza e precisa. É uma ferramenta que lhe ajuda a encontrar o encaixe produto-mercado de forma estruturada. Dessa maneira, ele é composto por 2 blocos: a Proposta de Valor e o Segmento de Clientes.
 
-<img src = "https://user-images.githubusercontent.com/99203402/235356192-02cacd2c-c330-4c2b-be36-7da9bef30557.png" width = "650" >
+![Proposta de Valor](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/proposta%20de%20valor.png)
 
 A partir da imagem acima, é possível descrever mais detalhadamente cada segmento do Value Propositions Canvas:
 
-**Tarefas do cliente (Customer Job)**: Primeiramente, é preciso descrever o que os funcionários da Gerdau estão tentando fazer, podendo ser tarefas que estão tentando realizar ou completar, problemas que estão tentando resolver ou necessidades que estão tentando satisfazer.
+**Tarefas do cliente (Customer Job)**: Primeiramente, é preciso descrever o que os funcionários da Gerdau estão tentando fazer, podendo ser tarefas que estão tentando realizar ou completar, problemas que estão tentando resolver ou necessidades que estão tentando satisfazer. (Contratação de uma empresa terceirizada para fazer a inspeção do ambiente; Envio de um trabalhador para adentrar o espaço confinado, mesmo não tendo garantia de segurança do ambiente)
 
-**Dores (Pains)**: Em seguida, descrevemos as emoções negativas, custos e situações indesejadas, riscos e outras experiências ruins que a Gerdau pode vivenciar antes, durante ou após as tarefas listadas anteriormente.
+**Dores (Pains)**: Em seguida, descrevemos as emoções negativas, custos e situações indesejadas, riscos e outras experiências ruins que a Gerdau pode vivenciar antes, durante ou após as tarefas listadas anteriormente. (Riscos na operação de inspeção de ambientes inóspitos; Falta de eficiência na inspeção de tais ambientes; Falta de acurácia e precisão na coleta dos dados dos gases)
 
-**Ganhos (Gains)**: Após as dores, descrevemos os benefícios que a Gerdau espera, deseja ou seria surpreendida positivamente se existisse, incluindo utilidade funcional, ganhos sociais, emoções positivas e redução de custos.
+**Ganhos (Gains)**: Após as dores, descrevemos os benefícios que a Gerdau espera, deseja ou seria surpreendida positivamente se existisse, incluindo utilidade funcional, ganhos sociais, emoções positivas e redução de custos. (Aumento da eficiência na coleta de dados e inspeção da estrutura; Redução do tempo necessário para realizar as atividades, resultando em economia de tempo e recursos; Aumento da segurança do ambiente de trabalho, reduzindo o risco de acidentes, além de contribuir para uma melhor imagem da Gerdau)
 
-**Produtos e serviços (Products and services)**: Com o perfil do consumidor já desenhado, listamos todos os produtos e serviços em que a proposta de valor esta baseada.
+**Produtos e serviços (Products and services)**: Com o perfil do consumidor já desenhado, listamos todos os produtos e serviços em que a proposta de valor esta baseada. (Robô capaz de se mover em ambientes de espaço confinado e inspecioná-lo; Sensores para coletar condições atmosféricas; Robô programado para ter uma rotina pré-definida; Software para processamento e análise de dados coletados pelo robô; Serviços de manutenção e suporte para o robô e o software)
 
-**Aliviadores de dores (Pain Relievers)**: Em seguida, descrevemos como os produtos e serviços aliviam as dores da Gerdau, como eles eliminam ou reduzem emoções negativas, custos e situações indesejadas, riscos que eles vivenciam ou vivenciaram antes, durante ou depois de um job-to-be-done.
+**Aliviadores de dores (Pain Relievers)**: Em seguida, descrevemos como os produtos e serviços aliviam as dores da Gerdau, como eles eliminam ou reduzem emoções negativas, custos e situações indesejadas, riscos que eles vivenciam ou vivenciaram antes, durante ou depois de um job-to-be-done. (Redução de riscos e perigos, evitando acidentes e melhorando a segurança dos trabalhadores; Maior precisão e eficiência na coleta de dados, o que  reduz o tempo gasto e erros humanos, além de melhorar a qualidade das análises; Robô autônomo ou com sua movimentação controlada por um controle remoto)
 
-**Criadores de ganho (Gain Creators)**: Por fim, descrevemos como nossos produtos e serviços criam ganhos para a Gerdau. 
+**Criadores de ganho (Gain Creators)**: Por fim, descrevemos como nossos produtos e serviços criam ganhos para a Gerdau. (Reduzir o risco de acidentes dos trabalhadores; A partir da coleta de dados via sensores, ter a possibilidade de ajudar a identificar/mitigar riscos de segurança, como vazamento de gases tóxicos/combustíveis; Aumentar a eficiência do método de inspeção; Coleta de dados de forma mais precisa e consistente; Monitoramento em tempo real; Inovação tecnológica incremental; Solução econômica e sustentável para a manutenção e inspeção de estruturas)
 
 ## Matriz de Riscos
 A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar os riscos associados a um projeto, processo ou atividade. Desse modo, ela é composta por duas dimensões: a primeira representa a probabilidade de ocorrência de um risco, geralmente classificada como baixa, média ou alta; a segunda dimensão representa o impacto que o risco pode ter, caso ocorra, também classificado como baixo, médio ou alto. Por fim, a matriz de riscos é muito útil para a gestão de riscos, pois permite priorizar os riscos de acordo com sua probabilidade e impacto, facilitando a tomada de decisão sobre quais riscos devem ser tratados primeiro.
@@ -110,7 +110,7 @@ A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportuni
 Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados.
 Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
 
-<img src= "https://user-images.githubusercontent.com/99203402/235355410-2ad1f997-1da9-464b-8c85-d765e4ebb36e.png" width = "600">
+![Matriz Oceano Azul](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/matriz%20oceano%20azul.png)
 
 Justificativa das pontuações referentes ao oceano azul:
 
@@ -128,22 +128,22 @@ Justificativa das pontuações referentes ao oceano azul:
 
 Após análise cuidadosa do gráfico, identificamos fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Além disso, observamos que o nosso produto se encontra no mesmo quadrante que produtos já consolidados no mercado, o que nos leva a propor um projeto com similaridades. 
 
-Elimine
+**Eliminar**
 - Robôs grandes e desajeitados que não podem manobrar em espaços estreitos
 - Robôs que não são seguros para uso em ambientes perigosos e confinados
 - Robôs que não têm sensores para ajudar na navegação e na análise de dados atmosféricos
 
-Reduza
+**Reduzir**
 - Custo de fabricação de robôs, mantendo a qualidade e a segurança
 - Complexidade de operação do robô, tornando-o fácil de usar
 - Tempo necessário para a manutenção do robô
 
-Aumente
+**Elevar**
 - Agilidade e capacidade de manobra do robô em terrenos difíceis, bem como uma melhor análise e coleta de dados atmoféricos
 - Confiabilidade e durabilidade do robô
 - Capacidade de navegação autônoma em ambientes confinados
 
-Crie
+**Criar**
 - Novas funcionalidades para o robô, como a capacidade de detectar e responder a emergências em tempo real
 - Novas formas de comunicação do robô com o operador
 - Criar uma nova feature integrável com o sistema da Gerdau

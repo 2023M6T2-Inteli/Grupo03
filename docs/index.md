@@ -232,7 +232,9 @@ Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos 
 
 ## Diagrama de blocos - Versão 1
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
+
 Embora a imagem acima represente o primeiro esboço da arquitetura da solução, criamos uma nova versão para uma melhor visualização, apresentada na imagem abaixo.
+
 ![Arquitetura da Solução - v1]( https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/arquitetura%20da%20solu%C3%A7%C3%A3o%20v1.png) 
 
 ### Descrição:

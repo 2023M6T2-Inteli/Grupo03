@@ -1,7 +1,14 @@
-import networkx as nx
-import math
-from networkx.algorithms import approximation as approx
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+from geometry_msgs.msg import Twist
+from nav_msgs.msg import Odometry
+from tf_transformations import euler_from_quaternion
 from collections import deque
+import networkx as nx
+from networkx.algorithms import approximation as approx
+import time
+from math import *
 
 def Graph():
     nodes = []
@@ -19,7 +26,7 @@ def Graph():
             return f"node{self.name}"
 
     def Weighed_Edge(p1, p2):
-        weitgh = math.sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y))
+        weitgh = sqrt((p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y))
         weitghEdge = (p1, p2, weitgh)
         WE.append(weitghEdge)
     
@@ -82,21 +89,86 @@ def best_path_all_nodes(graph, source):
     for i in repeated:
         path.pop(i)
 
-    # Transformar a lista em uma deque para otimizar as operações de remoção e adição de elementos
-    path = deque(path)
 
     # Retornar o caminho
     return path
 
-# Função principal que solicita o ponto de início e imprime o caminho
-def main():
+class TurtleController(Node):
+    currentPose = []
+    angleSet = False
+    def __init__(self,path):
+        self.path = path
+        super().__init__('turtle_controller')
+        self.publisher_ = self.create_publisher(
+            msg_type=Twist, 
+            topic='cmd_vel',
+            qos_profile=10
+        )
+        self.pose_subscription = self.create_subscription(
+            msg_type=Odometry,
+            topic='/odom',
+            callback=self.pose_callback,
+            qos_profile=10
+        )
+        self.timer_ = self.create_timer(0.1, self.move_turtle)
+        self.twist_msg_ = Twist()
+        
+
+    def move_turtle(self):
+        nextPose = self.path[0]
+        print(nextPose)
+        self.pose_subscription.callback
+        print(self.currentPose)
+        dx = self.currentPose[0]-nextPose.x
+        dy = self.currentPose[1]-nextPose.y
+        ang = atan2(dy,dx)-self.currentPose[2]
+        direction = ang/abs(ang)
+        print(ang)
+        if self.angleSet == False:
+            if abs(dx)<0.1 or abs(dy)<0.1:
+                self.path.pop(0)
+                return
+            if abs(ang) > 0.01:
+                self.twist_msg_.linear.x = 0.0
+                self.twist_msg_.angular.z = 0.1*direction
+            else:
+                self.twist_msg_.angular.z = 0.0
+                self.angleSet = True
+
+        if self.angleSet:
+            if abs(dx)>0.1 or abs(dy)>0.1:
+                self.twist_msg_.linear.x = -0.1
+            else:
+                self.twist_msg_.linear.x = 0.0
+                self.path.pop(0)
+                self.angleSet = False
+        
+        self.publisher_.publish(self.twist_msg_)
+    
+    def pose_callback(self, msg):
+        x = msg.pose.pose.position.x
+        y = msg.pose.pose.position.y
+        z = msg.pose.pose.position.z
+        ang = msg.pose.pose.orientation
+        _, _, theta = euler_from_quaternion([ang.x, ang.y, ang.z, ang.w])
+        self.get_logger().info(f"x={x}, y={y}, theta={theta}")
+        self.currentPose = [x,y,theta]
+        
+        
+
+
+def main(args=None):
     G = Graph()
     graph = G[0]
     nodes = G[2]
     p0 = int(input(f"{G[1]} De que ponto voce quer começar o percurso? Digite a posição do ponto na lista. Considere que o primeiro ponto é o 0"))
-    print(G)
-    print(best_path_all_nodes(graph, nodes[p0]))
-    
-# Verificar se este arquivo é executado como um programa principal e, se sim, executar a função main()
-if __name__=="__main__":
+    path = best_path_all_nodes(graph, nodes[p0])
+    rclpy.init()
+    turtle_controller = TurtleController(path)
+    rclpy.spin(turtle_controller)
+    turtle_controller.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
     main()

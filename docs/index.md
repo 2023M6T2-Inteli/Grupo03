@@ -39,6 +39,9 @@ Simulação de robôs para aplicações diversas.
 - [Arquitetura da Solução](#arquitetura-da-solução)
   - [Requisitos](#requisitos)    
   - [Arquitetura da Solução - Versão 1](#arquitetura-da-solução---versão-1)
+- [Inteface web (frontend)](#interface-web-(frontend))
+  - [Entradas e saídas](#entradas-e-saidas)
+  - [Mockup](#mockup)
 - [Referências](#referências)
 
 # Autores
@@ -245,3 +248,49 @@ Temos três componentes principais na arquitetura do sistema:
 - O componente **backend** implementa a arquitetura ROS2 (Robot Operating System) para receber e enviar informações por meio dos tópicos pub/sub (publisher/subscriber), comunicando-se diretamente com o robô. Além disso, ele inclui um framework, um banco de dados e um ORM (Object-Relational Mapping). Além da interface pub/sub (publisher/subscriber), o backend também utiliza a comunicação HTTP (HyperText Transfer Protocol).
 
 - O componente **frontend** utiliza um framework para a paginação e CSS para a estilização. Ele se comunica com o resto do sistema por meio da interface HTTP disponibilizada pelo backend.
+
+## Análise de requisitos
+### Requisitos Funcionais
+- Inspeção dos ambientes durante e após da manutenção
+- Detecção de condições atmosféricas (presença de gases tóxicos) dos espaços confinados
+- Sensores para detectar os gases, e talvez detectar colisões
+- Robô ser capaz de retornar ao ponto inicial em casos de erros/defeitos/objetos no meio do caminho
+- Movimentação por joystick (casos de emergência)
+- Interface web apresentando um dashboard com dados coletados e imagens em tempo real, além de poder gerar relatórios em PDF
+
+### Requisitos não funcionais
+- Funcionamento confiável e eficiente no processo de monitoramento e inspeção
+- Confiança nos dados gerados
+- Monitoramento e inspeção em tempo real
+- Interface web de fácil compreensão por aqueles usuários que a utilizem 
+
+## Análise de viabilidade técnica
+O projeto é uma solução para os desafios enfrentados pelos técnicos que lidam com espaços confinados em seu dia a dia, tendo como objetivo principal simplificar as tarefas de segurança e inspeção, por meio de um sistema automatizado. Dessa maneira, optamos por adotar o TurtleBot Burger, um robô com capacidade de processamento adequada para os sistemas que iremos empregar, mesmo que ele enfrente algumas limitações em relação à sua mobilidade, especialmente em terrenos irregulares, sua vantagem reside em seu tamanho compacto, permitindo seu acesso a espaços confinados, além de ser uma ótima ferramenta educacional.
+
+Ademais, o robô será equipado com sensores integrados projetados para detectar níveis de gases tóxicos no ambiente. Contudo, é importante mencionar que eles têm uma limitação e só podem detectar até cinco tipos de gases tóxicos. Assim mesmo sendo de uma natureza mais básica, os sensores selecionados são semelhantes aos utilizados na indústria.
+
+Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente. 
+
+# Interface web (frontend)
+A interface web do projeto é um sistema visual que permite ao usuário controlar os componentes da solução. A principal utilidade será controlar o processo de inspeção e dados gerados do robô. 
+
+## Entradas e saídas 
+a) Definição das entradas e saídas necessárias para a interação com o usuário de modo a atender suas necessidades.
+
+## Mockup
+Para o desenvolvimento da interface do usuário, optamos por criar uma aplicação web, com uma estrutura elaborada de acordo com as necessidades de entradas e saídas.
+
+# Simulação de rota 
+1. Sistema de otimização de rota. (peso 3)
+a) Análise e enumeração das possíveis rotas de navegação do robô móvel condizentes com a aplicação definida.
+b) Representação correta do ambiente e das rotas escolhidas utilizando grafos.
+c) Escolha e implementação de algoritmo para otimização de rota utilizando uma heurística que faça sentido no contexto do projeto.
+2. Implementação de rota ótima em sistema robótico. (peso 4)
+a) Instalação e configuração do ambiente de desenvolvimento baseado em sistema operacional robótico.
+b) Implementação de um sistema integrado capaz de simular a dinâmica e cinemática da plataforma robótica móvel.
+c) Implementação em ambiente de simulação da rota otimizada apresentada.
+d) Implementação de um sistema capaz de provisionar a comunicação entre a plataforma robótica móvel e o sistema de simulação com integração ao sistema operacional robótico.
+4. Sistema de locomoção e otimização de rota. (peso 4)
+a) Detalhamento da arquitetura do sistema de simulação e integração com o sistema operacional robótico.
+b) Detalhamento da escolha e implementação do algoritmo de otimização de rota.
+c) Integração e validação do sistema de otimização de rota com a movimentação da plataforma robótica.

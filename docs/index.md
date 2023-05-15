@@ -272,13 +272,29 @@ Ademais, o robô será equipado com sensores integrados projetados para detectar
 Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente. 
 
 # Interface web (frontend)
-A interface web do projeto é um sistema visual que permite ao usuário controlar os componentes da solução. A principal utilidade será controlar o processo de inspeção e dados gerados do robô. 
+
+Nossa interface minimalista foi cuidadosamente projetada para fornecer aos usuários a capacidade de editar facilmente as informações presentes em um relatório. Com um design limpo e simplificado, focamos na simplicidade e na clareza das funcionalidades, permitindo que o usuário tenha total controle sobre o conteúdo do relatório. 
+
+Além da edição de informações, nossa interface também oferece a capacidade de controlar o início e o fim da movimentação de um robô. Com apenas alguns cliques, o usuário pode definir o momento exato em que o robô inicia ou conclui sua movimentação, garantindo assim um controle preciso do fluxo de trabalho.
+
+Para a construção do frontend, utilizaremos o React como tecnologia principal, proporcionando eficiência e escalabilidade. Além disso, garantiremos a integração com os sistemas da Gerdau, aplicando sua identidade visual no design da interface. Isso resultará em uma experiência consistente e familiar para os usuários, facilitando a adoção do sistema e garantindo uma interface visualmente alinhada com a empresa.
 
 ## Entradas e saídas 
 a) Definição das entradas e saídas necessárias para a interação com o usuário de modo a atender suas necessidades.
 
+O robô contará com uma configuração de comunicação simplificada, proporcionando ao usuário uma interação intuitiva e eficiente. Com essa configuração, o usuário terá acesso a diversas entradas e saídas funcionais dentro da aplicação, permitindo uma experiência completa e satisfatória.
+
+| Entrada                  | Saída                                             |
+|-------------------------|-------------------------------------------------|
+| Botão na interface      | Permite ativar a movimentação do robô. O mesmo botão também permite pausar a movimentação. |
+| Input de título         |Permite ao usuário inserir o título da sala para fins de reconhecimento.  |
+| Botão de gerar relatório |Ao ser acionado, gera um modal com base nas informações coletadas durante o ensaio. O modal irá conter dados relevantes e análises do ensaio realizado. |
+| Página histórico        | Permite ao usuário acessar relatórios anteriores gerados pelo sistema. O usuário também pode baixar os relatórios em formato PDF para armazenamento ou compartilhamento posterior |
+
 ## Mockup
-Para o desenvolvimento da interface do usuário, optamos por criar uma aplicação web, com uma estrutura elaborada de acordo com as necessidades de entradas e saídas.
+Para proporcionar uma experiência de usuário otimizada, decidimos desenvolver uma aplicação web com uma interface cuidadosamente projetada, que atende às necessidades específicas de entradas e saídas. A estrutura da aplicação foi elaborada de forma a garantir uma interação fluida e intuitiva, maximizando a usabilidade e a eficiência para os usuários.
+
+<img width="565" alt="Captura de tela 2023-05-09 155102 (1)" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/1fd27f43-12cc-4b77-93ce-5603a29dff43">
 
 # Simulação de rota 
 

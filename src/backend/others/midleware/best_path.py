@@ -109,7 +109,7 @@ class TurtleController(Node):
         self.twist_msg_ = Twist()
 
     # Define a function to move the turtle robot along the path by publishing Twist messages to the cmd_vel topic based on the current position
-        def move_turtle(self):
+    def move_turtle(self):
         nextPose = self.path[0]
         print(nextPose)
         self.pose_subscription.callback

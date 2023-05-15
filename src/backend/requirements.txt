@@ -1,0 +1,5 @@
+sanic
+supabase
+psycopg2
+asyncpg
+SQLAlchemy

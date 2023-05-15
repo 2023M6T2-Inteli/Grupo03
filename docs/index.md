@@ -285,12 +285,3 @@ Para o desenvolvimento da interface do usuário, optamos por criar uma aplicaç�
 a) Análise e enumeração das possíveis rotas de navegação do robô móvel condizentes com a aplicação definida.
 b) Representação correta do ambiente e das rotas escolhidas utilizando grafos.
 c) Escolha e implementação de algoritmo para otimização de rota utilizando uma heurística que faça sentido no contexto do projeto.
-2. Implementação de rota ótima em sistema robótico. (peso 4)
-a) Instalação e configuração do ambiente de desenvolvimento baseado em sistema operacional robótico.
-b) Implementação de um sistema integrado capaz de simular a dinâmica e cinemática da plataforma robótica móvel.
-c) Implementação em ambiente de simulação da rota otimizada apresentada.
-d) Implementação de um sistema capaz de provisionar a comunicação entre a plataforma robótica móvel e o sistema de simulação com integração ao sistema operacional robótico.
-4. Sistema de locomoção e otimização de rota. (peso 4)
-a) Detalhamento da arquitetura do sistema de simulação e integração com o sistema operacional robótico.
-b) Detalhamento da escolha e implementação do algoritmo de otimização de rota.
-c) Integração e validação do sistema de otimização de rota com a movimentação da plataforma robótica.

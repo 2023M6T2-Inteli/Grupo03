@@ -281,7 +281,23 @@ a) Definição das entradas e saídas necessárias para a interação com o usu�
 Para o desenvolvimento da interface do usuário, optamos por criar uma aplicação web, com uma estrutura elaborada de acordo com as necessidades de entradas e saídas.
 
 # Simulação de rota 
-1. Sistema de otimização de rota. (peso 3)
-a) Análise e enumeração das possíveis rotas de navegação do robô móvel condizentes com a aplicação definida.
-b) Representação correta do ambiente e das rotas escolhidas utilizando grafos.
-c) Escolha e implementação de algoritmo para otimização de rota utilizando uma heurística que faça sentido no contexto do projeto.
+
+A otimização de rotas é um elemento essencial no desenvolvimento de um sistema eficiente para um robô móvel. Neste contexto, a simulação apresentará os principais aspectos a serem abordados ao implementar um sistema de otimização de rota. 
+
+Inicialmente, foi realizada uma análise detalhada e enumeração das possíveis rotas de navegação do robô, levando em consideração as exigências específicas da aplicação em questão e o caminho mais rápido. Em seguida, discutimos a importância de uma representação precisa do ambiente e das rotas escolhidas, utilizando grafos como uma ferramenta eficiente para visualizar e modelar as conexões entre os pontos relevantes. 
+
+A seguir, temos o algoritmo em grafo para otimizar as rotas, com base em uma heurística que faça sentido no contexto do projeto.
+
+## Algoritmo em grafo
+
+O script Python (best_path.py) utiliza a biblioteca rclpy para controlar um robô tartaruga criando um grafo de nós e arestas com pesos baseados na distância entre os nós, encontrando o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e movendo o robô tartaruga ao longo do caminho publicando mensagens Twist no tópico cmd_vel e se inscrevendo em mensagens Odometry do tópico /odom. O script define funções para criar um grafo, encontrar o melhor caminho e controlar o robô tartaruga, bem como uma classe TurtleController que usa rclpy para criar um nó para publicar e se inscrever em mensagens. A função main solicita ao usuário que insira as coordenadas dos nós e arestas, cria um grafo, encontra o melhor caminho através de todos os nós e controla o robô tartaruga para se mover ao longo do caminho.
+
+Tecnicamente, o script começa importando as bibliotecas necessárias e definindo uma função Graph para criar um grafo de nós e arestas com pesos baseados na distância entre os nós. A função define uma classe Position_Node para representar os nós com um nome e coordenadas x e y, e uma função Weighed_Edge para criar uma aresta entre dois nós com um peso baseado na distância entre eles. A função então solicita ao usuário que insira as coordenadas dos nós e adiciona-os ao grafo. Em seguida, solicita ao usuário que insira as arestas entre os nós e adiciona-as ao grafo com pesos baseados na distância entre os nós.
+
+O script também define uma função best_path_all_nodes para encontrar o melhor caminho através de todos os nós no grafo usando o algoritmo do problema do caixeiro viajante da biblioteca networkx. A função recebe como entrada um grafo e um nó de origem e retorna uma lista de nós representando o melhor caminho através de todos os nós no grafo.
+
+Em seguida, o script define uma classe TurtleController para controlar um robô tartaruga usando rclpy para criar um nó que publica mensagens Twist no tópico cmd_vel e se inscreve em mensagens Odometry do tópico /odom. A classe define uma função move_turtle que move o robô tartaruga ao longo do caminho publicando mensagens Twist no tópico cmd_vel com base na posição atual do robô e na próxima posição no caminho. A função calcula a diferença nas coordenadas x e y entre a posição atual e a próxima posição no caminho e usa isso para calcular um ângulo para virar em direção à próxima posição. A função então publica mensagens Twist com velocidades lineares e angulares para mover o robô em direção à próxima posição no caminho.
+
+O código também define uma função de retorno de chamada pose_callback para a classe TurtleController que atualiza a posição atual do robô tartaruga com base em mensagens Odometry do tópico /odom.
+
+Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.

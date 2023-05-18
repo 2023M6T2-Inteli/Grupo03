@@ -92,7 +92,7 @@ def best_path_all_nodes(graph, source):
 # Define a class for controlling a turtle robot using rclpy to create a node that publishes Twist messages to the cmd_vel topic and subscribes to Odometry messages from the /odom topic
 class TurtleController(Node):
     currentPose = []
-    frontDist = 0
+    frontDist = []
     angleSet = False
     def __init__(self,path):
         self.path = path
@@ -145,11 +145,13 @@ class TurtleController(Node):
                 print("Angulo ajustado!")
 
         if self.angleSet:
-            if self.frontDist < 0.3:
-                self.twist_msg_.linear.x = 0.0
-                print(f"Encontrei um obstaculo {self.frontDist}")
-                self.publisher_.publish(self.twist_msg_)
-                return
+            for i in self.frontDist:
+                if i < 0.3:
+                    self.twist_msg_.linear.x = 0.0
+                    print(f"Encontrei um obstaculo {self.frontDist}")
+                    self.publisher_.publish(self.twist_msg_)
+                    rclpy.shutdown()
+                    return
             
             if (abs(dx)>0.1 or abs(dy)>0.1):
                 self.twist_msg_.linear.x = -0.1
@@ -173,7 +175,7 @@ class TurtleController(Node):
 
     def lidar_callback(self, msg):
         front = (msg.angle_max)/(2*msg.angle_increment)
-        self.frontDist = msg.ranges[int(front)]
+        self.frontDist = msg.ranges[int(front-17):int(front+17)]
         
 
 # Define the main function to create a graph of nodes and edges, find the best path through all nodes, and control a turtle robot to move along the path using rclpy

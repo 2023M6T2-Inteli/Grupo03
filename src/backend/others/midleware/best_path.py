@@ -10,6 +10,21 @@ from networkx.algorithms import approximation as approx
 import time
 from math import *
 from sensor_msgs.msg import LaserScan
+from pynput import keyboard
+
+import sys
+import termios
+import tty
+
+def getch():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(fd)
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
 
 # Define a function to create a graph of nodes and edges with weights based on distance between nodes
 def Graph():
@@ -94,6 +109,7 @@ class TurtleController(Node):
     currentPose = []
     frontDist = []
     angleSet = False
+    manual = False
     def __init__(self,path):
         self.path = path
         super().__init__('turtle_controller')
@@ -120,6 +136,23 @@ class TurtleController(Node):
 
     # Define a function to move the turtle robot along the path by publishing Twist messages to the cmd_vel topic based on the current position
     def move_turtle(self):
+        if self.manual == True:
+            comand = getch()
+            if comand == "w":
+                self.twist_msg_.linear.x -= 0.1
+            if comand == "s":
+                self.twist_msg_.linear.x = 0.0
+                self.twist_msg_.angular.z = 0.0
+            if comand == "x":
+                self.twist_msg_.linear.x += 0.1
+            if comand == "a":
+                self.twist_msg_.angular.z += 0.1
+            if comand == "d":
+                self.twist_msg_.angular.z -= 0.1
+            if comand == "k":
+                self.manual = False
+            self.publisher_.publish(self.twist_msg_)
+            return
         print(f"fd = {self.frontDist}")
         if len(self.currentPose) == 0:
             return
@@ -150,7 +183,8 @@ class TurtleController(Node):
                     self.twist_msg_.linear.x = 0.0
                     print(f"Encontrei um obstaculo {self.frontDist}")
                     self.publisher_.publish(self.twist_msg_)
-                    rclpy.shutdown()
+                    self.angleSet = False
+                    self.manual = True
                     return
             
             if (abs(dx)>0.1 or abs(dy)>0.1):

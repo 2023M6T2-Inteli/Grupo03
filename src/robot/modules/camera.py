@@ -1,37 +1,31 @@
-import cv2
+import cv2 
 import rclpy
-import base64
 from rclpy.node import Node
-from std_msgs.msg import String
+from cv_bridge import CvBridge
+from sensor_msgs.msg import Image
 
 class Camera(Node):
-        
-    def __init__(self, control_period=0.02):
-        super().__init__('turtle_controller')
-        
-        self.control_timer = self.create_timer(
-                timer_period_sec=1,
-                callback=self.capture
-        )
+  def __init__(self):
+    super().__init__('image_publisher')
+    self.publisher_ = self.create_publisher(Image, '/camera', 10)
+    timer_period = 0.1
+    self.timer = self.create_timer(timer_period, self.timer_callback)
+    self.cap = cv2.VideoCapture(0)
+    self.bridge = CvBridge()
+   
+  def timer_callback(self):
+    ret, frame = self.cap.read()
+    if ret == True:
+      self.publisher_.publish(self.bridge.cv2_to_imgmsg(frame))
+    self.get_logger().info('Publishing video frame')
+  
+def main(args=None):
 
-        self.camera = self.create_publisher(
-                msg_type=String,
-                topic='/camera',
-                qos_profile=10
-        )
-    
-    def capture(self):
-        self.get_logger().info("Starting camera...")
-        cap = cv2.VideoCapture(0)
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                print("Can't receive frame (stream end?). Exiting ...")
-                break
-            encode_string= base64.b64encode(frame)
-            string = str(encode_string)
-            self.msg = String(data=string)
-            self.camera.publish(self.msg)
-
-# To see the output of this node, open a terminal and execute the following command:
-# ros2 topic echo /camera
+  rclpy.init(args=args)
+  image_publisher = Camera()
+  rclpy.spin(image_publisher)
+  image_publisher.destroy_node()
+  rclpy.shutdown()
+  
+if __name__ == '__main__':
+  main()

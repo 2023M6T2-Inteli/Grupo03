@@ -1,27 +1,28 @@
 import cv2
 import rclpy
-import base64
 from rclpy.node import Node
 from ultralytics import YOLO
-from std_msgs.msg import String
-
+from cv_bridge import CvBridge
+from sensor_msgs.msg import Image
+ 
 class Streaming(Node):
-        
-    def __init__(self, control_period=0.02):
-        super().__init__('turtle_controller')
 
-        self.streaming = self.create_subscription(String, '/camera', self.callback, 10)
+  def __init__(self):
+    super().__init__('image_subscriber')
+    self.subscription = self.create_subscription(
+      Image, 
+      '/camera', 
+      self.listener_callback, 
+      10)
+    self.subscription 
+    self.bridge = CvBridge()
 
-    def callback(self, msg):
-        print(msg)
-        # decode = base64.b64decode(str(msg))
-        # model = YOLO("./yolo/best.pt")
-        # result = model.predict(decode, conf=0.4)
-        # annotated = result[0].plot()
-        # print(annotated)
-        
-if __name__ == '__main__':
-    rclpy.init()
-    streaming = Streaming()
-    rclpy.spin(streaming)
-    rclpy.shutdown()
+  def listener_callback(self, data):
+    self.get_logger().info('Receiving video frame')
+    current_frame = self.bridge.imgmsg_to_cv2(data)
+    model = YOLO("./yolo/best.pt")
+    result = model.predict(current_frame, conf=0.6)
+    annotated = result[0].plot()
+    cv2.imshow("camera", annotated)
+    cv2.waitKey(1)
+

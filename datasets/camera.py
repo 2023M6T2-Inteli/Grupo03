@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 import cv2 as cv
 
-model = YOLO('./datasets/yolov8n2.pt')
+model = YOLO('./datasets/best.pt')
 
 capture = cv.VideoCapture(0)
 

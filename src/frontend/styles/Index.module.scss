@@ -1,0 +1,50 @@
+.Container {
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: center; /* Alinha os itens horizontalmente no centro */
+    height: 100vh; /* Define a altura para ocupar toda a altura da tela */
+    
+  }
+
+  .login{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    text-align: center; /* Alinha o texto ao centro */
+
+  }
+  
+  .button {
+    background-color: #013a78;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    color: #ffff;
+    border-radius: 20px;
+    align-self: center; /* Alinha o botão verticalmente no centro */
+    font-size: 17px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 300ms;
+
+        &:hover{
+            scale: 1.1;
+        }
+  }
+
+  .lottie{
+    width: 50%;
+    height: 100vh; /* Define a altura para ocupar toda a altura da tela */
+    background: linear-gradient(#013a78, #0075BD); /* Gradiente linear como cor de fundo */
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    text-align: center; /* Alinha o texto ao centro */
+    justify-content: center;
+  }

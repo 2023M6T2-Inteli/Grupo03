@@ -3,6 +3,8 @@
 
     .container{
         margin: 3rem;
+        display: flex;
+        flex-direction: row;
     
     
     p {
@@ -15,15 +17,47 @@
 
     h1{
         color: #003366;
+        margin-bottom: 20px;
 
     }
 
     input{
         border-color: #003366 ;
-        border-radius: 10px;
+        border-radius: 7px;
         width: 15rem;
         height: 1.5rem;
         margin-bottom: 2rem;
+        padding: 1px 5px;
+    }
+
+    .button{
+        background-color: #014990;
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 300ms;
+
+        &:hover{
+            scale: 1.05;
+        }
     }
 }
+}
+.field{
+    display: flex;
+    flex-direction: column;
+    
+    label{
+        font-weight: 600;
+        color: #014990;
+    }
+
+    input{
+        margin-top: 5px;
+        border: solid 1.5px  #014990;
+    }
 }

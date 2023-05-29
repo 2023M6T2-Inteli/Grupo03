@@ -247,7 +247,7 @@ Temos três componentes principais na arquitetura do sistema:
 
 - O componente **backend** implementa a arquitetura ROS2 (Robot Operating System) para receber e enviar informações por meio dos tópicos pub/sub (publisher/subscriber), comunicando-se diretamente com o robô. Além disso, ele inclui um framework, um banco de dados e um ORM (Object-Relational Mapping). Além da interface pub/sub (publisher/subscriber), o backend também utiliza a comunicação HTTP (HyperText Transfer Protocol).
 
-- O componente **frontend** utiliza um framework para a paginação e CSS para a estilização. Ele se comunica com o resto do sistema por meio da interface HTTP disponibilizada pelo backend.
+- O componente **frontend** utiliza do framework react para a paginação e CSS para a estilização. Ele se comunica com o resto do sistema por meio da interface HTTP disponibilizada pelo backend.
 
 ## Análise de requisitos
 ### Requisitos Funcionais

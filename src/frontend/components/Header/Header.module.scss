@@ -1,0 +1,70 @@
+.container{
+    height: 5.2rem;
+    background-image: linear-gradient( to right,#014C8D,#04233E ); 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    img{
+        width: 220px;
+        padding-top: 8px;
+        height: 55px;
+    }
+
+    p{
+        color: #ffff;
+        font-weight: 500;
+        font-size: 20px;
+        padding: 20px;
+        margin-top: 10px;
+        cursor: pointer;
+
+                  a {
+              &,
+              &:after,
+              &:before {
+                transition: all 0.5s;
+              }
+            }
+    }
+
+
+
+    .stroke {
+        a {
+          position: relative;
+      
+          &:after {
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            margin: auto;
+            width: 0%;
+            content: ".";
+            color: transparent;
+            background: var(#ffff);
+            height: 2px;
+          }
+      
+          &:hover:after {
+            width: 100%;
+          }
+        }
+      }
+      
+      .active {
+        position: relative;
+      
+        &:after {
+          position: absolute;
+          bottom: -1rem;
+          left: 0;
+          width: 100%;
+          content: ".";
+          color: transparent;
+          background: var(#ffff);
+          height: 2px;
+        }
+      }
+
+}

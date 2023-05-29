@@ -272,16 +272,48 @@ Ademais, o robô será equipado com sensores integrados projetados para detectar
 Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente. 
 
 # Interface web (frontend)
-A interface web do projeto é um sistema visual que permite ao usuário controlar os componentes da solução. A principal utilidade será controlar o processo de inspeção e dados gerados do robô. 
+
+Nossa interface minimalista foi cuidadosamente projetada para fornecer aos usuários a capacidade de editar facilmente as informações presentes em um relatório. Com um design limpo e simplificado, focamos na simplicidade e na clareza das funcionalidades, permitindo que o usuário tenha total controle sobre o conteúdo do relatório. 
+
+Além da edição de informações, nossa interface também oferece a capacidade de controlar o início e o fim da movimentação de um robô. Com apenas alguns cliques, o usuário pode definir o momento exato em que o robô inicia ou conclui sua movimentação, garantindo assim um controle preciso do fluxo de trabalho.
+
+Para a construção do frontend, utilizaremos o React como tecnologia principal, proporcionando eficiência e escalabilidade. Além disso, garantiremos a integração com os sistemas da Gerdau, aplicando sua identidade visual no design da interface. Isso resultará em uma experiência consistente e familiar para os usuários, facilitando a adoção do sistema e garantindo uma interface visualmente alinhada com a empresa.
 
 ## Entradas e saídas 
 a) Definição das entradas e saídas necessárias para a interação com o usuário de modo a atender suas necessidades.
 
+O robô contará com uma configuração de comunicação simplificada, proporcionando ao usuário uma interação intuitiva e eficiente. Com essa configuração, o usuário terá acesso a diversas entradas e saídas funcionais dentro da aplicação, permitindo uma experiência completa e satisfatória.
+
+| Entrada                  | Saída                                             |
+|-------------------------|-------------------------------------------------|
+| Botão na interface      | Permite ativar a movimentação do robô. O mesmo botão também permite pausar a movimentação. |
+| Input de título         |Permite ao usuário inserir o título da sala para fins de reconhecimento.  |
+| Botão de gerar relatório |Ao ser acionado, gera um modal com base nas informações coletadas durante o ensaio. O modal irá conter dados relevantes e análises do ensaio realizado. |
+| Página histórico        | Permite ao usuário acessar relatórios anteriores gerados pelo sistema. O usuário também pode baixar os relatórios em formato PDF para armazenamento ou compartilhamento posterior |
+
 ## Mockup
-Para o desenvolvimento da interface do usuário, optamos por criar uma aplicação web, com uma estrutura elaborada de acordo com as necessidades de entradas e saídas.
+Para proporcionar uma experiência de usuário otimizada, decidimos desenvolver uma aplicação web com uma interface cuidadosamente projetada, que atende às necessidades específicas de entradas e saídas. A estrutura da aplicação foi elaborada de forma a garantir uma interação fluida e intuitiva, maximizando a usabilidade e a eficiência para os usuários.
+
+<img width="565" alt="Captura de tela 2023-05-09 155102 (1)" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/1fd27f43-12cc-4b77-93ce-5603a29dff43">
 
 # Simulação de rota 
-1. Sistema de otimização de rota. (peso 3)
-a) Análise e enumeração das possíveis rotas de navegação do robô móvel condizentes com a aplicação definida.
-b) Representação correta do ambiente e das rotas escolhidas utilizando grafos.
-c) Escolha e implementação de algoritmo para otimização de rota utilizando uma heurística que faça sentido no contexto do projeto.
+
+A otimização de rotas é um elemento essencial no desenvolvimento de um sistema eficiente para um robô móvel. Neste contexto, a simulação apresentará os principais aspectos a serem abordados ao implementar um sistema de otimização de rota. 
+
+Inicialmente, foi realizada uma análise detalhada e enumeração das possíveis rotas de navegação do robô, levando em consideração as exigências específicas da aplicação em questão e o caminho mais rápido. Em seguida, discutimos a importância de uma representação precisa do ambiente e das rotas escolhidas, utilizando grafos como uma ferramenta eficiente para visualizar e modelar as conexões entre os pontos relevantes. 
+
+A seguir, temos o algoritmo em grafo para otimizar as rotas, com base em uma heurística que faça sentido no contexto do projeto.
+
+## Algoritmo em grafo
+
+O script Python (best_path.py) utiliza a biblioteca rclpy para controlar um robô tartaruga criando um grafo de nós e arestas com pesos baseados na distância entre os nós, encontrando o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e movendo o robô tartaruga ao longo do caminho publicando mensagens Twist no tópico cmd_vel e se inscrevendo em mensagens Odometry do tópico /odom. O script define funções para criar um grafo, encontrar o melhor caminho e controlar o robô tartaruga, bem como uma classe TurtleController que usa rclpy para criar um nó para publicar e se inscrever em mensagens. A função main solicita ao usuário que insira as coordenadas dos nós e arestas, cria um grafo, encontra o melhor caminho através de todos os nós e controla o robô tartaruga para se mover ao longo do caminho.
+
+Tecnicamente, o script começa importando as bibliotecas necessárias e definindo uma função Graph para criar um grafo de nós e arestas com pesos baseados na distância entre os nós. A função define uma classe Position_Node para representar os nós com um nome e coordenadas x e y, e uma função Weighed_Edge para criar uma aresta entre dois nós com um peso baseado na distância entre eles. A função então solicita ao usuário que insira as coordenadas dos nós e adiciona-os ao grafo. Em seguida, solicita ao usuário que insira as arestas entre os nós e adiciona-as ao grafo com pesos baseados na distância entre os nós.
+
+O script também define uma função best_path_all_nodes para encontrar o melhor caminho através de todos os nós no grafo usando o algoritmo do problema do caixeiro viajante da biblioteca networkx. A função recebe como entrada um grafo e um nó de origem e retorna uma lista de nós representando o melhor caminho através de todos os nós no grafo.
+
+Em seguida, o script define uma classe TurtleController para controlar um robô tartaruga usando rclpy para criar um nó que publica mensagens Twist no tópico cmd_vel e se inscreve em mensagens Odometry do tópico /odom. A classe define uma função move_turtle que move o robô tartaruga ao longo do caminho publicando mensagens Twist no tópico cmd_vel com base na posição atual do robô e na próxima posição no caminho. A função calcula a diferença nas coordenadas x e y entre a posição atual e a próxima posição no caminho e usa isso para calcular um ângulo para virar em direção à próxima posição. A função então publica mensagens Twist com velocidades lineares e angulares para mover o robô em direção à próxima posição no caminho.
+
+O código também define uma função de retorno de chamada pose_callback para a classe TurtleController que atualiza a posição atual do robô tartaruga com base em mensagens Odometry do tópico /odom.
+
+Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.

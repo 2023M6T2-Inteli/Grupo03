@@ -9,6 +9,22 @@ import networkx as nx
 from networkx.algorithms import approximation as approx
 import time
 from math import *
+from sensor_msgs.msg import LaserScan
+from pynput import keyboard
+
+import sys
+import termios
+import tty
+
+def getch():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(fd)
+        ch = sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
 
 # Define a function to create a graph of nodes and edges with weights based on distance between nodes
 def Graph():
@@ -84,13 +100,16 @@ def best_path_all_nodes(graph, source):
             repeated.append(i-1)
     for i in repeated:
         path.pop(i)
-
+    
+    print(f"path:{path}")
     return path
 
 # Define a class for controlling a turtle robot using rclpy to create a node that publishes Twist messages to the cmd_vel topic and subscribes to Odometry messages from the /odom topic
 class TurtleController(Node):
     currentPose = []
+    frontDist = []
     angleSet = False
+    manual = False
     def __init__(self,path):
         self.path = path
         super().__init__('turtle_controller')
@@ -105,34 +124,72 @@ class TurtleController(Node):
             callback=self.pose_callback,
             qos_profile=10
         )
+        self.lidar_subscription = self.create_subscription(
+            msg_type=LaserScan,
+            topic = 'scan',
+            callback = self.lidar_callback,
+            qos_profile = 10
+        )
+
         self.timer_ = self.create_timer(0.1, self.move_turtle)
         self.twist_msg_ = Twist()
 
     # Define a function to move the turtle robot along the path by publishing Twist messages to the cmd_vel topic based on the current position
     def move_turtle(self):
+        if self.manual == True:
+            comand = getch()
+            if comand == "w":
+                self.twist_msg_.linear.x -= 0.1
+            if comand == "s":
+                self.twist_msg_.linear.x = 0.0
+                self.twist_msg_.angular.z = 0.0
+            if comand == "x":
+                self.twist_msg_.linear.x += 0.1
+            if comand == "a":
+                self.twist_msg_.angular.z += 0.1
+            if comand == "d":
+                self.twist_msg_.angular.z -= 0.1
+            if comand == "k":
+                self.manual = False
+            self.publisher_.publish(self.twist_msg_)
+            return
+        print(f"fd = {self.frontDist}")
+        if len(self.currentPose) == 0:
+            return
         nextPose = self.path[0]
-        print(nextPose)
+        print(f"np: {nextPose.x},{nextPose.y}")
         self.pose_subscription.callback
-        print(self.currentPose)
+        print(f"cp: {self.currentPose}")
         dx = self.currentPose[0]-nextPose.x
         dy = self.currentPose[1]-nextPose.y
         ang = atan2(dy,dx)-self.currentPose[2]
         direction = ang/abs(ang)
-        print(ang)
+        print(f"ang: {ang}")
         if self.angleSet == False:
-            if abs(dx)<0.1 or abs(dy)<0.1:
+            if (abs(dx)<0.1 and abs(dy)<0.1):
                 self.path.pop(0)
-                return
-            if abs(ang) > 0.01:
+                self.angleSet = False
+            if ang > 0.01 or ang < -0.01:
                 self.twist_msg_.linear.x = 0.0
-                self.twist_msg_.angular.z = 0.1*direction
+                self.twist_msg_.angular.z = 0.1
             else:
                 self.twist_msg_.angular.z = 0.0
                 self.angleSet = True
+                print("Angulo ajustado!")
 
         if self.angleSet:
-            if abs(dx)>0.1 or abs(dy)>0.1:
+            for i in self.frontDist:
+                if i < 0.3:
+                    self.twist_msg_.linear.x = 0.0
+                    print(f"Encontrei um obstaculo {self.frontDist}")
+                    self.publisher_.publish(self.twist_msg_)
+                    self.angleSet = False
+                    self.manual = True
+                    return
+            
+            if (abs(dx)>0.1 or abs(dy)>0.1):
                 self.twist_msg_.linear.x = -0.1
+
             else:
                 self.twist_msg_.linear.x = 0.0
                 self.path.pop(0)
@@ -147,8 +204,13 @@ class TurtleController(Node):
         z = msg.pose.pose.position.z
         ang = msg.pose.pose.orientation
         _, _, theta = euler_from_quaternion([ang.x, ang.y, ang.z, ang.w])
-        self.get_logger().info(f"x={x}, y={y}, theta={theta}")
+        #self.get_logger().info(f"x={x}, y={y}, theta={theta}")
         self.currentPose = [x,y,theta]
+
+    def lidar_callback(self, msg):
+        front = (msg.angle_max)/(2*msg.angle_increment)
+        self.frontDist = msg.ranges[int(front-17):int(front+17)]
+        
 
 # Define the main function to create a graph of nodes and edges, find the best path through all nodes, and control a turtle robot to move along the path using rclpy
 def main(args=None):

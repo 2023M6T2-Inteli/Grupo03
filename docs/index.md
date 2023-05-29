@@ -320,19 +320,56 @@ O código também define uma função de retorno de chamada pose_callback para a
 
 Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.
 
-# Sistema de visão computaciona
+# Sistema de visão computacional
 ## Implementação do sistema de visão computacional
 
 A implementação do sistema de visão computacional foi desenvolvida com o modelo de detecção de objetos pré-treinado, como o YOLOv8 (You Only Look Once versão 8) e é capaz de identificar rachaduras em paredes de concreto com o uso de um dataset do Roboflow. 
 
 Explicação do notebook e script em Python:
 
-1. Preparação do Ambiente: Instalação da biblioteca 'ultralytics'.
-2. Preparação do dataset: Acessamos o dataset de rachaduras em paredes de concreto fornecido pela Roboflow.
-3. Treinamento do modelo: Em um notebook, a partir do dataset do roboflow, treinamos o modelo com o código a seguir:
-`!yolo train data=/content/crack-2/data.yaml model=sample_data/yolov8n.pt epochs=10 lr0=0.01`
-3. 
+1. **Preparação do Ambiente:** Instalação da biblioteca 'ultralytics'.
 
+2. **Preparação do dataset:** Acessamos o dataset de rachaduras em paredes de concreto fornecido pela Roboflow.
+
+3. **Treinamento do modelo:** Em um notebook, a partir do dataset do roboflow, treinamos o modelo com o código a seguir:
+
+`!yolo train data=/content/crack-2/data.yaml model=sample_data/yolov8n.pt epochs=10 lr0=0.01`
+
+4. Configuração do script:
+Importar as bibliotecas necessárias:
+
+``
+from ultralytics import YOLO
+import cv2 as cv
+``
+
+Carregue o modelo YOLO pré-treinado:
+
+``
+model = YOLO('./semana5/best.pt')
+``
+
+5. Detecção de Rachaduras:
+Inicialize a captura de vídeo da webcam:
+
+```python
+capture = cv.VideoCapture(0)
+``
+
+Criação de um loop para capturar quadros (frames) da captura de vídeo e realizar a detecção de objetos:
+
+```python
+while True:
+    _, frame = capture.read()
+    result = model.predict(frame, conf=0.6)
+    cv.imshow('frame', result[0].plot())
+    if cv.waitKey(1) == ord('q'):
+        break
+```
+
+No código acima, cada quadro capturado é passado para o modelo YOLO, que realiza a detecção de objetos com base nas rachaduras presentes no quadro. O resultado da detecção é exibido em uma janela com o nome 'frame'. O loop é interrompido quando a tecla 'q' é pressionada.
+
+5. Execução do script: Execute o script Python no terminal ou prompt de comando. Assim, o script iniciará a captura de vídeo da webcam e exibirá os quadros com as detecções de rachaduras em tempo real.
 
 
 ## Validação da eficácia e performance do sistema de visão computacional

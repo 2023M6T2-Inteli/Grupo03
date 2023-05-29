@@ -1,7 +1,7 @@
 import styles from "../styles/Index.module.scss";
 import { useRef } from "react";
 import  Lottie  from "lottie-react";
-import animationData from "../public/robot1.json";
+import animationData from "../public/robot2.json";
 import Link from 'next/link';
 
 export default function Login() {
@@ -10,6 +10,7 @@ export default function Login() {
       <div className={styles.Container}>
         <div className={styles.login}>
           <div className={styles.content}>
+            <img src="logoGerdau.png" alt="" />
             <p>
               Faça o login com o Google usando seu domínio da Gerdau e
               desbloqueie um mundo de possibilidades em nossa plataforma. Aqui,
@@ -23,7 +24,7 @@ export default function Login() {
           </div>
         </div>
         <div className={styles.lottie}>
-        <div  style={{width:'320px'}}>
+        <div  style={{width:'400px'}}>
           <Lottie animationData={animationData} loop autoplay speed={1.5} />
         </div>
         </div>

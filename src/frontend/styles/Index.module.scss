@@ -20,6 +20,14 @@
     align-items: center; /* Alinha os itens verticalmente no centro */
     text-align: center; /* Alinha o texto ao centro */
 
+    img{
+      width: 250px;
+      margin-bottom: 50px;
+    }
+
+    p{
+      font-weight: 500;
+    }
   }
   
   .button {

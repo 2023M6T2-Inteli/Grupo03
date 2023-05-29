@@ -17,7 +17,7 @@ export default function Home({ children }) {
     console.log(ambienteValue);
 
     const relatorioData = {
-      id: 8,
+      id: 24,
       nome_local: ambienteValue,
       endereco: "sp",
       data: "2023-05-25T10:30:00Z",
@@ -50,13 +50,16 @@ export default function Home({ children }) {
                 <input ref={ambienteInputRef} type="text" id="Ambiente" />
               </div>
               <div className={styles.field}>
-                <label htmlFor="Ambiente">Endereço</label>
-                <input ref={ambienteInputRef} type="text" id="Ambiente" />
+                <label htmlFor="Address">Endereço</label>
+                <input type="text" id="Ambiente" />
               </div>
             </form>
-            <Card title="Concentração de gás" />
+            <Card title="Concentração de oxigênio" />
           </div>
           <div className={styles.files}>
+            <div className={styles.compvis}>
+              <p>Visão computacional</p>
+            </div>
             <div>
               <button form="forms" className={styles.button}>Gerar Relatório</button>
             </div>

@@ -249,6 +249,8 @@ Temos três componentes principais na arquitetura do sistema:
 
 - O componente **frontend** utiliza do framework react para a paginação e CSS para a estilização. Ele se comunica com o resto do sistema por meio da interface HTTP disponibilizada pelo backend.
 
+## HENRIQUE MARLON
+
 ## Análise de requisitos
 ### Requisitos Funcionais
 - Inspeção dos ambientes durante e após da manutenção
@@ -317,3 +319,27 @@ Em seguida, o script define uma classe TurtleController para controlar um robô 
 O código também define uma função de retorno de chamada pose_callback para a classe TurtleController que atualiza a posição atual do robô tartaruga com base em mensagens Odometry do tópico /odom.
 
 Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.
+
+# Sistema de visão computaciona
+## Implementação do sistema de visão computacional
+
+A implementação do sistema de visão computacional foi desenvolvida com o modelo de detecção de objetos pré-treinado, como o YOLOv8 (You Only Look Once versão 8) e é capaz de identificar rachaduras em paredes de concreto com o uso de um dataset do Roboflow. 
+
+Explicação do notebook e script em Python:
+
+1. Preparação do Ambiente: Instalação da biblioteca 'ultralytics'.
+2. Preparação do dataset: Acessamos o dataset de rachaduras em paredes de concreto fornecido pela Roboflow.
+3. Treinamento do modelo: Em um notebook, a partir do dataset do roboflow, treinamos o modelo com o código a seguir:
+`!yolo train data=/content/crack-2/data.yaml model=sample_data/yolov8n.pt epochs=10 lr0=0.01`
+3. 
+
+
+
+## Validação da eficácia e performance do sistema de visão computacional
+
+# Sistemas de segurança
+
+## Implementação do sistema anticolisão.
+## Fabricação e implementação dos dispositivos de segurança.
+## Implementação do sistema de proteção contra comandos indesejados.
+## Validação da eficácia dos sistemas de segurança.

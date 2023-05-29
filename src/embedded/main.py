@@ -6,6 +6,7 @@ def main(args=None):
     rclpy.init()
     camera = Camera()
     rclpy.spin(camera)
+    camera.destroy_node()
     rclpy.shutdown()
     
 

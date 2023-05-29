@@ -18,14 +18,3 @@ class Camera(Node):
     if ret == True:
       self.publisher_.publish(self.bridge.cv2_to_imgmsg(frame))
     self.get_logger().info('Publishing video frame')
-  
-def main(args=None):
-
-  rclpy.init(args=args)
-  image_publisher = Camera()
-  rclpy.spin(image_publisher)
-  image_publisher.destroy_node()
-  rclpy.shutdown()
-  
-if __name__ == '__main__':
-  main()

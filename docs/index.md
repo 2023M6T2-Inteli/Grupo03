@@ -273,11 +273,25 @@ Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um 
 
 # Interface web (frontend)
 
-Nossa interface minimalista foi cuidadosamente projetada para fornecer aos usuários a capacidade de editar facilmente as informações presentes em um relatório. Com um design limpo e simplificado, focamos na simplicidade e na clareza das funcionalidades, permitindo que o usuário tenha total controle sobre o conteúdo do relatório. 
+Em nossa interface atual, estamos implementando algumas atualizações para melhorar a experiência do usuário. Começamos com a adição de uma tela de login que utiliza o nextAuth, uma biblioteca que nos permite autenticar apenas usuários com domínio da Gerdau. Isso garante que apenas pessoas autorizadas tenham acesso ao sistema.
 
-Além da edição de informações, nossa interface também oferece a capacidade de controlar o início e o fim da movimentação de um robô. Com apenas alguns cliques, o usuário pode definir o momento exato em que o robô inicia ou conclui sua movimentação, garantindo assim um controle preciso do fluxo de trabalho.
+Após o login, os usuários serão redirecionados para um dashboard inicial, onde poderão editar o relatório. No dashboard, eles terão a opção de modificar informações como título do relatório e adicionar observações relevantes. Além disso, estamos trabalhando para implementar uma funcionalidade adicional que permitirá que os usuários baixem o relatório em formato PDF, facilitando sua visualização e compartilhamento.
 
-Para a construção do frontend, utilizaremos o React como tecnologia principal, proporcionando eficiência e escalabilidade. Além disso, garantiremos a integração com os sistemas da Gerdau, aplicando sua identidade visual no design da interface. Isso resultará em uma experiência consistente e familiar para os usuários, facilitando a adoção do sistema e garantindo uma interface visualmente alinhada com a empresa.
+No dashboard, também teremos um botão para iniciar a movimentação do robô. Essa opção será especialmente útil para usuários que desejam coletar dados atmosféricos e explorar ambientes confinados. No entanto, pensando na flexibilidade, também incluiremos a opção de pausar a movimentação do robô, caso seja necessário interromper temporariamente suas atividades.
+
+Por fim, desenvolveremos uma página de histórico que permitirá aos usuários acessar todos os relatórios anteriores. Nessa página, eles terão a opção de filtrar o histórico por data ou ID, facilitando a localização de relatórios específicos. Essa funcionalidade auxiliará os usuários a revisitar relatórios antigos, realizar comparações ou acessar informações relevantes de forma rápida e eficiente.
+
+Essas melhorias na interface visam tornar o uso do sistema mais intuitivo, eficiente e personalizado para atender às necessidades dos usuários da Gerdau.
+
+### Tela de Login
+<img width="600" alt="Captura de tela 2023-05-29 141300" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/c8d549b9-a29d-412e-a7cd-804484789095">
+
+### Dashboard
+<img width="600" alt="Captura de tela 2023-05-29 141436" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/7a099e25-4665-4419-a632-8b859429d4db">
+
+### Página de histórico
+<img width="600" alt="Captura de tela 2023-05-29 141457" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/f0c50d63-ca09-4d20-bac0-31f589e2a17c">
+
 
 ## Entradas e saídas 
 a) Definição das entradas e saídas necessárias para a interação com o usuário de modo a atender suas necessidades.

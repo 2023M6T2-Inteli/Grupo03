@@ -349,15 +349,15 @@ Finalmente, o código define uma função main que cria um grafo de nós e arest
 
 ## Implementação do sistema de visão computacional
 
-A implementação do sistema de visão computacional foi desenvolvida com o modelo de detecção de objetos pré-treinado, como o YOLOv8 (You Only Look Once versão 8) e é capaz de identificar rachaduras em paredes de concreto com o uso de um dataset do Roboflow.
+A implementação do sistema de visão computacional foi desenvolvida com o modelo de detecção de objetos pré-treinado, YOLOv8 (You Only Look Once versão 8) e é capaz de identificar rachaduras em paredes de concreto com o uso de um dataset do Roboflow.
 
 Explicação do notebook e script em Python:
 
 1. **Preparação do Ambiente:** Instalação da biblioteca 'ultralytics'.
 
-2. **Preparação do dataset:** Acessamos o dataset de rachaduras em paredes de concreto fornecido pela Roboflow.
+2. **Preparação do dataset:** No notebook, acessamos o dataset de rachaduras em paredes de concreto fornecido pela Roboflow.
 
-3. **Treinamento do modelo:** Em um notebook, a partir do dataset do roboflow, treinamos o modelo com o código a seguir:
+3. **Treinamento do modelo:** A partir do dataset do roboflow, treinamos o modelo com o código a seguir:
 
 ```bash
 !yolo train data=/content/crack-2/data.yaml model=sample_data/yolov8n.pt epochs=10 lr0=0.01
@@ -372,7 +372,7 @@ from ultralytics import YOLO
 import cv2 as cv
 ```
 
-Carregue o modelo YOLO pré-treinado:
+Carregar o modelo YOLO pré-treinado:
 
 ```bash
 model = YOLO('./semana5/best.pt')
@@ -380,7 +380,7 @@ model = YOLO('./semana5/best.pt')
 
 5. **Detecção de Rachaduras:**
 
-Inicialize a captura de vídeo da webcam:
+Inicialização da captura de vídeo da webcam:
 
 ```bash
 capture = cv.VideoCapture(0)

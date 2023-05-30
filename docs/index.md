@@ -436,13 +436,13 @@ A Matriz de Confusão é uma representação tabular usada para avaliar o desemp
 
 A Matriz de Confusão Normalizada é uma representação tabular que resume o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, levando em consideração a proporção relativa de cada classe. Quando os valores superiores da esquerda para direita são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva. Isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. Já os valores inferiores da esquerda para direita, sendo 0.21 e background, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas. A Matriz de Confusão Normalizada é valiosa para avaliar o desempenho do modelo, fornecendo informações sobre a taxa de acerto e os erros de classificação para cada classe, considerando a distribuição relativa dos dados.
 
-### Integração do sistema de visão computacional com a arquitetura ROS2:
+## Integração do sistema de visão computacional com a arquitetura ROS2:
 
 - Para a implementação dessa integração foi necessário contruir um publisher que envia imagens coletadas da câmera acoplada ao robô ( Turtlebot ) e as publica em um tópico denominado "/camera". Do outro lado, temos um subscriber que recebe os dados enviados, os trata para o tipo de dado que o modelo reconhece como input e mostra na tela o resultado da análise feita após o método de predição ```result = model.predict(current_frame, conf=0.6)```.
 
-#### Descrição técnica:
+### Descrição técnica:
 
-##### **Subscriber:**
+#### **Subscriber:**
 
   1 - Importação dos pacotes e métodos necessários para o tratamento e redenrização do output do modelo:
     ```
@@ -495,7 +495,7 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
       main()
     ```
 
-##### **Publisher:**
+#### **Publisher:**
 
    1 - Importação dos pacotes e métodos necessários para coletar as imagens da camera acoplada ao robô e publicá-las no tópico "/camera":
 

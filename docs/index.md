@@ -268,8 +268,6 @@ Temos três componentes principais na arquitetura do sistema:
 
 - O componente **frontend** utiliza do framework react para a paginação e CSS para a estilização. Ele se comunica com o resto do sistema por meio da interface HTTP disponibilizada pelo backend.
 
-## HENRIQUE MARLON
-
 ## Análise de requisitos
 
 ### Requisitos Funcionais
@@ -437,6 +435,119 @@ A Matriz de Confusão é uma representação tabular usada para avaliar o desemp
 ![Matriz de Confusão](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/confusion_matrix_normalized.png) 
 
 A Matriz de Confusão Normalizada é uma representação tabular que resume o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, levando em consideração a proporção relativa de cada classe. Quando os valores superiores da esquerda para direita são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva. Isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. Já os valores inferiores da esquerda para direita, sendo 0.21 e background, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas. A Matriz de Confusão Normalizada é valiosa para avaliar o desempenho do modelo, fornecendo informações sobre a taxa de acerto e os erros de classificação para cada classe, considerando a distribuição relativa dos dados.
+
+### Integração do sistema de vicão computacional com a arquitetura ROS2:
+
+- Para a implementação dessa integração foi necessário contruir um publisher que envia imagens coletadas da câmera acoplada ao robô ( Turtlebot ) e as publica em um tópico denominado "/camera". Do outro lado, temos um subscriber que recebe os dados enviados, os trata para o tipo de dado que o modelo reconhece como input e mostra na tela o resultado da análise feita após o método de predição ```result = model.predict(current_frame, conf=0.6)```.
+
+#### Descrição técnica:
+
+##### **Subscriber:**
+
+  1 - Importação dos pacotes e métodos necessários para o tratamento e redenrização do output do modelo:
+    ```
+    import cv2
+    import rclpy
+    from rclpy.node import Node
+    from ultralytics import YOLO
+    from cv_bridge import CvBridge
+    from sensor_msgs.msg import Image
+    ```
+  2 - Definição da classe "Streaming" que traz a lógica de receber os dados, tratá-los, fazer o input deles para a    análise por parte do modelo e rederizar o resultado:
+
+    ```
+    class Streaming(Node):
+      def __init__(self):
+        super().__init__('image_subscriber')
+        self.subscription = self.create_subscription(
+          Image, 
+          '/camera', 
+          self.listener_callback, 
+          10)
+        self.subscription 
+        self.bridge = CvBridge()
+
+      def listener_callback(self, data):
+        self.get_logger().info('Receiving video frame')
+        current_frame = self.bridge.imgmsg_to_cv2(data)
+        model = YOLO("./yolo/best.pt")
+        result = model.predict(current_frame, conf=0.6)
+        annotated = result[0].plot()
+        cv2.imshow("camera", annotated)
+        cv2.waitKey(1)
+    ```
+    
+   3 - Para iniciar esse subscriber, atribuímos ao arquivo "main.py" localizado no path: ```./src/backend/ros``` o seguinte código:
+   
+    ```
+    import rclpy
+    from modules import Streaming
+
+
+    def main(args=None):
+        rclpy.init(args=args)
+        image_subscriber = Streaming()
+        rclpy.spin(image_subscriber)
+        image_subscriber.destroy_node()
+        rclpy.shutdown()
+
+    if __name__ == '__main__':
+      main()
+    ```
+
+##### **Publisher:**
+
+   1 - Importação dos pacotes e métodos necessários para coletar as imagens da camera acoplada ao robô e publicá-las no tópico "/camera":
+
+    ```
+    import cv2 
+    import rclpy
+    from rclpy.node import Node
+    from cv_bridge import CvBridge
+    from sensor_msgs.msg import Image
+    ```
+
+  2 - Definição da classe "Camera" que traz a lógica de captar os dados da câmera acoplada ao robô, tratá-los e publicá-los no tópico "/camera" para que o "subscriber" possa recebê-los para fazer a lógica anteriormente descrita.
+  
+    ```
+    class Camera(Node):
+      def __init__(self):
+        super().__init__('image_publisher')
+        self.publisher_ = self.create_publisher(Image, '/camera', 10)
+        timer_period = 0.1
+        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.cap = cv2.VideoCapture(0)
+        self.bridge = CvBridge()
+
+      def timer_callback(self):
+        ret, frame = self.cap.read()
+        if ret == True:
+          self.publisher_.publish(self.bridge.cv2_to_imgmsg(frame))
+        self.get_logger().info('Publishing video frame')
+    ```
+  
+  3 - Para iniciar esse publisher, atribuímos ao arquivo "main.py" localizado no path: ```./src/embedded``` o seguinte código:
+  
+    ```
+    import rclpy
+    from modules import Camera
+
+
+    def main(args=None):
+        rclpy.init()
+        camera = Camera()
+        rclpy.spin(camera)
+        camera.destroy_node()
+        rclpy.shutdown()
+
+
+    if __name__ == "__main__":
+        main()
+    ```  
+    
+##### **Demonstração em vídeo:**
+Link: https://www.img.youtube.com/watch?v=YvxhzSp2Roo
+
 
 # Sistemas de segurança
 

@@ -13,7 +13,7 @@ function Card(props) {
             </div>
       ):(
         <div className={styles.imageBox}>
-            <img src={"/grafico.svg"} />
+          <p>20% vol</p>
         </div>
       )}
     </div>

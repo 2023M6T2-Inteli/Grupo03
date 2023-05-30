@@ -1,7 +1,7 @@
 .main{
     background-color: #014C8D;
     border-radius: 25px;
-    width: 15rem;
+    width: 14rem;
     margin-bottom: 1.5rem;
     text-align: center;
     padding: 0.5rem 1rem 1rem 1rem ;
@@ -10,11 +10,17 @@
         img{
             width: 100%;
         }
+
+        p{
+            background-color:  #ffff;
+            border-radius: 7px;
+            color: #014C8D;
+            font-size: 30px;
+        }
     }
      
     h3{
         color: #ffff;
-        margin-bottom: 10px;
     }
 
     .time{

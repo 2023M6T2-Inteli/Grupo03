@@ -37,7 +37,7 @@ node_modules
 .pnp.js
 # testing
 /coverage
-
+/env
 # next.js
 /.next/
 /out/
@@ -60,6 +60,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+venv/
+.env
+.next
+*.pack
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,venv
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,venv

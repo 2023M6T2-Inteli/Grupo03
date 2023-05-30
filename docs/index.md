@@ -546,7 +546,7 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
     ```  
     
 ##### **Demonstração em vídeo:**
-Link: https://www.img.youtube.com/watch?v=YvxhzSp2Roo
+Link: https://www.youtube.com/watch?v=YvxhzSp2Roo
 
 
 # Sistemas de segurança

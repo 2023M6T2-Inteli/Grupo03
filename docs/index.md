@@ -343,7 +343,7 @@ Inicialmente, foi realizada uma análise detalhada e enumeração das possíveis
 
 A seguir, temos o algoritmo em grafo para otimizar as rotas, com base em uma heurística que faça sentido no contexto do projeto.
 
-## Algoritmo em grafo
+## Algoritmo em grafo e movimentação
 
 O script Python (best_path.py) utiliza a biblioteca rclpy para controlar um robô tartaruga criando um grafo de nós e arestas com pesos baseados na distância entre os nós, encontrando o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e movendo o robô tartaruga ao longo do caminho publicando mensagens Twist no tópico cmd_vel e se inscrevendo em mensagens Odometry do tópico /odom. O script define funções para criar um grafo, encontrar o melhor caminho e controlar o robô tartaruga, bem como uma classe TurtleController que usa rclpy para criar um nó para publicar e se inscrever em mensagens. A função main solicita ao usuário que insira as coordenadas dos nós e arestas, cria um grafo, encontra o melhor caminho através de todos os nós e controla o robô tartaruga para se mover ao longo do caminho.
 
@@ -356,6 +356,7 @@ Em seguida, o script define uma classe TurtleController para controlar um robô 
 O código também define uma função de retorno de chamada pose_callback para a classe TurtleController que atualiza a posição atual do robô tartaruga com base em mensagens Odometry do tópico /odom.
 
 Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.
+
 
 # Sistema de visão computacional
 
@@ -563,12 +564,16 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
 Link: https://www.youtube.com/watch?v=YvxhzSp2Roo
 
 
-# Sistemas de segurança
+# Sistema anticolisão
 
-## Implementação do sistema anticolisão
+O sistema de anti-colisão implementado neste script utiliza o LIDAR (Light Detection and Ranging) do Turtlebot para verificar continuamente a presença de obstáculos à frente do robô. O LIDAR gera uma lista de pontos, representando as distâncias em relação ao robô. Os pontos selecionados para verificação correspondem às distâncias à frente do robô.
 
-## Fabricação e implementação dos dispositivos de segurança
+Caso seja detectado um objeto a uma distância inferior a 30cm do robô, e diretamente em sua trajetória, ou seja, se o robô continuar avançando, ocorrerá uma colisão iminente. Nesse momento, o modo de movimentação automática é interrompido e o controle passa para o modo manual.
 
-## Implementação do sistema de proteção contra comandos indesejados
+No modo manual, o robô monitora as entradas do terminal, especificamente os comandos 'a', 'd', 'w', 'x' e 's', que correspondem a aumentar a velocidade angular para a esquerda, aumentar a velocidade angular para a direita, aumentar a velocidade linear para a frente, aumentar a velocidade linear para trás e parar completamente o robô, respectivamente. Essa funcionalidade permite que o operador do robô possa movimentá-lo para entender melhor o obstáculo através da câmera e desviar dele.
 
-## Validação da eficácia dos sistemas de segurança
+Além disso, o código também verifica a entrada 'k' para retornar ao modo automático. Quando essa entrada é recebida, o robô retoma o percurso preestabelecido e continua em direção ao próximo ponto que estava seguindo antes da interrupção.
+
+O objetivo principal desse sistema é garantir a segurança do robô, evitando colisões com obstáculos. Ele proporciona ao operador a capacidade de controlar manualmente o robô para analisar e evitar obstáculos de maneira mais precisa, antes de retornar ao modo automático e prosseguir com sua rota planejada.
+
+<a href="https://www.youtube.com/watch?v=KR6Fwj-3By8">Video demontrando movimentação do robo com sistema de otimização de rotas e sistema anti colisão</a>

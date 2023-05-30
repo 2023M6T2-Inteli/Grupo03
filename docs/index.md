@@ -472,7 +472,7 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
 
 #### **Subscriber:**
 
-  1 - Importação dos pacotes e métodos necessários para o tratamento e redenrização do output do modelo:
+  1 - Importação dos pacotes e métodos necessários para o tratamento e renderização do output do modelo:
   
     ```
     import cv2
@@ -482,7 +482,7 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
     from cv_bridge import CvBridge
     from sensor_msgs.msg import Image
     ```
-  2 - Definição da classe "Streaming" que traz a lógica de receber os dados, tratá-los, fazer o input deles para a    análise por parte do modelo e rederizar o resultado:
+  2 - Definição da classe "Streaming" que traz a lógica de receber os dados, tratá-los, fazer o input deles para a análise por parte do modelo e renderização do resultado:
 
     ```
     class Streaming(Node):

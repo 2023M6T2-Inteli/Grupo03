@@ -473,6 +473,7 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
 #### **Subscriber:**
 
   1 - Importação dos pacotes e métodos necessários para o tratamento e redenrização do output do modelo:
+  
     ```
     import cv2
     import rclpy

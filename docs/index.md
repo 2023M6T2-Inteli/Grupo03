@@ -73,7 +73,7 @@ A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fo
 
 Inicialmente, é esperado uma sensibilização da relevância do tema durante o curso. E as motivações para avançarmos no desenvolvimento de tecnologias disruptivas para redução da exposição a riscos. É desejável que os alunos tenham uma aula sobre algumas definições com relação a Segurança. (Ex: conceitos de Risco x Perigo,
 conceitos de gerenciamento de riscos, prevenção de acidentes ie: barreiras físicas, sistêmicas).
-É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável. 
+É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável.
 Este robô poderá ser utilizado por operadores e mantenedores em atividades de espaço confinado, utilizado como ferramenta para diagnóstico preliminar da atividade.
 A solução passará por uma avaliação de validação dos times de inovação, segurança e gestão de riscos. A solução também será apresentada aos líderes de negócio.
 
@@ -110,7 +110,7 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 
 ![Matriz de Riscos](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/matriz_de_riscos.png)
 
-### Abordagens:
+### Abordagens
 
 - Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
 
@@ -127,7 +127,8 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 - Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
 
 ## Matriz Oceano Azul
-A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa. 
+
+A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa.
 
 Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados.
 Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
@@ -198,7 +199,6 @@ Ao desenvolvermos nosso projeto, consideramos as restrições locais e o cenári
 
 **Qual a missão do projeto proposto?**
 O projeto tem como objetivo principal que um robô faça a inspeção das condições atmosféricas de um ambiente confinado, que por conceito, designa um espaço fechado que pode apresentar condições inapropriadas para a presença humana. Essa inspeção é necessária para garantir que uma pessoa adentre o ambiente sem sofrer danos à sua saúde, ou haver algum tipo de acidente decorrente das condições atmosféricas. Portanto, a principal missão do projeto é garantir a segurança dos funcionários da Gerdau, de modo a evitar acidentes e aumentar a produtividade.
-
 
 **Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda?**
 De uma maneira geral, o produto buscará compartilhar confiança em atuar na manutenção do setor, por meio de inovações tecnológicas na análise e mapeamento de zonas confinadas improprias a pessoas. A associação da marca ao propósito da solução buscará melhor reflexão do setor de segurança no trabalho ao contextos ao qual o robô irá se inserir, sendo relevante a demonstração da evolução do setor ao longos dos tempos ao momento de termos processos que não é mais necessário vidas humanas em serviços arriscados, sendo isso uma proposta de marketing e venda apresentada a partir de uma percepção evolutiva do problema e solução.
@@ -472,7 +472,8 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
 
 #### **Subscriber:**
 
-  1 - Importação dos pacotes e métodos necessários para o tratamento e redenrização do output do modelo:
+  1 - Importação dos pacotes e métodos necessários para o tratamento e renderização do output do modelo:
+  
     ```
     import cv2
     import rclpy
@@ -481,7 +482,7 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
     from cv_bridge import CvBridge
     from sensor_msgs.msg import Image
     ```
-  2 - Definição da classe "Streaming" que traz a lógica de receber os dados, tratá-los, fazer o input deles para a    análise por parte do modelo e rederizar o resultado:
+  2 - Definição da classe "Streaming" que traz a lógica de receber os dados, tratá-los, fazer o input deles para a análise por parte do modelo e renderização do resultado:
 
     ```
     class Streaming(Node):

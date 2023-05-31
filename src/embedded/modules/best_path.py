@@ -163,7 +163,6 @@ class TurtleController(Node):
         dx = self.currentPose[0]-nextPose.x
         dy = self.currentPose[1]-nextPose.y
         ang = atan2(dy,dx)-self.currentPose[2]
-        direction = ang/abs(ang)
         print(f"ang: {ang}")
         if self.angleSet == False:
             if (abs(dx)<0.1 and abs(dy)<0.1):

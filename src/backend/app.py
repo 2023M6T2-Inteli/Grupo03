@@ -1,4 +1,5 @@
 from fastapi import FastAPI, WebSocket
+from fastapi.responses import HTMLResponse
 
 app = FastAPI()
 
@@ -29,7 +30,12 @@ html = """
   </script>
 </body>
 </html>
+
 """
+
+@app.get("/")
+async def get():
+    return HTMLResponse(html)
 
 
 connected_clients = set()

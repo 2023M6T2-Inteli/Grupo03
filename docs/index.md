@@ -73,7 +73,7 @@ A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fo
 
 Inicialmente, é esperado uma sensibilização da relevância do tema durante o curso. E as motivações para avançarmos no desenvolvimento de tecnologias disruptivas para redução da exposição a riscos. É desejável que os alunos tenham uma aula sobre algumas definições com relação a Segurança. (Ex: conceitos de Risco x Perigo,
 conceitos de gerenciamento de riscos, prevenção de acidentes ie: barreiras físicas, sistêmicas).
-É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável. 
+É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável.
 Este robô poderá ser utilizado por operadores e mantenedores em atividades de espaço confinado, utilizado como ferramenta para diagnóstico preliminar da atividade.
 A solução passará por uma avaliação de validação dos times de inovação, segurança e gestão de riscos. A solução também será apresentada aos líderes de negócio.
 
@@ -110,7 +110,7 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 
 ![Matriz de Riscos](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/matriz_de_riscos.png)
 
-### Abordagens:
+### Abordagens
 
 - Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
 
@@ -127,7 +127,8 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 - Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
 
 ## Matriz Oceano Azul
-A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa. 
+
+A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa.
 
 Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados.
 Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
@@ -198,7 +199,6 @@ Ao desenvolvermos nosso projeto, consideramos as restrições locais e o cenári
 
 **Qual a missão do projeto proposto?**
 O projeto tem como objetivo principal que um robô faça a inspeção das condições atmosféricas de um ambiente confinado, que por conceito, designa um espaço fechado que pode apresentar condições inapropriadas para a presença humana. Essa inspeção é necessária para garantir que uma pessoa adentre o ambiente sem sofrer danos à sua saúde, ou haver algum tipo de acidente decorrente das condições atmosféricas. Portanto, a principal missão do projeto é garantir a segurança dos funcionários da Gerdau, de modo a evitar acidentes e aumentar a produtividade.
-
 
 **Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda?**
 De uma maneira geral, o produto buscará compartilhar confiança em atuar na manutenção do setor, por meio de inovações tecnológicas na análise e mapeamento de zonas confinadas improprias a pessoas. A associação da marca ao propósito da solução buscará melhor reflexão do setor de segurança no trabalho ao contextos ao qual o robô irá se inserir, sendo relevante a demonstração da evolução do setor ao longos dos tempos ao momento de termos processos que não é mais necessário vidas humanas em serviços arriscados, sendo isso uma proposta de marketing e venda apresentada a partir de uma percepção evolutiva do problema e solução.
@@ -430,43 +430,53 @@ No código acima, cada quadro capturado é passado para o modelo YOLO, que reali
 ## Validação da eficácia e performance do sistema de visão computacional
 
 ### Curva de confiança F1
-A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária. Ela representa a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão. Essa curva é útil para visualizar como o desempenho do modelo varia com diferentes níveis de confiança e identificar áreas onde ele pode estar superconfiante ou subconfiante. A F1 Confidence Curve é valiosa na avaliação da calibração do modelo e na identificação de possíveis problemas de confiabilidade.
+A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão. 
 
 ![Curva F1](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/F1_curve.png) 
 
-Quando representada por uma parábola invertida, a curva revela uma relação não linear entre o valor de confiança atribuído pelo modelo e a pontuação F1 resultante. Essa forma característica pode indicar um comportamento peculiar do modelo em relação à confiança das previsões. É importante observar cuidadosamente essa curva e compreender as áreas em que a confiança do modelo varia consideravelmente para tomar decisões mais fundamentadas em relação às previsões. Identificar os pontos em que a curva atinge níveis ideais de confiança pode ser útil para calibrar o modelo e otimizar seu desempenho, resultando em previsões mais precisas e confiáveis.
+A curva é útil para visualizar como o desempenho do modelo varia com diferentes níveis de confiança e identificar áreas onde ele pode estar superconfiante ou subconfiante, podendo ser valiosa na avaliação da calibração do modelo e na identificação de possíveis problemas de confiabilidade. Dessa maneira, na imagem temos uma parábola invertida, o que revela alguns pontos de uma relação não linear entre o valor de confiança atribuído pelo modelo e a pontuação F1 resultante.
 
 ### Curva Precision-Recall 
-A PR (Precision-Recall) Curve é uma métrica comumente usada para avaliar o desempenho de modelos de aprendizado de máquina em tarefas de classificação, especialmente quando há um desequilíbrio significativo entre as classes. Ela representa a relação entre a precisão (precision) e o recall (revocação) do modelo em diferentes pontos de corte ao longo do espectro de confiança. A precisão mede a proporção de instâncias corretamente classificadas como positivas em relação ao total de instâncias classificadas como positivas, enquanto o recall mede a proporção de instâncias positivas corretamente identificadas em relação ao total de instâncias verdadeiramente positivas. Ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a PR Curve oferece uma representação visual do trade-off entre essas duas métricas. 
+A PR (Precision-Recall) Curve é uma métrica comumente usada para avaliar o desempenho de modelos de aprendizado de máquina em tarefas de classificação, especialmente quando há um desequilíbrio significativo entre as classes, representando a relação entre a precisão (precision) e o recall (revocação) do modelo em diferentes pontos de corte ao longo do espectro de confiança. 
+
+Sendo assim, a precisão mede a proporção de instâncias corretamente classificadas como positivas em relação ao total de instâncias classificadas como positivas, enquanto o recall mede a proporção de instâncias positivas corretamente identificadas em relação ao total de instâncias verdadeiramente positivas. Desse modo, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a PR Curve oferece uma representação visual do trade-off entre essas duas métricas. 
 
 ![Curva PR](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/PR_curve.png) 
 
-Quando a curva começa do canto superior esquerdo e vai descendo para o canto inferior direito, isso indica um trade-off entre precisão e recall. Nessa configuração, o modelo pode obter altas taxas de recall, ou seja, conseguir identificar corretamente a maioria das instâncias positivas, porém, em detrimento da precisão, resultando em um aumento das falsas positivas. É importante analisar essa curva cuidadosamente para compreender o ponto de equilíbrio ideal entre precisão e recall e tomar decisões fundamentadas no ajuste do modelo. Isso pode envolver a definição de um ponto de corte adequado para equilibrar o compromisso entre a identificação correta de instâncias positivas e a minimização de falsos positivos.
+A curva acima, indica um trade-off entre precisão e recall. Nessa configuração, o modelo pode obter altas taxas de recall, ou seja, conseguir identificar corretamente a maioria das instâncias positivas, porém, em detrimento da precisão, resultando em um aumento das falsas positivas.
 
 ### Curva Precision-Confidence
-A P Curve, ou Curva P, é uma métrica usada para avaliar a precisão de um modelo de aprendizado de máquina em tarefas de classificação binária. Ela representa a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. Em outras palavras, a P Curve mostra como a precisão do modelo evolui à medida que o limite de classificação é ajustado. Ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a curva permite visualizar como a precisão é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos positivos. O objetivo é identificar o ponto de corte que maximiza a precisão do modelo, encontrando o melhor equilíbrio entre a identificação correta das instâncias positivas e a minimização dos falsos positivos.
+A P Curve mostra como a precisão do modelo evolui à medida que o limite de classificação é ajustado, representando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. 
+
+Dessa maneira, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a curva permite visualizar como a precisão é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos positivos.
 
 ![Curva P](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/P_curve.png) 
 
-Quando a curva começa no canto inferior esquerdo e sobe até o canto superior direito, isso indica um aumento gradual na precisão à medida que o valor de corte é ajustado. Isso significa que, ao aumentar o limite de classificação, o modelo é capaz de identificar corretamente mais instâncias positivas em relação ao total de instâncias classificadas como positivas, resultando em uma maior taxa de precisão. Essa configuração é desejável, pois indica que o modelo está melhorando seu desempenho ao minimizar os falsos positivos e aumentar a confiança nas previsões positivas. É importante observar essa curva cuidadosamente para determinar o ponto de corte que maximize a precisão do modelo, garantindo um equilíbrio adequado entre a identificação correta das instâncias positivas e a minimização dos falsos positivos.
+A imagem acima, representa uma curva que mostra um aumento gradual na precisão à medida que o valor de corte é ajustado, ou seja, ao aumentar o limite de classificação, o modelo é capaz de identificar corretamente mais instâncias positivas em relação ao total de instâncias classificadas como positivas, resultando em uma maior taxa de precisão.
 
 ### Curva Recall-Confidence
-A R Curve, ou Curva R, é uma métrica usada para avaliar a revocação (recall) de um modelo de aprendizado de máquina em tarefas de classificação binária. Ela representa a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. Ao plotar os valores de precisão no eixo x e os valores de recall no eixo y, a Curva R permite visualizar como a revocação é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos negativos. O objetivo é identificar o ponto de corte que maximiza a revocação do modelo, ou seja, aquele que permite a identificação correta do maior número possível de instâncias positivas, minimizando os falsos negativos. A Curva R é útil para avaliar a capacidade do modelo de recuperar corretamente os casos positivos e auxiliar na tomada de decisões sobre o ajuste do ponto de corte para otimizar o desempenho do modelo.
+A R Curve, ou Curva R, é uma métrica usada para avaliar a revocação (recall) de um modelo de aprendizado de máquina em tarefas de classificação binária, caracterizando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. 
+
+Dessa maneira, ao plotar os valores de precisão no eixo x e os valores de recall no eixo y, a Curva R permite visualizar como a revocação é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos negativos. 
 
 ![Curva R](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/R_curve.png) 
 
-Quando a curva forma um desenho em formato de "S" ao longo do gráfico, começando no canto superior esquerdo e descendo até o canto inferior direito, isso indica uma relação não linear entre o valor de corte e a revocação. Essa configuração sugere que, ao ajustar o limite de classificação, o modelo pode alcançar uma revocação mais alta para determinados valores de corte. É importante analisar essa curva com atenção para identificar os pontos de corte que maximizam a revocação do modelo, ou seja, aqueles que permitem a identificação correta do maior número possível de instâncias positivas, minimizando os falsos negativos. Compreender essa dinâmica auxilia na escolha adequada do ponto de corte e no aprimoramento do desempenho do modelo, buscando obter uma alta taxa de revocação.
+A imagem representa uma relação não linear entre o valor de corte e a revocação, tal configuração sugere que, ao ajustar o limite de classificação, o modelo pode alcançar uma revocação mais alta para determinados valores de corte.
 
 ### Matriz de confusão
-A Matriz de Confusão é uma representação tabular usada para avaliar o desempenho de um modelo de aprendizado de máquina em tarefas de classificação. Ela resume os resultados das previsões em relação aos valores verdadeiros das instâncias. A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP), falsos positivos (FP), verdadeiros negativos (TN) e falsos negativos (FN). Os verdadeiros positivos correspondem às instâncias corretamente classificadas como positivas, os falsos positivos representam as instâncias erroneamente classificadas como positivas, os verdadeiros negativos são as instâncias corretamente classificadas como negativas e os falsos negativos indicam as instâncias erroneamente classificadas como negativas. A Matriz de Confusão permite uma visualização clara dos erros e acertos do modelo, sendo uma ferramenta essencial para a análise do desempenho e para a avaliação de métricas como precisão, revocação e precisão global.
+A Matriz de Confusão é uma representação tabular usada para avaliar o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, resumindo os resultados das previsões em relação aos valores verdadeiros das instâncias. 
+
+A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP), falsos positivos (FP), verdadeiros negativos (TN) e falsos negativos (FN). Assim, os verdadeiros positivos correspondem às instâncias corretamente classificadas como positivas, os falsos positivos representam as instâncias erroneamente classificadas como positivas, os verdadeiros negativos são as instâncias corretamente classificadas como negativas e os falsos negativos indicam as instâncias erroneamente classificadas como negativas. 
 
 ![Matriz de Confusão](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/confusion_matrix_normalized.png) 
 
-A Matriz de Confusão Normalizada é uma representação tabular que resume o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, levando em consideração a proporção relativa de cada classe. Quando os valores superiores da esquerda para direita são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva. Isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. Já os valores inferiores da esquerda para direita, sendo 0.21 e background, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas. A Matriz de Confusão Normalizada é valiosa para avaliar o desempenho do modelo, fornecendo informações sobre a taxa de acerto e os erros de classificação para cada classe, considerando a distribuição relativa dos dados.
+Quando os valores superiores são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva, ou seja, isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. 
+
+Já os valores inferiores, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas.
 
 ## Integração do sistema de visão computacional com a arquitetura ROS2:
 
-- Para a implementação dessa integração foi necessário contruir um publisher que envia imagens coletadas da câmera acoplada ao robô ( Turtlebot ) e as publica em um tópico denominado "/camera". Do outro lado, temos um subscriber que recebe os dados enviados, os trata para o tipo de dado que o modelo reconhece como input e mostra na tela o resultado da análise feita após o método de predição ```result = model.predict(current_frame, conf=0.6)```.
+Para a implementação dessa integração foi necessário contruir um publisher que envia imagens coletadas da câmera acoplada ao robô ( Turtlebot ) e as publica em um tópico denominado "/camera". Do outro lado, temos um subscriber que recebe os dados enviados, os trata para o tipo de dado que o modelo reconhece como input e mostra na tela o resultado da análise feita após o método de predição ```result = model.predict(current_frame, conf=0.6)```.
 
 ### Descrição técnica:
 
@@ -574,5 +584,4 @@ A Matriz de Confusão Normalizada é uma representação tabular que resume o de
         main()
     ```  
     
-##### **Demonstração em vídeo:**
-Link: https://www.youtube.com/watch?v=YvxhzSp2Roo
+**Demonstração em vídeo:** https://www.youtube.com/watch?v=YvxhzSp2Roo

@@ -20,9 +20,8 @@ app.add_middleware(
 @app.post("/relatorios")
 async def create_relatorio(relatorio: Relatorio):
     supabase = create_supabase_client()
-    
-    try:
 
+    try:
         response = supabase.table(table_name).insert(relatorio.dict()).execute()
         print(response)
         return response
@@ -45,3 +44,4 @@ async def get_relatorios(id: int):
     response = supabase.table(table_name).select("*").eq('id', str(id)).limit(1).execute()
     print(id)
     return response
+

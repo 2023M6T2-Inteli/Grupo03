@@ -1,14 +1,17 @@
 import styles from "@/styles/Home.module.scss";
 import Card from "@/components/Card/Card";
 import { useRef } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "@/components/Header/Header";
+import WebSocketComponent from "@/components/WebSocket/WebSocket";
 
 export default function Home({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const handleSidebarToggle = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
+
 
   const ambienteInputRef = useRef();
   const submitHandler = async (event) => {
@@ -54,15 +57,17 @@ export default function Home({ children }) {
                 <input type="text" id="Ambiente" />
               </div>
             </form>
-            <Card title="Concentração de oxigênio" />
+            <Card title="Quantidade de bateria do robô" />
           </div>
           <div className={styles.files}>
             <div className={styles.compvis}>
-              <p>Visão computacional</p>
+              <WebSocketComponent />
             </div>
             <div>
               <button form="forms" className={styles.button}>Gerar Relatório</button>
+              {/* <button className={styles.button}>Iniciar movimentação <br/>do robô</button> */}
             </div>
+           
           </div>
         </div>
         

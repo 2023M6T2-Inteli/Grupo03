@@ -13,7 +13,7 @@ function Card(props) {
             </div>
       ):(
         <div className={styles.imageBox}>
-          <p>20% vol</p>
+          <p>20%</p>
         </div>
       )}
     </div>

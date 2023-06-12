@@ -4,10 +4,10 @@ from typing import List
 from pydantic import BaseModel
 from supabase import create_client, Client
 
-# Carregar variáveis do arquivo .env
+# Carrega variáveis do arquivo .env
 load_dotenv()
 
-# Acessar as variáveis do ambiente
+# Acessa as variáveis do ambiente
 url = os.environ.get("SUPABASE_URL")
 key = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(url, key)
@@ -18,7 +18,6 @@ class Relatorio(BaseModel):
     endereco: str
     data: str
     gas: float
-    condicoes_ambientais: str
     observacoes: str
 
 

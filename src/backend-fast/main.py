@@ -1,7 +1,15 @@
+from math import atan2
+from rclpy.node import Node
+from nav_msgs.msg import Odometry
+from geometry_msgs.msg import Twist
 from fastapi import FastAPI
 from models import Relatorio, create_client, create_supabase_client
 import httpx
 from fastapi.middleware.cors import CORSMiddleware
+
+from embedded.modules.queue import Queue
+from embedded.modules.stack import Stack
+
 app = FastAPI()
 
 
@@ -44,4 +52,3 @@ async def get_relatorios(id: int):
     response = supabase.table(table_name).select("*").eq('id', str(id)).limit(1).execute()
     print(id)
     return response
-

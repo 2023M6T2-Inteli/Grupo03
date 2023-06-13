@@ -588,9 +588,21 @@ Para a implementação dessa integração foi necessário contruir um publisher 
 
 ## Backend
 
+### Supabase e FastAPI
+
+Implementamos nossa infraestrutura de backend utilizando o framework FastAPI, uma solução que permite a criação eficiente e ágil de APIs. Todo o código está organizado em um arquivo principal chamado main.py, responsável por iniciar o servidor.
+
+Ao iniciar o servidor, disponibilizamos uma variedade de rotas (também conhecidas como endpoints) que viabilizam diferentes operações. Essas rotas foram desenvolvidas para lidar com o registro de imagens, interação com o banco de dados e acesso aos registros de imagens e frames analisados por meio da visão computacional previamente implementada.
+
+Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pelo YoloV8 para o Supabase, um serviço online utilizado para armazenar e gerenciar os arquivos. Essa API possibilita o envio seguro das imagens ao Supabase, garantindo seu armazenamento e permitindo a recuperação posterior, caso necessário.
+
+A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
+
+#### APIs e rotas
+
 ### Websocket
 
-- O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
+O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
 
 ```
 @app.websocket("/ws")

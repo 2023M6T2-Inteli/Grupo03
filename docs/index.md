@@ -253,6 +253,7 @@ Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos 
 # Arquitetura do Sistema
 
 ## Diagrama de blocos - Versão 1
+
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
 
 Embora a imagem acima represente o primeiro esboço da arquitetura da solução, criamos uma nova versão para uma melhor visualização, apresentada na imagem abaixo.
@@ -260,6 +261,7 @@ Embora a imagem acima represente o primeiro esboço da arquitetura da solução,
 ![Arquitetura da Solução - v1]( https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/arquitetura%20da%20solu%C3%A7%C3%A3o%20v1.png) 
 
 ### Descrição
+
 Temos três componentes principais na arquitetura do sistema:
 
 - O componente **embarcado** é responsável pela implementação do ROS2 (Robot Operating System) no sistema operacional Ubuntu, executado no microprocessador Raspberry Pi, que coordena os movimentos do robô por meio de comandos enviados para o microcontrolador Cortex M4 STM32F407. Além disso, alguns periféricos, como câmera, sensor de gás, sensor de temperatura e LIDAR (Light Detection and Ranging), serão acoplados ao sistema para melhorar sua eficiência e precisão. Todos os periféricos se comunicarão diretamente com o microprocessador, e a interface de comunicação escolhida para o robô é a pub/sub.
@@ -295,6 +297,7 @@ Ademais, o robô será equipado com sensores integrados projetados para detectar
 Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente.
 
 # Interface web (frontend)
+
 Em nossa interface atual, estamos implementando algumas atualizações para melhorar a experiência do usuário. Começamos com a adição de uma tela de login que utiliza o nextAuth, uma biblioteca que nos permite autenticar apenas usuários com domínio da Gerdau. Isso garante que apenas pessoas autorizadas tenham acesso ao sistema.
 
 Após o login, os usuários serão redirecionados para um dashboard inicial, onde poderão editar o relatório. No dashboard, eles terão a opção de modificar informações como título do relatório e adicionar observações relevantes. Além disso, estamos trabalhando para implementar uma funcionalidade adicional que permitirá que os usuários baixem o relatório em formato PDF, facilitando sua visualização e compartilhamento.
@@ -430,45 +433,50 @@ No código acima, cada quadro capturado é passado para o modelo YOLO, que reali
 ## Validação da eficácia e performance do sistema de visão computacional
 
 ### Curva de confiança F1
-A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão. 
 
-![Curva F1](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/F1_curve.png) 
+A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão.
+
+![Curva F1](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/F1_curve.png)
 
 A curva é útil para visualizar como o desempenho do modelo varia com diferentes níveis de confiança e identificar áreas onde ele pode estar superconfiante ou subconfiante, podendo ser valiosa na avaliação da calibração do modelo e na identificação de possíveis problemas de confiabilidade. Dessa maneira, na imagem temos uma parábola invertida, o que revela alguns pontos de uma relação não linear entre o valor de confiança atribuído pelo modelo e a pontuação F1 resultante.
 
-### Curva Precision-Recall 
-A PR (Precision-Recall) Curve é uma métrica comumente usada para avaliar o desempenho de modelos de aprendizado de máquina em tarefas de classificação, especialmente quando há um desequilíbrio significativo entre as classes, representando a relação entre a precisão (precision) e o recall (revocação) do modelo em diferentes pontos de corte ao longo do espectro de confiança. 
+### Curva Precision-Recall
 
-Sendo assim, a precisão mede a proporção de instâncias corretamente classificadas como positivas em relação ao total de instâncias classificadas como positivas, enquanto o recall mede a proporção de instâncias positivas corretamente identificadas em relação ao total de instâncias verdadeiramente positivas. Desse modo, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a PR Curve oferece uma representação visual do trade-off entre essas duas métricas. 
+A PR (Precision-Recall) Curve é uma métrica comumente usada para avaliar o desempenho de modelos de aprendizado de máquina em tarefas de classificação, especialmente quando há um desequilíbrio significativo entre as classes, representando a relação entre a precisão (precision) e o recall (revocação) do modelo em diferentes pontos de corte ao longo do espectro de confiança.
 
-![Curva PR](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/PR_curve.png) 
+Sendo assim, a precisão mede a proporção de instâncias corretamente classificadas como positivas em relação ao total de instâncias classificadas como positivas, enquanto o recall mede a proporção de instâncias positivas corretamente identificadas em relação ao total de instâncias verdadeiramente positivas. Desse modo, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a PR Curve oferece uma representação visual do trade-off entre essas duas métricas.
+
+![Curva PR](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/PR_curve.png)
 
 A curva acima, indica um trade-off entre precisão e recall. Nessa configuração, o modelo pode obter altas taxas de recall, ou seja, conseguir identificar corretamente a maioria das instâncias positivas, porém, em detrimento da precisão, resultando em um aumento das falsas positivas.
 
 ### Curva Precision-Confidence
-A P Curve mostra como a precisão do modelo evolui à medida que o limite de classificação é ajustado, representando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. 
+
+A P Curve mostra como a precisão do modelo evolui à medida que o limite de classificação é ajustado, representando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado.
 
 Dessa maneira, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a curva permite visualizar como a precisão é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos positivos.
 
-![Curva P](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/P_curve.png) 
+![Curva P](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/P_curve.png)
 
 A imagem acima, representa uma curva que mostra um aumento gradual na precisão à medida que o valor de corte é ajustado, ou seja, ao aumentar o limite de classificação, o modelo é capaz de identificar corretamente mais instâncias positivas em relação ao total de instâncias classificadas como positivas, resultando em uma maior taxa de precisão.
 
 ### Curva Recall-Confidence
-A R Curve, ou Curva R, é uma métrica usada para avaliar a revocação (recall) de um modelo de aprendizado de máquina em tarefas de classificação binária, caracterizando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. 
 
-Dessa maneira, ao plotar os valores de precisão no eixo x e os valores de recall no eixo y, a Curva R permite visualizar como a revocação é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos negativos. 
+A R Curve, ou Curva R, é uma métrica usada para avaliar a revocação (recall) de um modelo de aprendizado de máquina em tarefas de classificação binária, caracterizando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado.
 
-![Curva R](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/R_curve.png) 
+Dessa maneira, ao plotar os valores de precisão no eixo x e os valores de recall no eixo y, a Curva R permite visualizar como a revocação é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos negativos.
+
+![Curva R](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/R_curve.png)
 
 A imagem representa uma relação não linear entre o valor de corte e a revocação, tal configuração sugere que, ao ajustar o limite de classificação, o modelo pode alcançar uma revocação mais alta para determinados valores de corte.
 
 ### Matriz de confusão
-A Matriz de Confusão é uma representação tabular usada para avaliar o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, resumindo os resultados das previsões em relação aos valores verdadeiros das instâncias. 
 
-A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP), falsos positivos (FP), verdadeiros negativos (TN) e falsos negativos (FN). Assim, os verdadeiros positivos correspondem às instâncias corretamente classificadas como positivas, os falsos positivos representam as instâncias erroneamente classificadas como positivas, os verdadeiros negativos são as instâncias corretamente classificadas como negativas e os falsos negativos indicam as instâncias erroneamente classificadas como negativas. 
+A Matriz de Confusão é uma representação tabular usada para avaliar o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, resumindo os resultados das previsões em relação aos valores verdadeiros das instâncias.
 
-![Matriz de Confusão](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/confusion_matrix_normalized.png) 
+A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP), falsos positivos (FP), verdadeiros negativos (TN) e falsos negativos (FN). Assim, os verdadeiros positivos correspondem às instâncias corretamente classificadas como positivas, os falsos positivos representam as instâncias erroneamente classificadas como positivas, os verdadeiros negativos são as instâncias corretamente classificadas como negativas e os falsos negativos indicam as instâncias erroneamente classificadas como negativas.
+
+![Matriz de Confusão](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/confusion_matrix_normalized.png)
 
 Quando os valores superiores são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva, ou seja, isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. 
 
@@ -706,3 +714,25 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## Descrição dos sensores
+
+Com o intuito de possibilitar a coleta de dados que permitam a análise da segurança do ambiente confinado e da possibilidade de ocorrência de acidentes, foram selecionados sensores que permitem a obtenção de informações relevantes para a análise do ambiente. Os sensores selecionados foram:
+
+### Sensor de qualidade do ar (MQ-135)
+
+Esse sensor apresenta a capacidade de detectar gases que podem ser prejudiciais para a saúde humana, como o dióxido de carbono, monóxido de carbono, amônia, benzeno, álcool, fumaça, entre outros. Os gases coletados por esse sensor, quando encontrados em altas concentações, podem causar problemas respiratórios, tontura, náusea, entre outros sintomas, prejudicando a saúde e o bem estar dos trabalhadores.
+
+Esse sensor apresenta uma saída digital, que fornece um resultado binário indicando quando há ou não a presença desses gases em concentrações elevadas, e uma saída analógica, que fornece um valor de tensão proporcional à concentração de gases detectada. A saída digital é utilizada para a detecção de gases, enquanto a saída analógica é utilizada para a obtenção de dados quantitativos sobre a concentração de gases. 
+
+A partir de uma análise dos dados enviados pela saída analógica, que apontavam valores próximos a 80(condições normais de gases) e mais de 900 (quantidades muito altas de gases), foi possível construir uma escala, de valores aproximadamente entre 10 e 100. Quanto maior o valor obtido, maior a concentração de gases detectada. Essa transformação foi realizada para facilitar a visualização dos dados pelo usuário final, de forma mais clara e intuitiva.
+
+### Sensor de temperatura e umidade (DHT11)
+
+Esse sensor apresenta a capacidade de detectar a temperatura e a umidade do ambiente. A temperatura e a umidade são fatores que podem influenciar na saúde e no bem estar dos trabalhadores, além da conservação do ambiente confinado. Além disso, a temperatura e a umidade também podem influenciar na ocorrência de acidentes, como o aumento da probabilidade de incêndios e explosões.
+
+Ao utilizar a biblioteca DHT.h, foi possível obter os valores de temperatura e umidade em graus Celsius e porcentagem, respectivamente. Esses valores são obtidos a partir de uma saída digital, que fornece um resultado binário indicando quando há ou não a presença desses gases em concentrações elevadas, e uma saída analógica, que fornece um valor de tensão proporcional à concentração de gases detectada. A saída digital é utilizada para a detecção de gases, enquanto a saída analógica é utilizada para a obtenção de dados quantitativos sobre a concentração de gases. A partir da saída analógica, foi possível construir uma escala, de valores aproximadamente entre 10 e 100. Quanto maior o valor obtido, maior a concentração de gases detectada. Essa transformação foi realizada para facilitar a visualização dos dados pelo usuário final, de forma mais clara e intuitiva.
+
+## Utilização do microcontrolador
+
+Devido à falta de portas analógicas do microprocessador Raspberry Pi 4 e também do microcontrolador OPEN-CR (integrados ao robô), foi necessário utilizar um microcontrolador externo para a coleta dos dados dos sensores. Com esse intuito, foi utilizado um microcontrolador Arduino Uno, que apresenta portas analógicas para a coleta dos dados dos sensores. A comunicação entre o microcontrolador e o Raspberry Pi 4 foi realizada por meio de uma comunicação serial, utilizando um cabo USB.

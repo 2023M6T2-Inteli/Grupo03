@@ -585,3 +585,101 @@ Para a implementação dessa integração foi necessário contruir um publisher 
     ```  
     
 **Demonstração em vídeo:** https://www.youtube.com/watch?v=YvxhzSp2Roo
+
+## Backend
+
+### Websocket
+
+- O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
+
+```
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    connected_clients.add(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            for client in connected_clients:
+                await client.send_text(data)
+    except Exception as e:
+        print(f"WebSocket connection closed with exception: {e}")
+    finally:
+        connected_clients.remove(websocket)
+```
+
+- Nesse sentido, esse canal wenbsocket é utilizada pelo subscriber do tópico "/camera" presente no arquivo streaming e implementado na classe "Streaming":
+
+```
+class Streaming(Node):
+
+  def __init__(self):
+    super().__init__('image_subscriber')
+    self.subscription = self.create_subscription(
+      Image, 
+      '/camera', 
+      self.listener_callback, 
+      10)
+    self.subscription 
+    self.bridge = CvBridge()
+    self.websocket_url = "ws://localhost:8000/ws"
+    self.websocket = websockets.connect(self.websocket_url)
+
+  async def send_frame_via_websocket(self, frame_base64):
+    async with self.websocket as websocket:
+      await websocket.send(frame_base64)
+
+  def listener_callback(self, data):
+    self.get_logger().info('Receiving video frame')
+    current_frame = self.bridge.imgmsg_to_cv2(data)
+    model = YOLO("./yolo/best.pt")
+    result = model.predict(current_frame, conf=0.6)
+    annotated = result[0].plot()
+    _, frames = cv2.imencode(".jpg", annotated)
+    frame_base64 = base64.b64encode(frames).decode("utf-8")
+    print ("início        " + frame_base64 + "        fim")
+    asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
+```
+
+- Segue uma foto que demonstra essa integração:
+
+![img_4917_720](https://github.com/2023M6T2-Inteli/Splinters/assets/89201795/a98ebefd-bad5-4b18-8c63-55f2d8117a7c)
+
+- Continuando no âmbito de comunicação via websocket, temos também dados de bateria protos para serem levados para o frontend via websocket. Aqui, nós estamos tendo ainda alguns problemas para deixar estável a comunicação tanto da bateria, quanto dos frames da câmera ( tentaremos nessa sprint explorar o socketio para testar se conseguimos melhorar essa trasmissão ). Abaixo o cógiddo da so subscriber da bateria, coletando dados de da voltagem publicados no tópico ```/battery_state```. O código também contempla o cálculo para retonar para o frontend a porcentagem da bateria do robô em tempo real:
+
+```
+import rclpy
+import asyncio
+import websockets
+from rclpy.node import Node
+from sensor_msgs.msg import BatteryState
+
+
+class Battery(Node):
+    def __init__(self):
+        super().__init__('battery_subscriber')
+        self.subscription = self.create_subscription(
+            BatteryState,
+            '/battery_state', 
+            self.listener_callback, 
+            10)
+        
+    async def send_battery_via_websocket(self, relative_battery_percent):
+        async with websockets.connect("ws://localhost:8000/battery") as websocket:
+            await websocket.send(relative_battery_percent)
+
+    def listener_callback(self, battery):
+        relative_battery_percent = (battery.voltage - 11)/1.6
+
+        asyncio.get_event_loop().run_until_complete(self.send_battery_via_websocket(str(relative_battery_percent)))
+        print(relative_battery_percent)
+
+def main():
+    rclpy.init()
+    battery = Battery()
+    rclpy.spin(battery)
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```

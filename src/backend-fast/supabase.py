@@ -17,20 +17,37 @@ models: Client = create_client(url, key)
 #Nome do bucket utilizado - No meu caso é "Images"
 bucket_name: str = "video"
 
+@app.post("/upload-images")
+async def upload_image(image: bytes = fastapi.File(...)): 
+    with open("uploaded_image.jpg", "wb") as file:
+        file.write(image)
+    print(get_yolo_results("uploaded_image.jpg"))
+    return {"message": "Image uploaded"}
+
+@app.get('/video')
+def video_feed(request:Request):
+    return StreamingResponse(get_yolo_results(), media_type='multipart/x-mixed-replace; boundary=frame')
+
 @app.get("/list")
 async def list():
-    # Lista todas as imagens do Bucket 
     res = models.storage.from_(bucket_name).list()
     print(res)
 
+@app.post("/upload")
+def upload(content: UploadFile = fastapi.File(...)):    
+    with open(f"./recebidos/imagem{time.time()}.png", 'wb') as f:
+        dados = content.file.read()
+        f.write(dados)
+    return {"status": "ok"}
+
+list_files = os.listdir("./received")
+
 @app.get("/images")
-# async def images(image: bytes = fastapi.File(...)):
 async def images():
-    # Rota da imagem local para ser feito o upload (no meu caso esta na pasta mock e é a imagem "lala.png")
     with open("./mock/lala.png", 'rb+') as f:
         arquivo = f.read()
-        # Realiza o upload da imagem no bucket, sendo que o nome "lala.png" será o nome salvo no bucket, e você não pode criar imagens com o mesmo nome, emtão vale adicionar um timestamp pra garantir a diferença de nomes 
-
         res = models.storage.from_(bucket_name).upload("lala.png", arquivo)
         print(res)
     return {"message": "Image uploaded successfully"}
+
+models.Base.metadata.create_all(bind=engine)

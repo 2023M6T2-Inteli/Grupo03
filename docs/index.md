@@ -253,6 +253,7 @@ Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos 
 # Arquitetura do Sistema
 
 ## Diagrama de blocos - Versão 1
+
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
 
 Embora a imagem acima represente o primeiro esboço da arquitetura da solução, criamos uma nova versão para uma melhor visualização, apresentada na imagem abaixo.
@@ -260,6 +261,7 @@ Embora a imagem acima represente o primeiro esboço da arquitetura da solução,
 ![Arquitetura da Solução - v1]( https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/arquitetura%20da%20solu%C3%A7%C3%A3o%20v1.png) 
 
 ### Descrição
+
 Temos três componentes principais na arquitetura do sistema:
 
 - O componente **embarcado** é responsável pela implementação do ROS2 (Robot Operating System) no sistema operacional Ubuntu, executado no microprocessador Raspberry Pi, que coordena os movimentos do robô por meio de comandos enviados para o microcontrolador Cortex M4 STM32F407. Além disso, alguns periféricos, como câmera, sensor de gás, sensor de temperatura e LIDAR (Light Detection and Ranging), serão acoplados ao sistema para melhorar sua eficiência e precisão. Todos os periféricos se comunicarão diretamente com o microprocessador, e a interface de comunicação escolhida para o robô é a pub/sub.
@@ -295,6 +297,7 @@ Ademais, o robô será equipado com sensores integrados projetados para detectar
 Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente.
 
 # Interface web (frontend)
+
 Em nossa interface atual, estamos implementando algumas atualizações para melhorar a experiência do usuário. Começamos com a adição de uma tela de login que utiliza o nextAuth, uma biblioteca que nos permite autenticar apenas usuários com domínio da Gerdau. Isso garante que apenas pessoas autorizadas tenham acesso ao sistema.
 
 Após o login, os usuários serão redirecionados para um dashboard inicial, onde poderão editar o relatório. No dashboard, eles terão a opção de modificar informações como título do relatório e adicionar observações relevantes. Além disso, estamos trabalhando para implementar uma funcionalidade adicional que permitirá que os usuários baixem o relatório em formato PDF, facilitando sua visualização e compartilhamento.
@@ -430,45 +433,50 @@ No código acima, cada quadro capturado é passado para o modelo YOLO, que reali
 ## Validação da eficácia e performance do sistema de visão computacional
 
 ### Curva de confiança F1
-A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão. 
 
-![Curva F1](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/F1_curve.png) 
+A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão.
+
+![Curva F1](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/F1_curve.png)
 
 A curva é útil para visualizar como o desempenho do modelo varia com diferentes níveis de confiança e identificar áreas onde ele pode estar superconfiante ou subconfiante, podendo ser valiosa na avaliação da calibração do modelo e na identificação de possíveis problemas de confiabilidade. Dessa maneira, na imagem temos uma parábola invertida, o que revela alguns pontos de uma relação não linear entre o valor de confiança atribuído pelo modelo e a pontuação F1 resultante.
 
-### Curva Precision-Recall 
-A PR (Precision-Recall) Curve é uma métrica comumente usada para avaliar o desempenho de modelos de aprendizado de máquina em tarefas de classificação, especialmente quando há um desequilíbrio significativo entre as classes, representando a relação entre a precisão (precision) e o recall (revocação) do modelo em diferentes pontos de corte ao longo do espectro de confiança. 
+### Curva Precision-Recall
 
-Sendo assim, a precisão mede a proporção de instâncias corretamente classificadas como positivas em relação ao total de instâncias classificadas como positivas, enquanto o recall mede a proporção de instâncias positivas corretamente identificadas em relação ao total de instâncias verdadeiramente positivas. Desse modo, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a PR Curve oferece uma representação visual do trade-off entre essas duas métricas. 
+A PR (Precision-Recall) Curve é uma métrica comumente usada para avaliar o desempenho de modelos de aprendizado de máquina em tarefas de classificação, especialmente quando há um desequilíbrio significativo entre as classes, representando a relação entre a precisão (precision) e o recall (revocação) do modelo em diferentes pontos de corte ao longo do espectro de confiança.
 
-![Curva PR](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/PR_curve.png) 
+Sendo assim, a precisão mede a proporção de instâncias corretamente classificadas como positivas em relação ao total de instâncias classificadas como positivas, enquanto o recall mede a proporção de instâncias positivas corretamente identificadas em relação ao total de instâncias verdadeiramente positivas. Desse modo, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a PR Curve oferece uma representação visual do trade-off entre essas duas métricas.
+
+![Curva PR](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/PR_curve.png)
 
 A curva acima, indica um trade-off entre precisão e recall. Nessa configuração, o modelo pode obter altas taxas de recall, ou seja, conseguir identificar corretamente a maioria das instâncias positivas, porém, em detrimento da precisão, resultando em um aumento das falsas positivas.
 
 ### Curva Precision-Confidence
-A P Curve mostra como a precisão do modelo evolui à medida que o limite de classificação é ajustado, representando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. 
+
+A P Curve mostra como a precisão do modelo evolui à medida que o limite de classificação é ajustado, representando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado.
 
 Dessa maneira, ao plotar os valores de recall no eixo x e os valores de precisão no eixo y, a curva permite visualizar como a precisão é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos positivos.
 
-![Curva P](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/P_curve.png) 
+![Curva P](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/P_curve.png)
 
 A imagem acima, representa uma curva que mostra um aumento gradual na precisão à medida que o valor de corte é ajustado, ou seja, ao aumentar o limite de classificação, o modelo é capaz de identificar corretamente mais instâncias positivas em relação ao total de instâncias classificadas como positivas, resultando em uma maior taxa de precisão.
 
 ### Curva Recall-Confidence
-A R Curve, ou Curva R, é uma métrica usada para avaliar a revocação (recall) de um modelo de aprendizado de máquina em tarefas de classificação binária, caracterizando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado. 
 
-Dessa maneira, ao plotar os valores de precisão no eixo x e os valores de recall no eixo y, a Curva R permite visualizar como a revocação é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos negativos. 
+A R Curve, ou Curva R, é uma métrica usada para avaliar a revocação (recall) de um modelo de aprendizado de máquina em tarefas de classificação binária, caracterizando a proporção de verdadeiros positivos (TP) em relação ao número total de instâncias positivas (TP + falsos negativos, FN) à medida que o valor de corte é variado.
 
-![Curva R](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/R_curve.png) 
+Dessa maneira, ao plotar os valores de precisão no eixo x e os valores de recall no eixo y, a Curva R permite visualizar como a revocação é afetada pelo equilíbrio entre os verdadeiros positivos e os falsos negativos.
+
+![Curva R](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/R_curve.png)
 
 A imagem representa uma relação não linear entre o valor de corte e a revocação, tal configuração sugere que, ao ajustar o limite de classificação, o modelo pode alcançar uma revocação mais alta para determinados valores de corte.
 
 ### Matriz de confusão
-A Matriz de Confusão é uma representação tabular usada para avaliar o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, resumindo os resultados das previsões em relação aos valores verdadeiros das instâncias. 
 
-A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP), falsos positivos (FP), verdadeiros negativos (TN) e falsos negativos (FN). Assim, os verdadeiros positivos correspondem às instâncias corretamente classificadas como positivas, os falsos positivos representam as instâncias erroneamente classificadas como positivas, os verdadeiros negativos são as instâncias corretamente classificadas como negativas e os falsos negativos indicam as instâncias erroneamente classificadas como negativas. 
+A Matriz de Confusão é uma representação tabular usada para avaliar o desempenho de um modelo de aprendizado de máquina em tarefas de classificação, resumindo os resultados das previsões em relação aos valores verdadeiros das instâncias.
 
-![Matriz de Confusão](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/confusion_matrix_normalized.png) 
+A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP), falsos positivos (FP), verdadeiros negativos (TN) e falsos negativos (FN). Assim, os verdadeiros positivos correspondem às instâncias corretamente classificadas como positivas, os falsos positivos representam as instâncias erroneamente classificadas como positivas, os verdadeiros negativos são as instâncias corretamente classificadas como negativas e os falsos negativos indicam as instâncias erroneamente classificadas como negativas.
+
+![Matriz de Confusão](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/confusion_matrix_normalized.png)
 
 Quando os valores superiores são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva, ou seja, isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. 
 
@@ -486,7 +494,9 @@ Para a implementação dessa integração foi necessário contruir um publisher 
   
     ```
     import cv2
-    import rclpy
+    import base64
+    import asyncio
+    import websockets
     from rclpy.node import Node
     from ultralytics import YOLO
     from cv_bridge import CvBridge
@@ -496,24 +506,33 @@ Para a implementação dessa integração foi necessário contruir um publisher 
 
     ```
     class Streaming(Node):
-      def __init__(self):
-        super().__init__('image_subscriber')
-        self.subscription = self.create_subscription(
-          Image, 
-          '/camera', 
-          self.listener_callback, 
-          10)
-        self.subscription 
-        self.bridge = CvBridge()
 
-      def listener_callback(self, data):
-        self.get_logger().info('Receiving video frame')
-        current_frame = self.bridge.imgmsg_to_cv2(data)
-        model = YOLO("./yolo/best.pt")
-        result = model.predict(current_frame, conf=0.6)
-        annotated = result[0].plot()
-        cv2.imshow("camera", annotated)
-        cv2.waitKey(1)
+    def __init__(self):
+      super().__init__('image_subscriber')
+      self.subscription = self.create_subscription(
+        Image, 
+        '/camera', 
+        self.listener_callback, 
+        10)
+      self.subscription 
+      self.bridge = CvBridge()
+      self.websocket_url = "ws://localhost:8000/ws"
+      self.websocket = websockets.connect(self.websocket_url)
+
+    async def send_frame_via_websocket(self, frame_base64):
+      async with self.websocket as websocket:
+        await websocket.send(frame_base64)
+
+    def listener_callback(self, data):
+      self.get_logger().info('Receiving video frame')
+      current_frame = self.bridge.imgmsg_to_cv2(data)
+      model = YOLO("./yolo/best.pt")
+      result = model.predict(current_frame, conf=0.6)
+      annotated = result[0].plot()
+      _, frames = cv2.imencode(".jpg", annotated)
+      frame_base64 = base64.b64encode(frames).decode("utf-8")
+      print ("início        " + frame_base64 + "        fim")
+      asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
     ```
     
    3 - Para iniciar esse subscriber, atribuímos ao arquivo "main.py" localizado no path: ```./src/backend/ros``` o seguinte código:
@@ -553,7 +572,7 @@ Para a implementação dessa integração foi necessário contruir um publisher 
       def __init__(self):
         super().__init__('image_publisher')
         self.publisher_ = self.create_publisher(Image, '/camera', 10)
-        timer_period = 0.1
+        timer_period = 0.001
         self.timer = self.create_timer(timer_period, self.timer_callback)
         self.cap = cv2.VideoCapture(0)
         self.bridge = CvBridge()
@@ -585,3 +604,135 @@ Para a implementação dessa integração foi necessário contruir um publisher 
     ```  
     
 **Demonstração em vídeo:** https://www.youtube.com/watch?v=YvxhzSp2Roo
+
+## Backend
+
+### Supabase e FastAPI
+
+Implementamos nossa infraestrutura de backend utilizando o framework FastAPI, uma solução que permite a criação eficiente e ágil de APIs. Todo o código está organizado em um arquivo principal chamado main.py, responsável por iniciar o servidor.
+
+Ao iniciar o servidor, disponibilizamos uma variedade de rotas (também conhecidas como endpoints) que viabilizam diferentes operações. Essas rotas foram desenvolvidas para lidar com o registro de imagens, interação com o banco de dados e acesso aos registros de imagens e frames analisados por meio da visão computacional previamente implementada.
+
+Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pelo YoloV8 para o Supabase, um serviço online utilizado para armazenar e gerenciar os arquivos. Essa API possibilita o envio seguro das imagens ao Supabase, garantindo seu armazenamento e permitindo a recuperação posterior, caso necessário.
+
+A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
+
+#### APIs e rotas
+
+### Websocket
+
+O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
+
+```
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    connected_clients.add(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            for client in connected_clients:
+                await client.send_text(data)
+    except Exception as e:
+        print(f"WebSocket connection closed with exception: {e}")
+    finally:
+        connected_clients.remove(websocket)
+```
+
+- Nesse sentido, esse canal wenbsocket é utilizada pelo subscriber do tópico "/camera" presente no arquivo streaming e implementado na classe "Streaming":
+
+```
+class Streaming(Node):
+
+  def __init__(self):
+    super().__init__('image_subscriber')
+    self.subscription = self.create_subscription(
+      Image, 
+      '/camera', 
+      self.listener_callback, 
+      10)
+    self.subscription 
+    self.bridge = CvBridge()
+    self.websocket_url = "ws://localhost:8000/ws"
+    self.websocket = websockets.connect(self.websocket_url)
+
+  async def send_frame_via_websocket(self, frame_base64):
+    async with self.websocket as websocket:
+      await websocket.send(frame_base64)
+
+  def listener_callback(self, data):
+    self.get_logger().info('Receiving video frame')
+    current_frame = self.bridge.imgmsg_to_cv2(data)
+    model = YOLO("./yolo/best.pt")
+    result = model.predict(current_frame, conf=0.6)
+    annotated = result[0].plot()
+    _, frames = cv2.imencode(".jpg", annotated)
+    frame_base64 = base64.b64encode(frames).decode("utf-8")
+    print ("início        " + frame_base64 + "        fim")
+    asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
+```
+
+- Segue uma foto que demonstra essa integração:
+
+![img_4917_720](https://github.com/2023M6T2-Inteli/Splinters/assets/89201795/a98ebefd-bad5-4b18-8c63-55f2d8117a7c)
+
+- Continuando no âmbito de comunicação via websocket, temos também dados de bateria protos para serem levados para o frontend via websocket. Aqui, nós estamos tendo ainda alguns problemas para deixar estável a comunicação tanto da bateria, quanto dos frames da câmera ( tentaremos nessa sprint explorar o socketio para testar se conseguimos melhorar essa trasmissão ). Abaixo o cógiddo da so subscriber da bateria, coletando dados de da voltagem publicados no tópico ```/battery_state```. O código também contempla o cálculo para retonar para o frontend a porcentagem da bateria do robô em tempo real:
+
+```
+import rclpy
+import asyncio
+import websockets
+from rclpy.node import Node
+from sensor_msgs.msg import BatteryState
+
+
+class Battery(Node):
+    def __init__(self):
+        super().__init__('battery_subscriber')
+        self.subscription = self.create_subscription(
+            BatteryState,
+            '/battery_state', 
+            self.listener_callback, 
+            10)
+        
+    async def send_battery_via_websocket(self, relative_battery_percent):
+        async with websockets.connect("ws://localhost:8000/battery") as websocket:
+            await websocket.send(relative_battery_percent)
+
+    def listener_callback(self, battery):
+        relative_battery_percent = (battery.voltage - 11)/1.6
+
+        asyncio.get_event_loop().run_until_complete(self.send_battery_via_websocket(str(relative_battery_percent)))
+        print(relative_battery_percent)
+
+def main():
+    rclpy.init()
+    battery = Battery()
+    rclpy.spin(battery)
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+## Descrição dos sensores
+
+Com o intuito de possibilitar a coleta de dados que permitam a análise da segurança do ambiente confinado e da possibilidade de ocorrência de acidentes, foram selecionados sensores que permitem a obtenção de informações relevantes para a análise do ambiente. Os sensores selecionados foram:
+
+### Sensor de qualidade do ar (MQ-135)
+
+Esse sensor apresenta a capacidade de detectar gases que podem ser prejudiciais para a saúde humana, como o dióxido de carbono, monóxido de carbono, amônia, benzeno, álcool, fumaça, entre outros. Os gases coletados por esse sensor, quando encontrados em altas concentações, podem causar problemas respiratórios, tontura, náusea, entre outros sintomas, prejudicando a saúde e o bem estar dos trabalhadores.
+
+Esse sensor apresenta uma saída digital, que fornece um resultado binário indicando quando há ou não a presença desses gases em concentrações elevadas, e uma saída analógica, que fornece um valor de tensão proporcional à concentração de gases detectada. A saída digital é utilizada para a detecção de gases, enquanto a saída analógica é utilizada para a obtenção de dados quantitativos sobre a concentração de gases. 
+
+A partir de uma análise dos dados enviados pela saída analógica, que apontavam valores próximos a 80(condições normais de gases) e mais de 900 (quantidades muito altas de gases), foi possível construir uma escala, de valores aproximadamente entre 10 e 100. Quanto maior o valor obtido, maior a concentração de gases detectada. Essa transformação foi realizada para facilitar a visualização dos dados pelo usuário final, de forma mais clara e intuitiva.
+
+### Sensor de temperatura e umidade (DHT11)
+
+Esse sensor apresenta a capacidade de detectar a temperatura e a umidade do ambiente. A temperatura e a umidade são fatores que podem influenciar na saúde e no bem estar dos trabalhadores, além da conservação do ambiente confinado. Além disso, a temperatura e a umidade também podem influenciar na ocorrência de acidentes, como o aumento da probabilidade de incêndios e explosões.
+
+Ao utilizar a biblioteca DHT.h, foi possível obter os valores de temperatura e umidade em graus Celsius e porcentagem, respectivamente. Esses valores são obtidos a partir de uma saída digital, que fornece um resultado binário indicando quando há ou não a presença desses gases em concentrações elevadas, e uma saída analógica, que fornece um valor de tensão proporcional à concentração de gases detectada. A saída digital é utilizada para a detecção de gases, enquanto a saída analógica é utilizada para a obtenção de dados quantitativos sobre a concentração de gases. A partir da saída analógica, foi possível construir uma escala, de valores aproximadamente entre 10 e 100. Quanto maior o valor obtido, maior a concentração de gases detectada. Essa transformação foi realizada para facilitar a visualização dos dados pelo usuário final, de forma mais clara e intuitiva.
+
+## Utilização do microcontrolador
+
+Devido à falta de portas analógicas do microprocessador Raspberry Pi 4 e também do microcontrolador OPEN-CR (integrados ao robô), foi necessário utilizar um microcontrolador externo para a coleta dos dados dos sensores. Com esse intuito, foi utilizado um microcontrolador Arduino Uno, que apresenta portas analógicas para a coleta dos dados dos sensores. A comunicação entre o microcontrolador e o Raspberry Pi 4 foi realizada por meio de uma comunicação serial, utilizando um cabo USB.

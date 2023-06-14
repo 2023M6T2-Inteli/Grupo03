@@ -33,10 +33,9 @@ html = """
 
 """
 
-@app.get("/")
+@app.get("/frames")
 async def get():
     return HTMLResponse(html)
-
 
 connected_clients = set()
 

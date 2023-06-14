@@ -10,9 +10,10 @@
 
 # Nome do Projeto
 
-## Nome do Grupo
+## Splinters 
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: <a href=https://github.com/luanaparra>Luana Parra</a>, <a href=https://github.com/henriquemarlon>Henrique Marlon</a>, <a href=https://github.com/rafaelkatalan>Rafael katalan, <a href=https://github.com/Bianca-Cassemiro>Bianca Cassemiro</a>, <a href=https://github.com/Pablo-RLV>Pablo Viana</a> <a href=https://github.com/gabrielpascoli>Gabriel Pascoli</a> <a href=https://github.com/jacksonwsaguiar>Jackson Aguiar</a>,
+
 
 ## Descrição
 

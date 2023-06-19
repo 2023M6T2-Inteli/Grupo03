@@ -1,3 +1,5 @@
+<span style="background-color: yellow">FALTA</span>
+
 <table>
 <tr>
 <td>
@@ -129,20 +131,14 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 
 ### Abordagens
 
-- Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
-
-- Manutenabilidade do Hardware: Como estamos lidando com uma implementação física, ela estará exposta às intempéries que podem diminuir a vida útil de seus componentes. Como plano de ação para esse risco, vamos considerar opções de proteção do hardware.
-
-- Falhas de comunicação na equipe que está desenvolvendo o projeto: Para mitigar esse risco, aplicaremos derivações da metodologia ágil para manter a comunicação entre os membros do grupo sempre alinhada e focada no consenso entre as partes. Além disso, definiremos claramente os papéis e responsabilidades de cada membro da equipe, a fim de evitar ambiguidades e conflitos.
-
-- Falhas de comunicação na transmissão de dados: Estudaremos formas de manter a comunicação via wifi o mais estável possível, considerando a melhor eficiência do sistema implementado. Também estabeleceremos procedimentos para monitorar continuamente a qualidade da transmissão de dados e para solucionar rapidamente quaisquer problemas que possam surgir.
-
-- Falta de resistência do hardware a ambientes hostis: Para garantir a resistência do sistema a possíveis condições hostis, como temperaturas diferentes do ambiente, selecionaremos componentes de alta qualidade e resistência, além de considerar soluções de proteção adicionais, como caixas de proteção e materiais de vedação.
-
-- Aumento exagerado do escopo do projeto: Para garantir a entrega da melhor solução possível, pensando nos riscos anteriormente citados, definiremos claramente o escopo do projeto e as funcionalidades a serem desenvolvidas. Também implementaremos processos de gerenciamento de mudanças para avaliar qualquer nova solicitação de funcionalidade e garantir que ela seja consistente com os objetivos do projeto e viável em termos de prazo e recursos.
-
-- Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
-
+1. Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
+2. Manutenabilidade do Hardware: Como estamos lidando com uma implementação física, ela estará exposta às intempéries que podem diminuir a vida útil de seus componentes. Como plano de ação para esse risco, vamos considerar opções de proteção do hardware.
+3. Falhas de comunicação na equipe que está desenvolvendo o projeto: Para mitigar esse risco, aplicaremos derivações da metodologia ágil para manter a comunicação entre os membros do grupo sempre alinhada e focada no consenso entre as partes. Além disso, definiremos claramente os papéis e responsabilidades de cada membro da equipe, a fim de evitar ambiguidades e conflitos.
+4. Falhas de comunicação na transmissão de dados: Estudaremos formas de manter a comunicação via wifi o mais estável possível, considerando a melhor eficiência do sistema implementado. Também estabeleceremos procedimentos para monitorar continuamente a qualidade da transmissão de dados e para solucionar rapidamente quaisquer problemas que possam surgir.
+5. Falta de resistência do hardware a ambientes hostis: Para garantir a resistência do sistema a possíveis condições hostis, como temperaturas diferentes do ambiente, selecionaremos componentes de alta qualidade e resistência, além de considerar soluções de proteção adicionais, como caixas de proteção e materiais de vedação.
+6. Aumento exagerado do escopo do projeto: Para garantir a entrega da melhor solução possível, pensando nos riscos anteriormente citados, definiremos claramente o escopo do projeto e as funcionalidades a serem desenvolvidas. Também implementaremos processos de gerenciamento de mudanças para avaliar qualquer nova solicitação de funcionalidade e garantir que ela seja consistente com os objetivos do projeto e viável em termos de prazo e recursos.
+7. Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
+   
 ## Matriz Oceano Azul
 
 A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa.
@@ -306,19 +302,19 @@ Temos três componentes principais na arquitetura do sistema:
 
 ### Requisitos Funcionais
 
-- Inspeção dos ambientes durante e após da manutenção
-- Detecção de condições atmosféricas (presença de gases tóxicos) dos espaços confinados
-- Sensores para detectar os gases, e talvez detectar colisões
-- Robô ser capaz de retornar ao ponto inicial em casos de erros/defeitos/objetos no meio do caminho
-- Movimentação por joystick (casos de emergência)
-- Interface web apresentando um dashboard com dados coletados e imagens em tempo real, além de poder gerar relatórios em PDF
+1. Inspeção dos ambientes durante e após da manutenção
+2. Detecção de condições atmosféricas (presença de gases tóxicos) dos espaços confinados
+3. Sensores para detectar os gases, e talvez detectar colisões
+4. Robô ser capaz de retornar ao ponto inicial em casos de erros/defeitos/objetos no meio do caminho
+5. Movimentação por joystick (casos de emergência)
+6. Interface web apresentando um dashboard com dados coletados e imagens em tempo real, além de poder gerar relatórios em PDF
 
 ### Requisitos não funcionais
 
-- Funcionamento confiável e eficiente no processo de monitoramento e inspeção
-- Confiança nos dados gerados
-- Monitoramento e inspeção em tempo real
-- Interface web de fácil compreensão por aqueles usuários que a utilizem
+1. Funcionamento confiável e eficiente no processo de monitoramento e inspeção
+2. Confiança nos dados gerados
+3. Monitoramento e inspeção em tempo real
+4. Interface web de fácil compreensão por aqueles usuários que a utilizem
 
 ## Análise de viabilidade técnica
 

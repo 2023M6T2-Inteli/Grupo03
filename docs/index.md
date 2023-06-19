@@ -399,13 +399,17 @@ Para proporcionar uma experiência de usuário otimizada, decidimos desenvolver 
 
 <img width="565" alt="Captura de tela 2023-05-09 155102 (1)" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/1fd27f43-12cc-4b77-93ce-5603a29dff43">
 
-# Simulação de rota
+# Sistema de locomoção e otimização de rota
 
-A otimização de rotas é um elemento essencial no desenvolvimento de um sistema eficiente para um robô móvel. Neste contexto, a simulação apresentará os principais aspectos a serem abordados ao implementar um sistema de otimização de rota.
+A otimização de rotas é um componente fundamental para o desenvolvimento de um sistema eficiente em um robô móvel. Com o objetivo de abordar essa questão de forma inteligente, a simulação desempenha um papel crucial, pois nos permite explorar e compreender os principais aspectos relacionados à implementação de um sistema de otimização de rotas.
 
-Inicialmente, foi realizada uma análise detalhada e enumeração das possíveis rotas de navegação do robô, levando em consideração as exigências específicas da aplicação em questão e o caminho mais rápido. Em seguida, discutimos a importância de uma representação precisa do ambiente e das rotas escolhidas, utilizando grafos como uma ferramenta eficiente para visualizar e modelar as conexões entre os pontos relevantes.
+Em um primeiro momento, é imprescindível realizar uma análise minuciosa, examinando e enumerando todas as possíveis rotas de navegação que o robô pode seguir. Nesse processo, levam-se em consideração as exigências específicas da aplicação em questão, bem como a busca pelo caminho mais rápido e eficiente. A identificação dessas rotas viáveis é crucial para garantir um planejamento adequado e assertivo.
 
-A seguir, temos o algoritmo em grafo para otimizar as rotas, com base em uma heurística que faça sentido no contexto do projeto.
+Posteriormente, é crucial reconhecer a importância de uma representação precisa do ambiente e das rotas selecionadas. Para isso, os grafos surgem como uma ferramenta extremamente eficaz, permitindo a visualização e modelagem das conexões entre os pontos relevantes. Essa representação gráfica oferece uma perspectiva clara das interações espaciais entre os locais a serem visitados, auxiliando na análise e tomada de decisões.
+
+Uma vez que as rotas foram mapeadas e o ambiente foi devidamente representado, é possível utilizar algoritmos em grafos para otimizar essas rotas. Esses algoritmos podem ser embasados em heurísticas que sejam coerentes e adequadas ao contexto do projeto em questão. A aplicação de heurísticas é essencial para orientar o robô na seleção da melhor rota possível, levando em consideração fatores como distância, tempo, obstáculos e outras restrições específicas.
+
+Dessa forma, a simulação e a aplicação de algoritmos em grafos oferecem uma abordagem inteligente para otimizar as rotas em sistemas de robôs móveis. Essa metodologia permite uma análise abrangente, considerando diferentes cenários e restrições, e contribui para o desenvolvimento de sistemas eficientes e confiáveis. Ao buscar constantemente melhorias nessa área, abre-se espaço para avanços significativos em termos de produtividade, economia de recursos e eficiência operacional.
 
 ## Algoritmo em grafo e movimentação
 
@@ -421,21 +425,25 @@ O código também define uma função de retorno de chamada pose_callback para a
 
 Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.
 
-### Sistema anticolisão
+## Sistema anticolisão (sistema de segurança)
 
-O sistema de anti-colisão implementado neste script utiliza o LIDAR (Light Detection and Ranging) do Turtlebot para verificar continuamente a presença de obstáculos à frente do robô. O LIDAR gera uma lista de pontos, representando as distâncias em relação ao robô. Os pontos selecionados para verificação correspondem às distâncias à frente do robô.
+O sistema de anticolisão implementado neste script representa uma abordagem inteligente para garantir a segurança do robô. Ele utiliza o LIDAR (Light Detection and Ranging) do Turtlebot, um dispositivo capaz de detectar a presença de obstáculos à frente do robô. O LIDAR gera uma lista de pontos que representam as distâncias entre o robô e os objetos ao seu redor. Nesse sistema, são selecionados os pontos que correspondem às distâncias à frente do robô para verificação contínua.
 
-Caso seja detectado um objeto a uma distância inferior a 30cm do robô, e diretamente em sua trajetória, ou seja, se o robô continuar avançando, ocorrerá uma colisão iminente. Nesse momento, o modo de movimentação automática é interrompido e o controle passa para o modo manual.
+Se o sistema detectar um objeto a uma distância inferior a 30cm do robô, diretamente em sua trajetória, é considerada uma colisão iminente. Nesse momento, o modo de movimentação automática é interrompido e o controle é transferido para o modo manual.
 
-No modo manual, o robô monitora as entradas do terminal, especificamente os comandos 'a', 'd', 'w', 'x' e 's', que correspondem a aumentar a velocidade angular para a esquerda, aumentar a velocidade angular para a direita, aumentar a velocidade linear para a frente, aumentar a velocidade linear para trás e parar completamente o robô, respectivamente. Essa funcionalidade permite que o operador do robô possa movimentá-lo para entender melhor o obstáculo através da câmera e desviar dele.
+No modo manual, o robô monitora os comandos inseridos pelo operador no terminal. Esses comandos incluem 'a', 'd', 'w', 'x' e 's', que aumentam a velocidade angular para a esquerda, aumentam a velocidade angular para a direita, aumentam a velocidade linear para a frente, aumentam a velocidade linear para trás e param completamente o robô, respectivamente. Essa funcionalidade permite que o operador do robô movimente-o manualmente para avaliar melhor o obstáculo por meio da câmera e desviá-lo de forma precisa.
 
-Além disso, o código também verifica a entrada 'k' para retornar ao modo automático. Quando essa entrada é recebida, o robô retoma o percurso preestabelecido e continua em direção ao próximo ponto que estava seguindo antes da interrupção.
+Além disso, o código também verifica o comando 'k' para retornar ao modo automático. Quando esse comando é recebido, o robô retoma sua rota predefinida e continua em direção ao próximo ponto que estava seguindo antes da interrupção.
 
-O objetivo principal desse sistema é garantir a segurança do robô, evitando colisões com obstáculos. Ele proporciona ao operador a capacidade de controlar manualmente o robô para analisar e evitar obstáculos de maneira mais precisa, antes de retornar ao modo automático e prosseguir com sua rota planejada.
+O objetivo principal desse sistema é assegurar a segurança do robô, evitando colisões com obstáculos. Ele oferece ao operador a capacidade de controlar manualmente o robô para analisar e evitar obstáculos de maneira mais precisa antes de retornar ao modo automático e prosseguir com sua rota planejada. Essa abordagem inteligente combina a detecção de obstáculos por meio do LIDAR, o controle manual e a retomada automática da rota para fornecer um sistema de segurança eficiente e confiável.
 
 <a href="https://www.youtube.com/watch?v=KR6Fwj-3By8">Video demontrando movimentação do robo com sistema de otimização de rotas e sistema anti colisão</a>
 
 # Sistema de visão computacional
+
+O sistema de visão computacional é uma área da inteligência artificial que visa capacitar computadores a interpretar e compreender o mundo visual, assim como os seres humanos. Utilizando algoritmos e técnicas avançadas, esse sistema é capaz de processar imagens e vídeos, identificar objetos, reconhecer padrões, realizar detecção de movimento, entre outras tarefas. 
+
+Dessa maneira, no projeto foi implementado o sistema de visão computacional utilizando o modelo YOLOv8 para detecção de rachaduras em paredes de concreto. Por meio da análise de imagens em tempo real capturadas por uma câmera, o sistema é capaz de identificar com precisão a presença de rachaduras, oferecendo uma solução eficiente para inspeções dos espaços confinados e manutenção preventiva.
 
 ## Implementação do sistema de visão computacional
 
@@ -493,6 +501,8 @@ No código acima, cada quadro capturado é passado para o modelo YOLO, que reali
 
 ## Validação da eficácia e performance do sistema de visão computacional
 
+A validação da eficácia e performance do sistema de visão computacional é um processo essencial para avaliar a capacidade do sistema em fornecer resultados precisos e confiáveis na detecção e análise de informações visuais. Durante essa validação, foram realizadas análises detalhadas das curvas de precisão do sistema, permitindo uma avaliação criteriosa de sua capacidade de identificar e classificar objetos com alta acurácia.
+
 ### Curva de confiança F1
 
 A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão.
@@ -542,6 +552,10 @@ A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP)
 Quando os valores superiores são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva, ou seja, isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. 
 
 Já os valores inferiores, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas.
+
+# Integração de sistemas
+
+
 
 ## Integração do sistema de visão computacional com a arquitetura ROS2:
 

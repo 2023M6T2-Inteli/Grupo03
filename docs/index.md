@@ -147,50 +147,51 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 
 A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa.
 
-Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados.
-Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
+Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados. Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
+
+1. Preço: Neste atributo, buscamos oferecer um preço competitivo em relação aos concorrentes, levando em consideração o valor percebido pelos clientes. A ideia é fornecer uma solução acessível e que proporcione um excelente custo-benefício.
+2. Qualidade: A qualidade é um elemento crucial para o sucesso do produto. Buscamos entregar um robô em espaço confinado que seja robusto, durável e confiável, capaz de lidar com as demandas e desafios desse ambiente de forma eficiente e segura.
+3. Tecnologia: A inovação tecnológica é um diferencial importante. Nosso objetivo é oferecer uma solução que utilize as tecnologias mais avançadas disponíveis, como sensores de alta precisão, algoritmos inteligentes de processamento de dados e sistemas de comunicação de última geração.
+4. Conforto: A experiência do usuário é um fator determinante. Nosso robô em espaço confinado será projetado levando em consideração o conforto e a ergonomia, permitindo uma interação fácil e intuitiva para os operadores, mesmo em ambientes desafiadores.
+5. Comodidade: Além de fornecer uma solução eficiente, buscamos facilitar o uso e a integração do robô em espaço confinado com os processos existentes. Isso inclui aspectos como a facilidade de transporte, configuração rápida e interface amigável, visando minimizar o tempo de implantação e aumentar a conveniência para os usuários.
+6. Praticidade: A praticidade está relacionada à facilidade de uso, manutenção e suporte técnico. Nosso produto será projetado para simplificar as operações, minimizando a necessidade de treinamento extenso e oferecendo recursos de manutenção simplificados, com suporte técnico ágil e eficiente.
 
 ![Matriz Oceano Azul](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/matriz%20oceano%20azul.png)
 
 Justificativa das pontuações referentes ao oceano azul:
 
-- Preço: Através da parceria entre Inteli e Gerdau e da análise financeira realizada pelo grupo, concluímos que nosso produto tem um preço mais acessível em comparação aos produtos já consolidados no mercado, o que resultou em uma nota 8 na matriz.
+1. Preço: A parceria entre Inteli e Gerdau permitiu uma análise financeira detalhada, resultando em um produto com um preço mais acessível em comparação aos produtos já consolidados no mercado. Essa estratégia busca conquistar clientes que buscam uma solução de qualidade a um custo mais atrativo, refletindo na pontuação de 8 na matriz.
+2. Qualidade: Considerando o contexto educacional do projeto, no qual o produto será desenvolvido por estudantes, é importante reconhecer que a equipe possui recursos e experiência limitados em relação a concorrentes que contam com engenheiros formados e empresas estabelecidas. Portanto, embora se busque entregar um produto de alta qualidade, a pontuação pode ser um pouco menor em comparação aos competidores.
+3. Tecnologia: No desenvolvimento do projeto, serão utilizados softwares de ponta, alinhados com as demandas do mercado. No entanto, é importante mencionar que o hardware será fornecido pela faculdade, o que pode impactar a excelência da solução proposta. Essa limitação é decorrente do contexto educacional do projeto e é necessário considerá-la na avaliação da pontuação atribuída.
+4. Conforto: A parceria entre Inteli e Gerdau oferece ao cliente a oportunidade de participar ativamente no processo de desenvolvimento do produto, sugerindo modificações e acompanhando de perto o progresso. Essa interação direta proporciona maior conforto ao cliente, garantindo que suas necessidades sejam atendidas de forma personalizada.
+5. Comodidade: A presença da Gerdau durante todo o desenvolvimento do produto permite uma abordagem personalizada e customizada para atender às necessidades específicas do cliente. Essa proximidade e colaboração com a empresa garantem um processo mais conveniente e alinhado com as expectativas do cliente.
+6. Praticidade: Embora possa exigir mais tempo e esforço em comparação com a simples compra de um robô pronto para uso, o produto será customizado de acordo com as necessidades do cliente. Essa abordagem resulta em uma solução mais prática em termos de manutenção e utilização, atendendo às demandas específicas do ambiente confinado.
 
-- Qualidade: Considerando que o produto será desenvolvido por estudantes em um contexto educacional, a nota dada à qualidade é um pouco menor em relação aos concorrentes que possuem uma equipe de engenheiros já formados e uma empresa já estabelecida.
-
-- Tecnologia: Para o desenvolvimento do projeto, utilizaremos softwares importantes e requisitados no mercado, mas o hardware será fornecido pela faculdade, o que pode não ser ideal para a solução proposta. Isso ocorre devido ao contexto educacional do projeto.
-
-- Conforto: A parceria entre Inteli e Gerdau oferece ao cliente a possibilidade de sugerir e acompanhar de perto o desenvolvimento do produto, o que garante mais liberdade e conforto durante o processo.
-
-- Comodidade: A presença da Gerdau durante o desenvolvimento do produto garante que o serviço seja customizado de acordo com as necessidades do cliente, trazendo comodidade na hora de desenvolver a solução.
-
-- Praticidade: Embora não seja tão prático quanto simplesmente comprar um robô sob demanda, o produto será customizado para o cliente, o que resultará em facilidade de manutenção e utilização.
-
-Após análise cuidadosa do gráfico, identificamos fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Além disso, observamos que o nosso produto se encontra no mesmo quadrante que produtos já consolidados no mercado, o que nos leva a propor um projeto com similaridades.
+Após uma análise cuidadosa do gráfico, identificamos os fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Além disso, notamos que nosso produto se encontra no mesmo quadrante que produtos já consolidados no mercado, o que nos leva a propor um projeto com similaridades. Essa abordagem nos permitirá construir sobre as melhores práticas existentes, ao mesmo tempo em que buscamos diferenciar-nos com melhorias e adaptações específicas para atender às expectativas e necessidades da empresa Gerdau.
 
 **Eliminar**
 
-- Robôs grandes e desajeitados que não podem manobrar em espaços estreitos
-- Robôs que não são seguros para uso em ambientes perigosos e confinados
-- Robôs que não têm sensores para ajudar na navegação e na análise de dados atmosféricos
+- Robôs grandes e desajeitados que não podem manobrar em espaços estreitos: A proposta é eliminar a limitação de tamanho e tornar o robô mais compacto e ágil, capaz de operar em ambientes confinados e de difícil acesso.
+- Robôs que não são seguros para uso em ambientes perigosos e confinados: Buscamos eliminar qualquer risco de segurança, desenvolvendo um robô projetado especificamente para operar em ambientes confinados, com recursos de segurança aprimorados e certificações adequadas.
+- Robôs que não têm sensores para ajudar na navegação e na análise de dados atmosféricos: O objetivo é eliminar a limitação de coleta de informações ambientais, incorporando sensores avançados que permitam uma análise precisa dos dados atmosféricos, identificando riscos e fornecendo alertas em tempo real.
 
 **Reduzir**
 
-- Custo de fabricação de robôs, mantendo a qualidade e a segurança
-- Complexidade de operação do robô, tornando-o fácil de usar
-- Tempo necessário para a manutenção do robô
+- Custo de fabricação de robôs, mantendo a qualidade e a segurança: Buscamos otimizar os processos de fabricação, explorar parcerias estratégicas e utilizar tecnologias eficientes para reduzir os custos de produção, sem comprometer a qualidade e a segurança do produto final.
+- Complexidade de operação do robô, tornando-o fácil de usar: Simplificaremos a interface e a operação do robô, desenvolvendo uma solução intuitiva e fácil de usar, mesmo para usuários não especializados. Isso reduzirá a curva de aprendizado e facilitará a adoção da tecnologia.
+- Tempo necessário para a manutenção do robô: Projetaremos o robô com uma arquitetura modular e componentes de fácil substituição, reduzindo o tempo necessário para a manutenção e minimizando as interrupções nas operações.
 
 **Elevar**
 
-- Agilidade e capacidade de manobra do robô em terrenos difíceis, bem como uma melhor análise e coleta de dados atmoféricos
-- Confiabilidade e durabilidade do robô
-- Capacidade de navegação autônoma em ambientes confinados
+- Agilidade e capacidade de manobra do robô em terrenos difíceis, bem como uma melhor análise e coleta de dados atmosféricos: Nossa solução se concentrará em aprimorar a mobilidade do robô em terrenos desafiadores, tornando-o capaz de navegar com facilidade e coletar dados atmosféricos de forma precisa e abrangente.
+- Confiabilidade e durabilidade do robô: Buscaremos aprimorar a confiabilidade e a durabilidade do robô, utilizando materiais de alta qualidade, testes rigorosos e implementando medidas de segurança adicionais para garantir um desempenho consistente e uma vida útil prolongada.
+- Capacidade de navegação autônoma em ambientes confinados: Nosso objetivo é desenvolver algoritmos avançados de navegação autônoma, permitindo que o robô mapeie e navegue de forma independente em ambientes confinados, otimizando a eficiência e minimizando a necessidade de intervenção humana.
 
 **Criar**
 
-- Novas funcionalidades para o robô, como a capacidade de detectar e responder a emergências em tempo real
-- Novas formas de comunicação do robô com o operador
-- Criar uma nova feature integrável com o sistema da Gerdau
+- Novas funcionalidades para o robô, como a capacidade de detectar e responder a emergências em tempo real: Implementaremos recursos avançados de detecção de emergências, como a identificação de gases tóxicos, incêndios ou situações de perigo iminente, permitindo uma resposta rápida e eficaz.
+- Novas formas de comunicação do robô com o operador: Exploraremos tecnologias de comunicação inovadoras, como transmissão de vídeo em tempo real e interfaces de realidade aumentada, para aprimorar a interação e a colaboração entre o robô e o operador, mesmo à distância.
+- Criar uma nova feature integrável com o sistema da Gerdau: Desenvolveremos uma funcionalidade exclusiva e personalizada que poderá ser integrada perfeitamente ao sistema existente da Gerdau, proporcionando uma solução completa e adaptada às necessidades específicas da empresa.
 
 # Entendimento do Metadesign
 

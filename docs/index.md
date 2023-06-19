@@ -1,5 +1,18 @@
-<span style="background-color: yellow">FALTA</span>
+3. Descrição da arquitetura do sistema. (peso 0.5)
 
+4. Sistema de locomoção e otimização de rota. (peso 1)
+
+5. Interface de usuário. (peso 1)
+
+6. Sistema de visão computacional. (peso 1)
+
+7. Sistemas de segurança. (peso 1)
+
+8. Backend. (peso 1)
+
+9. Integração de sistemas. (peso 1)
+
+10. Validação da eficácia do sistema. (peso 2.5)
 <table>
 <tr>
 <td>
@@ -232,6 +245,27 @@ Além disso, nosso robô é projetado para ter uma vida útil prolongada, com po
 Para promover uma cultura de responsabilidade ambiental e social, buscamos envolver os trabalhadores no processo, garantindo sua participação e segurança. Além disso, podemos promover treinamentos e conscientização sobre questões ambientais e incentivar práticas sustentáveis dentro da empresa, como a redução do consumo de energia e a gestão adequada de resíduos.
 
 Ao considerar a sustentabilidade ambiental em nosso projeto, não apenas oferecemos uma solução eficiente, mas também contribuímos para a preservação do meio ambiente e promovemos uma atitude responsável em relação aos recursos naturais.
+
+## Influências socioculturais
+Nosso projeto é influenciado pelas demandas e necessidades socioculturais relacionadas à segurança dos trabalhadores e à eficiência operacional na indústria. Há uma crescente preocupação com a segurança no ambiente de trabalho e um maior interesse em adotar tecnologias avançadas para prevenir acidentes e proteger os funcionários. Além disso, a automação e a robótica estão se tornando cada vez mais comuns na indústria, refletindo uma mudança cultural em direção à modernização e eficiência.
+
+Nossa solução busca atender essas influências socioculturais, oferecendo um robô de inspeção que contribua para um ambiente de trabalho seguro e produtivo. Através da automação e coleta de dados precisos, nosso projeto reflete a preocupação com a segurança e a busca por melhores condições de trabalho. Além disso, promovemos uma cultura de inovação e avanço tecnológico, incentivando a adoção de soluções mais eficientes e sustentáveis na indústria.
+
+## Tipológico-formais e ergonômicos
+O design do nosso produto é orientado por considerações tipológico-formais e ergonômicas. Buscamos criar um robô de inspeção que seja funcional e eficiente em sua forma, levando em consideração as necessidades operacionais e as restrições de espaços confinados. O tamanho e a forma do robô são projetados para permitir fácil manobrabilidade e acesso a áreas de difícil alcance, garantindo uma inspeção abrangente e precisa.
+
+Além disso, consideramos a ergonomia na interação do operador com o robô. As interfaces e controles são projetados de forma intuitiva e ergonomicamente correta, minimizando a fadiga e o esforço durante a operação. Também levamos em consideração a segurança do operador, garantindo que o robô seja equipado com mecanismos de parada de emergência e sistemas de detecção de colisão.
+
+A combinação de considerações tipológico-formais e ergonômicas resulta em um design que atende tanto às necessidades operacionais quanto às exigências de segurança e eficiência.
+
+## Tecnologia produtiva e materiais empregados
+Nossa solução se baseia em tecnologia avançada para garantir a eficiência e a confiabilidade do produto. Utilizamos o Robot Operating System (ROS2) como base para o desenvolvimento do sistema embarcado, permitindo uma coordenação eficiente dos movimentos do robô e a integração dos sensores de alta precisão. Além disso, implementamos interfaces de comunicação pub/sub (publisher/subscriber) e HTTP para garantir a troca de informações em tempo real entre o robô, o backend e o frontend do sistema.
+
+Em relação aos materiais empregados, utilizamos componentes duráveis e de alta qualidade para garantir a resistência e a longevidade do robô. O uso de materiais leves, mas robustos, contribui para a mobilidade e a facilidade de manobra do robô em ambientes confinados. Também priorizamos a utilização de materiais e componentes que sejam sustentáveis e ecologicamente corretos, reduzindo o impacto ambiental do produto.
+
+A tecnologia produtiva empregada envolve processos de fabricação avançados, como usinagem de precisão, montagem automatizada e testes rigorosos para garantir a qualidade do produto final. Buscamos otimizar os processos produtivos para garantir uma produção eficiente e atender à demanda do mercado.
+
+A escolha cuidadosa de tecnologia produtiva e materiais empregados é fundamental para a qualidade, desempenho e sustentabilidade do nosso produto.
 
 # Análise Financeira
 

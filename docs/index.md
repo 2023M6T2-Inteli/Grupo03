@@ -56,26 +56,41 @@ Simulação de robôs para aplicações diversas.
 
 # Visão geral do projeto
 
+A seguir, apresentaremos uma visão geral do projeto, destacando seus objetivos, escopo e principais características. 
+
 ## Empresa
 
-Presente em 10 países, a Gerdau é pioneira no setor do aço na implantação de iniciativas de inovação digital. Esse é o resultado do trabalho conjunto de todos os mais de 30 mil colaboradores.
-A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fornecedoras de aços longos nas Américas e de aços especiais no mundo. No Brasil, também produz aços planos e minério de ferro. Além disso, é a maior recicladora da América Latina e, no mundo, transforma, anualmente, milhões de toneladas de sucata em aço, reforçando seu compromisso com o desenvolvimento sustentável das regiões onde atua. As ações das empresas Gerdau estão listadas nas bolsas de valores de São Paulo (B3), Nova Iorque (NYSE) e Madri (Latibex).
+Presente em 10 países, a Gerdau é pioneira no setor do aço na implantação de iniciativas de inovação digital. Esse resultado é fruto do trabalho conjunto de todos os seus mais de 30 mil colaboradores.
+
+A Gerdau é a maior empresa brasileira produtora de aço e uma das principais fornecedoras de aços longos nas Américas, além de ser uma das principais fornecedoras de aços especiais em nível global. No Brasil, também produz aços planos e minério de ferro. Além disso, é a maior recicladora da América Latina e, anualmente, transforma milhões de toneladas de sucata em aço, reforçando o seu compromisso com o desenvolvimento sustentável nas regiões onde atua. As ações da Gerdau estão listadas nas bolsas de valores de São Paulo (B3), Nova Iorque (NYSE) e Madri (Latibex).
 
 ## Problema
 
-## Objetivos
+Um dos riscos críticos identificados nas operações da Gerdau é o Espaço Confinado. Esses são ambientes que não foram projetados para a permanência humana contínua e apresentam condições desafiadoras, como acesso limitado, ventilação insuficiente e possíveis alterações nos níveis de oxigênio. Considerando a importância da segurança como valor fundamental em todas as nossas decisões diárias e nosso compromisso com o objetivo de alcançar o "acidente zero", é crucial enfrentar esse problema.
 
-### Objetivos gerais
+Embora tenhamos rigorosos padrões de operação e manutenção definidos por diretrizes corporativas, bem como normas regulamentadoras, como a NR 33 no Brasil, a verificação dos espaços confinados ainda é realizada periodicamente, com rotinas de inspeção geralmente planejadas e conduzidas externamente a esses ambientes. Isso significa que os acessos a esses espaços são limitados às atividades previamente programadas, o que pode não ser suficiente para garantir a segurança total dos colaboradores.
 
-### Objetivos específicos
+Atualmente, a pré-avaliação desses espaços confinados por meio de equipamentos tecnológicos, como robôs e drones, já é uma prática adotada. No entanto, essas soluções ainda apresentam custos elevados, o que as torna utilizadas apenas de forma pontual na indústria como um todo. Contudo, é importante ressaltar que diversas universidades e centros de pesquisa estão dedicando esforços para estudar e aprimorar essas tecnologias, dada a relevância do tema e a necessidade de avançar na mitigação dos riscos e melhorar os indicadores de segurança para nossos colaboradores.
 
-### Escopo macro
+Assim, é essencial abordar o problema dos espaços confinados de forma abrangente, buscando soluções inovadoras e eficazes para aprimorar a segurança em nossas operações. A conscientização sobre os riscos envolvidos, a implementação de medidas preventivas mais abrangentes e o investimento em tecnologias de pré-avaliação acessíveis são elementos fundamentais para garantir um ambiente de trabalho seguro e promover a cultura de segurança em toda a organização.
 
-Inicialmente, é esperado uma sensibilização da relevância do tema durante o curso. E as motivações para avançarmos no desenvolvimento de tecnologias disruptivas para redução da exposição a riscos. É desejável que os alunos tenham uma aula sobre algumas definições com relação a Segurança. (Ex: conceitos de Risco x Perigo,
-conceitos de gerenciamento de riscos, prevenção de acidentes ie: barreiras físicas, sistêmicas).
-É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável.
-Este robô poderá ser utilizado por operadores e mantenedores em atividades de espaço confinado, utilizado como ferramenta para diagnóstico preliminar da atividade.
-A solução passará por uma avaliação de validação dos times de inovação, segurança e gestão de riscos. A solução também será apresentada aos líderes de negócio.
+## Objetivo geral
+
+Por meio de uma solução de simulação, espera-se que um robô seja capaz de se locomover em ambientes de espaço confinado, coletar dados por meio de sensores, com foco especial em monitorar níveis de oxigênio e outros gases, além de utilizar filmagens para auxiliar na inspeção prévia da estrutura.
+
+## Benefícios esperados
+
+Segurança em primeiro lugar. Para nós, não há resultado mais importante do que preservar a vida das pessoas. É por isso que a Gerdau está empenhada em investir em soluções tecnológicas que visam reduzir a exposição dos nossos colaboradores em atividades de risco.
+
+Pensando no futuro que almejamos construir, a Gerdau tem o compromisso de desenvolver nossos valores nos futuros líderes, de modo que eles possam manter uma constante preocupação com a saúde e segurança dos colaboradores, independentemente de sua área de atuação.
+
+## Escopo macro
+
+Inicialmente, espera-se que haja uma conscientização sobre a importância do tema ao longo do curso, bem como as motivações para avançarmos no desenvolvimento de tecnologias disruptivas visando a redução da exposição a riscos. É desejável que os alunos recebam uma aula introdutória sobre definições relacionadas à segurança, como os conceitos de Risco x Perigo, gerenciamento de riscos e prevenção de acidentes, incluindo barreiras físicas e sistêmicas.
+
+Neste projeto, espera-se que os alunos desenvolvam, por meio de simulação, um robô capaz de se locomover em ambientes de espaço confinado e coletar informações sem a necessidade de geolocalização. Esse robô poderá se movimentar tanto na superfície quanto por vias aéreas, adaptando-se às exigências de cada ambiente. A simulação poderá ser realizada por meio de simuladores computacionais em conjunto com o ROS (Robot Operating System). É desejável também a implementação física do robô para fins de demonstração.
+
+O objetivo do projeto é fornecer uma ferramenta aos operadores e mantenedores para auxiliar em atividades de espaço confinado, permitindo um diagnóstico preliminar da situação. A solução desenvolvida será submetida a uma avaliação de validação pelos times de inovação, segurança e gestão de riscos. Além disso, a solução será apresentada aos líderes de negócio, visando a possibilidade de implementação em escala maior.
 
 ## Partes interessadas
 
@@ -83,6 +98,8 @@ A solução passará por uma avaliação de validação dos times de inovação,
 - Gerdau
 
 # Análise do problema
+
+No tópico de análise do problema, serão abordados diferentes aspectos relacionados à identificação e compreensão dos desafios existentes. Serão discutidos os riscos críticos presentes nas operações da Gerdau, com destaque para o Espaço Confinado, um dos principais focos de atenção. Serão explorados os procedimentos atuais de verificação e inspeção desses espaços, bem como as limitações e lacunas existentes.
 
 ## Proposta de valor (Value Proposition Canvas)
 
@@ -180,54 +197,66 @@ Após análise cuidadosa do gráfico, identificamos fatores que devem ser elimin
 ## Fatores mercadológicos
 
 **Qual é o seu produto e como ele se orienta ao mercado? Como ele é precificado?**
-Nosso produto consiste no robô "TurtleBot 3 Burger", programado para operar em ambientes confinados e coletar dados a partir de sensores de alta precisão. Esses dados são analisados por um operador, por meio de uma interface, para fornecer informações valiosas sobre o ambiente e suas condições atmosféricas, ajudando a prevenir acidentes e melhorar a produtividade. Para determinar o preço do nosso produto, consideramos vários fatores, incluindo o custo dos componentes e sensores utilizados, mão de obra necessária para desenvolvimento e implementação, despesas anuais de manutenção e o custo geral do projeto. Esses fatores são avaliados por meio de uma análise financeira, que nos permite chegar a um preço justo e competitivo para o mercado.
+
+Nosso projeto proposto consiste em desenvolver um robô para inspeção de ambientes confinados, visando garantir a segurança dos funcionários e evitar acidentes decorrentes das condições atmosféricas. O robô será equipado com sensores de alta precisão para analisar a presença de gases e outras condições ambientais, fornecendo informações em tempo real aos operadores. Nosso produto se orienta ao mercado industrial, principalmente em setores como manufatura, logística e transporte, onde a adoção de tecnologias de automação, como AGVs, está se tornando cada vez mais comum.
+
+A precificação do nosso produto levará em consideração diversos fatores, como o custo dos componentes e sensores utilizados, mão de obra necessária para o desenvolvimento e implementação, despesas anuais de manutenção e o custo geral do projeto. Realizaremos uma análise financeira abrangente para determinar um preço justo e competitivo para o mercado, considerando também a demanda e o valor agregado que nossa solução oferece em termos de segurança e eficiência.
 
 **Qual é o cenário do mercado no qual o projeto se insere?**
-A adoção de AGVs na manutenção industrial tem se tornado cada vez mais comum em escala global, principalmente em empresas de manufatura, logística e transporte que buscam aumentar sua eficiência e competitividade. No entanto, em São Paulo, Brasil, essa tecnologia ainda está em estágio inicial de adoção, com apenas algumas empresas de grande porte implementando AGVs em seus processos de transporte e manutenção. Apesar disso, a crescente demanda por eficiência e redução de custos pode levar a uma maior adoção de AGVs na manutenção industrial em São Paulo e em outras regiões do Brasil. Ademais, a falta de mão de obra qualificada na indústria pode impulsionar ainda mais a adoção de tecnologias de automação e robótica, incluindo AGVs.
 
-Por fim, o projeto que estamos desenvolvendo se insere em um nicho específico, mas de grande importância para empresas que priorizam a segurança em seus processos industriais. Nosso objetivo é utilizar robôs para a manutenção e segurança de espaços confinados, fornecendo informações precisas e em tempo real sobre as condições ambientais e evitando a exposição de operadores humanos a riscos.
+A adoção de robôs AGVs na indústria está em ascensão globalmente, com empresas buscando aumentar sua eficiência operacional e reduzir custos por meio da automação. No entanto, no contexto específico de São Paulo, Brasil, a utilização de AGVs na manutenção industrial ainda está em estágio inicial, sendo adotada apenas por algumas grandes empresas. Apesar disso, a demanda por eficiência e a escassez de mão de obra qualificada na indústria podem impulsionar a adoção de tecnologias de automação e robótica, incluindo AGVs, em São Paulo e outras regiões do Brasil.
+
+Nosso projeto se insere em um nicho específico, com foco na segurança em ambientes confinados. Visamos atender empresas que priorizam a segurança de seus processos industriais, oferecendo uma solução inovadora e tecnologicamente avançada. Ao considerar o cenário brasileiro de AGVs e as necessidades específicas de nossos clientes, buscamos contribuir para a modernização e automação dos processos de segurança na indústria.
 
 **Qual a visão do projeto proposto?**
 
-Assim, o projeto tem como objetivo criar um AGV (Automated Guided Vehicle) capaz de entrar em espaços confinados e, por meio de sensores, analisar a presença de gases no ambiente, enviando essas leituras para o operador. Acreditamos que nossa solução pode modernizar e automatizar processos de segurança na Gerdau, melhorando a segurança dos funcionários durante a realização desses procedimentos.
-
-Embora o uso de AGVs na segurança industrial ainda seja incipiente em São Paulo, no Brasil como um todo há um grande investimento nessa tecnologia. Não há restrições específicas para o uso de AGVs no país, mas existem normas de segurança que devem ser seguidas para garantir a integridade física dos trabalhadores e evitar acidentes.
-
-Ao desenvolvermos nosso projeto, consideramos as restrições locais e o cenário brasileiro de AGVs, focando em atender às necessidades específicas de nosso cliente e agregar segurança ao processo de análise do ambiente.
+O projeto proposto tem como visão principal criar uma simulação de um robô de inspeção para ambientes confinados que possa ser utilizado pela Gerdau, visando melhorar a segurança dos funcionários durante os procedimentos realizados nesses espaços. Através da automação e coleta de dados precisos, pretendemos modernizar e aprimorar os processos de segurança industrial, contribuindo para um ambiente de trabalho mais seguro e eficiente.
 
 ## Sistema produto/design
 
 **Qual a missão do projeto proposto?**
-O projeto tem como objetivo principal que um robô faça a inspeção das condições atmosféricas de um ambiente confinado, que por conceito, designa um espaço fechado que pode apresentar condições inapropriadas para a presença humana. Essa inspeção é necessária para garantir que uma pessoa adentre o ambiente sem sofrer danos à sua saúde, ou haver algum tipo de acidente decorrente das condições atmosféricas. Portanto, a principal missão do projeto é garantir a segurança dos funcionários da Gerdau, de modo a evitar acidentes e aumentar a produtividade.
+
+A principal missão do nosso projeto é garantir a segurança dos funcionários da Gerdau, fornecendo um robô de inspeção de ambientes confinados. Esse robô, equipado com sensores de alta precisão, será capaz de analisar as condições atmosféricas e fornecer informações em tempo real aos operadores, evitando a exposição humana a riscos e prevenindo acidentes decorrentes dessas condições. Além disso, buscamos aumentar a produtividade por meio da automação de tarefas de inspeção, permitindo que os funcionários se concentrem em atividades de maior valor agregado.
 
 **Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda?**
-De uma maneira geral, o produto buscará compartilhar confiança em atuar na manutenção do setor, por meio de inovações tecnológicas na análise e mapeamento de zonas confinadas improprias a pessoas. A associação da marca ao propósito da solução buscará melhor reflexão do setor de segurança no trabalho ao contextos ao qual o robô irá se inserir, sendo relevante a demonstração da evolução do setor ao longos dos tempos ao momento de termos processos que não é mais necessário vidas humanas em serviços arriscados, sendo isso uma proposta de marketing e venda apresentada a partir de uma percepção evolutiva do problema e solução.
+
+A unidade formal entre o design do produto, as formas de divulgação e venda é essencial para transmitir uma mensagem consistente e fortalecer a identidade da solução. A estética do produto deve refletir sua função e propósito, transmitindo confiança e inovação. O design deve ser intuitivo, com interfaces claras e amigáveis para os operadores.
+
+Na divulgação e venda da solução, é importante destacar os benefícios de segurança, eficiência e sustentabilidade ambiental que nosso produto oferece. Utilizaremos estratégias de marketing que enfatizem a evolução do setor de segurança industrial, destacando a importância de investir em tecnologias avançadas para prevenir acidentes e proteger os trabalhadores. Além disso, podemos utilizar materiais promocionais, como folhetos, vídeos e apresentações, para transmitir a proposta de valor do produto de forma clara e persuasiva.
+
+A unidade formal entre o design do produto e as formas de divulgação e venda contribuirá para uma identidade consistente da solução, fortalecendo sua aceitação no mercado e facilitando a compreensão de seus benefícios pelos clientes em potencial.
 
 ## Sustentabilidade ambiental
 
-Nosso produto é desenvolvido com foco na ecoeficiência, utilizando fontes renováveis de energia, como baterias recarregáveis, em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. Além disso, o robô é projetado para ter uma vida útil prolongada, permitindo seu uso em futuros projetos da empresa e reduzindo a necessidade de substituição constante.
+Nosso projeto tem um forte compromisso com a sustentabilidade ambiental. O design do produto é orientado para a ecoeficiência, buscando minimizar o impacto ambiental. Optamos por utilizar fontes renováveis de energia, como baterias recarregáveis, em vez de baterias alcalinas e combustíveis fósseis. Dessa forma, reduzimos as emissões de gases de efeito estufa e promovemos a transição para uma matriz energética mais limpa.
 
-Equipado com sensores de última geração, o robô realiza análises precisas do ambiente, reduzindo acidentes e prevenindo falhas que possam afetar o meio ambiente. Isso garante a preservação da saúde dos trabalhadores envolvidos nas inspeções e contribui para um ambiente de trabalho mais seguro.
+Além disso, nosso robô é projetado para ter uma vida útil prolongada, com possibilidade de reutilização em futuros projetos da empresa, reduzindo a geração de resíduos eletrônicos e a necessidade de substituição frequente. A escolha de sensores de alta precisão contribui para a análise precisa do ambiente, prevenindo acidentes que poderiam resultar em danos ao meio ambiente.
 
-Além disso, nosso objetivo é envolver os trabalhadores no processo, garantindo sua participação sem comprometer sua segurança ou saúde. Com isso, buscamos não apenas oferecer um produto eficiente, mas também promover uma cultura de responsabilidade ambiental e social dentro da empresa.
+Para promover uma cultura de responsabilidade ambiental e social, buscamos envolver os trabalhadores no processo, garantindo sua participação e segurança. Além disso, podemos promover treinamentos e conscientização sobre questões ambientais e incentivar práticas sustentáveis dentro da empresa, como a redução do consumo de energia e a gestão adequada de resíduos.
 
-## Análise Financeira
+Ao considerar a sustentabilidade ambiental em nosso projeto, não apenas oferecemos uma solução eficiente, mas também contribuímos para a preservação do meio ambiente e promovemos uma atitude responsável em relação aos recursos naturais.
 
-A Gerdau tem sedes industriais em 9 países nas Américas, mas consideraremos a implementação apenas para as unidades no Brasil. Segundo o site oficial da empresa, a Gerdau possui 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em território nacional. Considerando que para obter o resultado desejado seja necessário a implementação de 1 robô por unidade, seriam necessários 39 robôs, o que exigiria um investimento inicial de R$1.076.700,00. Para a manutenção da solução, estima-se um gasto anual de R$338.100,00, incluindo manutenção, custos operacionais e uma margem de aproximadamente 15% para possíveis problemas. A receita esperada com o projeto, como descrito anteriormente, é de R$3.942.900,00/ano, ou seja, é esperado já no primeiro ano um lucro de R$2.528.100,00. #(custo anual - receita anual)
+# Análise Financeira
+
+A Gerdau possui sedes industriais em 9 países nas Américas, mas neste projeto consideraremos apenas as unidades localizadas no Brasil. De acordo com as informações fornecidas no site oficial da empresa, existem 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em território nacional. Levando em conta a necessidade de implementação de 1 robô por unidade para alcançar o resultado desejado, seria preciso adquirir um total de 39 robôs. Isso exigiria um investimento inicial estimado em R$1.076.700,00. Para a manutenção da solução, estima-se um custo anual de R$338.100,00, que inclui despesas de manutenção, custos operacionais e uma margem de cerca de 15% para eventuais problemas. Com base na descrição anterior, a receita esperada com o projeto é de R$3.942.900,00 por ano. Portanto, já no primeiro ano, espera-se um lucro de R$2.528.100,00, considerando a diferença entre a receita anual e o custo anual.
 
 ### Custos
 
 - Custo do hardware (TurtleBot, Raspberry Pi 3, câmera DobotMagical, sensores de gases)
-  - TutleBot + raspberry Pi 3 -> R$17000/robo
-  - Sensores de gases -> R$400/robo
-  - Camera -> R$400/robo
+  - TurtleBot + Raspberry Pi 3: R$17.000/robô
+  - Sensores de gases: R$400/robô
+  - Câmera: R$400/robô
+
 - Custos de mão de obra (desenvolvimento de software, montagem, testes)
-  - 2 Meses; equipe de 3 engenheiros -> R$51000 (fonte: Glassdoor)
-  - Implementação do projeto (1 engenheiro) -> R$8.500/local (fonte: Glassdoor)
+  - Duração: 2 meses
+  - Equipe: 3 engenheiros
+  - Custo: R$51.000 (fonte: Glassdoor)
+  - Implementação do projeto (1 engenheiro): R$8.500/local (fonte: Glassdoor)
+
 - Custos de manutenção e atualização do software
-  - Alocação da aplicação WEB - R$60.000/ano
-  - Manutenção Hardware - R$1000/ano*robo
-  - Custo Operacional - R$5000/ano*robo
+  - Alocação da aplicação WEB: R$60.000/ano
+  - Manutenção de hardware: R$1.000/ano*robô
+  - Custo operacional: R$5.000/ano*robô
 
 ### Receitas
 
@@ -252,7 +281,9 @@ Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos 
 
 # Arquitetura do Sistema
 
-## Diagrama de blocos - Versão 1
+A arquitetura do sistema proposta para a simulação e demonstração de um robô em espaço confinado com capacidade de obtenção de informações do ambiente e avaliação preliminar de atividades de operação e/ou manutenção é baseada em um conceito de Prova de Conceito (POC) e Produto Mínimo Viável (MVP). O objetivo é desenvolver um sistema robótico autônomo que possa explorar e interagir com o ambiente confinado de forma segura e eficiente. A arquitetura envolve a integração de diferentes componentes, como sensores para detecção de riscos atmosféricos, sistemas de navegação autônoma, algoritmos de tomada de decisão e um sistema de alerta sonoro ou outro meio de comunicação para notificar a presença de riscos. Além disso, a solução inclui a implementação de uma versão física simplificada do robô para fins de demonstração. Através dessa abordagem, busca-se validar a viabilidade e eficácia do conceito antes de um desenvolvimento completo do produto.
+
+## Diagrama de blocos
 
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
 

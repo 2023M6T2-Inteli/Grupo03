@@ -334,7 +334,7 @@ Temos três componentes principais na arquitetura do sistema:
 
 ## Análise de requisitos
 
-### Requisitos Funcionais
+**Requisitos Funcionais**
 
 1. Inspeção dos ambientes durante e após da manutenção
 2. Detecção de condições atmosféricas (presença de gases tóxicos) dos espaços confinados
@@ -343,7 +343,7 @@ Temos três componentes principais na arquitetura do sistema:
 5. Movimentação por joystick (casos de emergência)
 6. Interface web apresentando um dashboard com dados coletados e imagens em tempo real, além de poder gerar relatórios em PDF
 
-### Requisitos não funcionais
+**Requisitos não funcionais**
 
 1. Funcionamento confiável e eficiente no processo de monitoramento e inspeção
 2. Confiança nos dados gerados
@@ -358,7 +358,7 @@ Ademais, o robô será equipado com sensores integrados projetados para detectar
 
 Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente.
 
-# Interface web (frontend)
+# Interface de usuário (frontend)
 
 Em nossa interface atual, estamos implementando algumas atualizações para melhorar a experiência do usuário. Começamos com a adição de uma tela de login que utiliza o nextAuth, uma biblioteca que nos permite autenticar apenas usuários com domínio da Gerdau. Isso garante que apenas pessoas autorizadas tenham acesso ao sistema.
 
@@ -379,7 +379,6 @@ Essas melhorias na interface visam tornar o uso do sistema mais intuitivo, efici
 
 ### Página de histórico
 <img width="600" alt="Captura de tela 2023-05-29 141457" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/f0c50d63-ca09-4d20-bac0-31f589e2a17c">
-
 
 ## Entradas e saídas
 
@@ -798,3 +797,5 @@ Ao utilizar a biblioteca DHT.h, foi possível obter os valores de temperatura e 
 ## Utilização do microcontrolador
 
 Devido à falta de portas analógicas do microprocessador Raspberry Pi 4 e também do microcontrolador OPEN-CR (integrados ao robô), foi necessário utilizar um microcontrolador externo para a coleta dos dados dos sensores. Com esse intuito, foi utilizado um microcontrolador Arduino Uno, que apresenta portas analógicas para a coleta dos dados dos sensores. A comunicação entre o microcontrolador e o Raspberry Pi 4 foi realizada por meio de uma comunicação serial, utilizando um cabo USB.
+
+# Validação da eficácia do sistema

@@ -1,18 +1,3 @@
-3. Descrição da arquitetura do sistema. (peso 0.5)
-
-4. Sistema de locomoção e otimização de rota. (peso 1)
-
-5. Interface de usuário. (peso 1)
-
-6. Sistema de visão computacional. (peso 1)
-
-7. Sistemas de segurança. (peso 1)
-
-8. Backend. (peso 1)
-
-9. Integração de sistemas. (peso 1)
-
-10. Validação da eficácia do sistema. (peso 2.5)
 <table>
 <tr>
 <td>
@@ -553,9 +538,121 @@ Quando os valores superiores são 0.79 e 1, indica que o modelo obteve uma alta 
 
 Já os valores inferiores, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas.
 
+# Backend
+
+O backend é uma parte essencial da arquitetura do sistema, fornecendo a infraestrutura necessária para processar e gerenciar os dados. Utilizamos o framework FastAPI e o Supabase para criar APIs eficientes e armazenar arquivos. Ele lida com operações como registro de imagens, interação com o banco de dados e acesso aos registros da visão computacional. Além disso, o websocket integra o ROS2 com o frontend, permitindo a transmissão em tempo real dos frames processados pelo modelo YOLO. Essa integração é fundamental para garantir uma comunicação eficiente entre os componentes do sistema.
+
+### Supabase e FastAPI
+
+Implementamos nossa infraestrutura de backend utilizando o framework FastAPI, uma solução que permite a criação eficiente e ágil de APIs. Todo o código está organizado em um arquivo principal chamado main.py, responsável por iniciar o servidor.
+
+Ao iniciar o servidor, disponibilizamos uma variedade de rotas (também conhecidas como endpoints) que viabilizam diferentes operações. Essas rotas foram desenvolvidas para lidar com o registro de imagens, interação com o banco de dados e acesso aos registros de imagens e frames analisados por meio da visão computacional previamente implementada.
+
+Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pelo YoloV8 para o Supabase, um serviço online utilizado para armazenar e gerenciar os arquivos. Essa API possibilita o envio seguro das imagens ao Supabase, garantindo seu armazenamento e permitindo a recuperação posterior, caso necessário.
+
+A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
+
+#### APIs e rotas
+
+### Websocket
+
+O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
+
+```
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    connected_clients.add(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            for client in connected_clients:
+                await client.send_text(data)
+    except Exception as e:
+        print(f"WebSocket connection closed with exception: {e}")
+    finally:
+        connected_clients.remove(websocket)
+```
+
+- Nesse sentido, esse canal wenbsocket é utilizada pelo subscriber do tópico "/camera" presente no arquivo streaming e implementado na classe "Streaming":
+
+```
+class Streaming(Node):
+
+  def __init__(self):
+    super().__init__('image_subscriber')
+    self.subscription = self.create_subscription(
+      Image, 
+      '/camera', 
+      self.listener_callback, 
+      10)
+    self.subscription 
+    self.bridge = CvBridge()
+    self.websocket_url = "ws://localhost:8000/ws"
+    self.websocket = websockets.connect(self.websocket_url)
+
+  async def send_frame_via_websocket(self, frame_base64):
+    async with self.websocket as websocket:
+      await websocket.send(frame_base64)
+
+  def listener_callback(self, data):
+    self.get_logger().info('Receiving video frame')
+    current_frame = self.bridge.imgmsg_to_cv2(data)
+    model = YOLO("./yolo/best.pt")
+    result = model.predict(current_frame, conf=0.6)
+    annotated = result[0].plot()
+    _, frames = cv2.imencode(".jpg", annotated)
+    frame_base64 = base64.b64encode(frames).decode("utf-8")
+    print ("início        " + frame_base64 + "        fim")
+    asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
+```
+
+- Segue uma foto que demonstra essa integração:
+
+![img_4917_720](https://github.com/2023M6T2-Inteli/Splinters/assets/89201795/a98ebefd-bad5-4b18-8c63-55f2d8117a7c)
+
+- Continuando no âmbito de comunicação via websocket, temos também dados de bateria protos para serem levados para o frontend via websocket. Aqui, nós estamos tendo ainda alguns problemas para deixar estável a comunicação tanto da bateria, quanto dos frames da câmera ( tentaremos nessa sprint explorar o socketio para testar se conseguimos melhorar essa trasmissão ). Abaixo o cógiddo da so subscriber da bateria, coletando dados de da voltagem publicados no tópico ```/battery_state```. O código também contempla o cálculo para retonar para o frontend a porcentagem da bateria do robô em tempo real:
+
+```
+import rclpy
+import asyncio
+import websockets
+from rclpy.node import Node
+from sensor_msgs.msg import BatteryState
+
+
+class Battery(Node):
+    def __init__(self):
+        super().__init__('battery_subscriber')
+        self.subscription = self.create_subscription(
+            BatteryState,
+            '/battery_state', 
+            self.listener_callback, 
+            10)
+        
+    async def send_battery_via_websocket(self, relative_battery_percent):
+        async with websockets.connect("ws://localhost:8000/battery") as websocket:
+            await websocket.send(relative_battery_percent)
+
+    def listener_callback(self, battery):
+        relative_battery_percent = (battery.voltage - 11)/1.6
+
+        asyncio.get_event_loop().run_until_complete(self.send_battery_via_websocket(str(relative_battery_percent)))
+        print(relative_battery_percent)
+
+def main():
+    rclpy.init()
+    battery = Battery()
+    rclpy.spin(battery)
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
 # Integração de sistemas
 
-
+A integração de sistemas desempenha um papel fundamental na arquitetura do sistema, permitindo que os três componentes principais - embarcado, backend e frontend - trabalhem de forma harmoniosa e coordenada. Através de uma cuidadosa integração, é possível estabelecer uma comunicação eficiente e confiável entre o robô, o backend e o frontend, garantindo o fluxo adequado de informações e a sincronização das funcionalidades. Essa integração se baseia na utilização de protocolos de comunicação como o ROS2, pub/sub e HTTP, que possibilitam a troca de dados entre os diferentes componentes do sistema. Através da integração de sistemas, é possível alcançar uma arquitetura robusta e escalável, capaz de oferecer um desempenho eficiente e uma experiência de usuário aprimorada.
 
 ## Integração do sistema de visão computacional com a arquitetura ROS2:
 
@@ -680,117 +777,7 @@ Para a implementação dessa integração foi necessário contruir um publisher 
     
 **Demonstração em vídeo:** https://www.youtube.com/watch?v=YvxhzSp2Roo
 
-## Backend
-
-### Supabase e FastAPI
-
-Implementamos nossa infraestrutura de backend utilizando o framework FastAPI, uma solução que permite a criação eficiente e ágil de APIs. Todo o código está organizado em um arquivo principal chamado main.py, responsável por iniciar o servidor.
-
-Ao iniciar o servidor, disponibilizamos uma variedade de rotas (também conhecidas como endpoints) que viabilizam diferentes operações. Essas rotas foram desenvolvidas para lidar com o registro de imagens, interação com o banco de dados e acesso aos registros de imagens e frames analisados por meio da visão computacional previamente implementada.
-
-Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pelo YoloV8 para o Supabase, um serviço online utilizado para armazenar e gerenciar os arquivos. Essa API possibilita o envio seguro das imagens ao Supabase, garantindo seu armazenamento e permitindo a recuperação posterior, caso necessário.
-
-A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
-
-#### APIs e rotas
-
-### Websocket
-
-O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
-
-```
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    connected_clients.add(websocket)
-    try:
-        while True:
-            data = await websocket.receive_text()
-            for client in connected_clients:
-                await client.send_text(data)
-    except Exception as e:
-        print(f"WebSocket connection closed with exception: {e}")
-    finally:
-        connected_clients.remove(websocket)
-```
-
-- Nesse sentido, esse canal wenbsocket é utilizada pelo subscriber do tópico "/camera" presente no arquivo streaming e implementado na classe "Streaming":
-
-```
-class Streaming(Node):
-
-  def __init__(self):
-    super().__init__('image_subscriber')
-    self.subscription = self.create_subscription(
-      Image, 
-      '/camera', 
-      self.listener_callback, 
-      10)
-    self.subscription 
-    self.bridge = CvBridge()
-    self.websocket_url = "ws://localhost:8000/ws"
-    self.websocket = websockets.connect(self.websocket_url)
-
-  async def send_frame_via_websocket(self, frame_base64):
-    async with self.websocket as websocket:
-      await websocket.send(frame_base64)
-
-  def listener_callback(self, data):
-    self.get_logger().info('Receiving video frame')
-    current_frame = self.bridge.imgmsg_to_cv2(data)
-    model = YOLO("./yolo/best.pt")
-    result = model.predict(current_frame, conf=0.6)
-    annotated = result[0].plot()
-    _, frames = cv2.imencode(".jpg", annotated)
-    frame_base64 = base64.b64encode(frames).decode("utf-8")
-    print ("início        " + frame_base64 + "        fim")
-    asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
-```
-
-- Segue uma foto que demonstra essa integração:
-
-![img_4917_720](https://github.com/2023M6T2-Inteli/Splinters/assets/89201795/a98ebefd-bad5-4b18-8c63-55f2d8117a7c)
-
-- Continuando no âmbito de comunicação via websocket, temos também dados de bateria protos para serem levados para o frontend via websocket. Aqui, nós estamos tendo ainda alguns problemas para deixar estável a comunicação tanto da bateria, quanto dos frames da câmera ( tentaremos nessa sprint explorar o socketio para testar se conseguimos melhorar essa trasmissão ). Abaixo o cógiddo da so subscriber da bateria, coletando dados de da voltagem publicados no tópico ```/battery_state```. O código também contempla o cálculo para retonar para o frontend a porcentagem da bateria do robô em tempo real:
-
-```
-import rclpy
-import asyncio
-import websockets
-from rclpy.node import Node
-from sensor_msgs.msg import BatteryState
-
-
-class Battery(Node):
-    def __init__(self):
-        super().__init__('battery_subscriber')
-        self.subscription = self.create_subscription(
-            BatteryState,
-            '/battery_state', 
-            self.listener_callback, 
-            10)
-        
-    async def send_battery_via_websocket(self, relative_battery_percent):
-        async with websockets.connect("ws://localhost:8000/battery") as websocket:
-            await websocket.send(relative_battery_percent)
-
-    def listener_callback(self, battery):
-        relative_battery_percent = (battery.voltage - 11)/1.6
-
-        asyncio.get_event_loop().run_until_complete(self.send_battery_via_websocket(str(relative_battery_percent)))
-        print(relative_battery_percent)
-
-def main():
-    rclpy.init()
-    battery = Battery()
-    rclpy.spin(battery)
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-```
-
-## Descrição dos sensores
+## Sensores
 
 Com o intuito de possibilitar a coleta de dados que permitam a análise da segurança do ambiente confinado e da possibilidade de ocorrência de acidentes, foram selecionados sensores que permitem a obtenção de informações relevantes para a análise do ambiente. Os sensores selecionados foram:
 

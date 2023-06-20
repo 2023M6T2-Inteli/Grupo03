@@ -1,43 +1,50 @@
+import httpx
 from fastapi import FastAPI, WebSocket
-from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
+from models.report import Relatorio, create_supabase_client
 
 app = FastAPI()
 
-html = """
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-  <img id="image-container" src="" alt="Received Image">
-
-  <script>
-    const socket = new WebSocket("ws://localhost:8000/ws"); // Substitua pelo URL correto do WebSocket
-
-    socket.onopen = function(event) {
-      console.log("WebSocket connection established.");
-    };
-
-    socket.onmessage = function(event) {
-      const imageContainer = document.getElementById("image-container");
-      const receivedData = event.data;
-      imageContainer.src = "data:image/jpg;base64," + receivedData; // Define o src da tag img com o valor base64 recebido
-    };
-
-    socket.onclose = function(event) {
-      console.log("WebSocket connection closed.");
-    };
-  </script>
-</body>
-</html>
-
-"""
-
-@app.get("/frames")
-async def get():
-    return HTMLResponse(html)
 
 connected_clients = set()
+schema_name = "public"  
+table_name = "Relatorio"
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.post("/relatorios")
+async def create_relatorio(relatorio: Relatorio):
+    supabase = create_supabase_client()
+
+    try:
+        response = supabase.table(table_name).insert(relatorio.dict()).execute()
+        print(response)
+        return response
+    except httpx.HTTPError as e:
+        return {"message": "Erro ao criar o relatório: " + str(e)}
+
+@app.get("/relatorios")
+async def get_relatorios():
+    supabase = create_supabase_client()
+    
+    response = supabase.table(table_name).select("*").execute()
+    
+    return response
+
+
+@app.get("/relatorios/{id}")
+async def get_relatorios(id: int):
+    supabase = create_supabase_client()
+     
+    response = supabase.table(table_name).select("*").eq('id', str(id)).limit(1).execute()
+    print(id)
+    return response
+
 
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):

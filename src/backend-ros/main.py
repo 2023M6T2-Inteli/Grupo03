@@ -1,23 +1,12 @@
-import rclpy
-from subscribers.battery import Battery
+import os
+from multiprocessing import Pool
 
-class RobotController(Battery):
-    def __init__(self):
-        super().__init__("battery")
-        self.battery = Battery(self, self.__battery_callback)
+processes = ('./controllers/battery_controller.py', './controllers/camera_controller.py')
 
-    def __battery_callback(self, data):  
-        self.percentage = ((data.data - 11)/1.6) * 100
-        event = {"name": "battery", "data": self.percentage}
-        self.event_queue.put(event)
-        self.new_scan.battery = self.percentage
 
-def main(args=None):
-    rclpy.init(args=args)
-    battery_subscriber = BatterySubscriber()
-    rclpy.spin(battery_subscriber)
-    battery_subscriber.destroy_node()
-    rclpy.shutdown()
-  
-if __name__ == '__main__':
-  main()
+def run_process(process):
+    os.system('python {}'.format(process))
+
+
+pool = Pool(processes=2)
+pool.map(run_process, processes)

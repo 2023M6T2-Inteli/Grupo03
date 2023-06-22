@@ -552,7 +552,39 @@ Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pel
 
 A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
 
-#### APIs e rotas
+### APIs e rotas
+Estamos utilizando o FastAPI para implementar as rotas e facilitar a comunicação entre diferentes softwares.
+
+O FastAPI é um framework de desenvolvimento web em Python que permite a criação rápida e eficiente de APIs. Ele é conhecido por sua alta performance e produtividade, além de fornecer recursos avançados, como tipagem estática de dados, geração automática de documentação interativa e suporte nativo para async/await.
+
+Ao utilizar o FastAPI, podemos definir as rotas da nossa aplicação de forma simples e intuitiva. Podemos especificar os métodos HTTP suportados (GET, POST, PUT, DELETE, etc.), os parâmetros necessários, os tipos de dados esperados e as respostas retornadas pela API.
+
+Além disso, o FastAPI possui uma sintaxe declarativa que nos permite aproveitar a validação automática dos dados de entrada e saída, bem como a geração automática de documentação interativa, tornando mais fácil para os desenvolvedores entenderem e utilizarem a nossa API.
+
+A seguir, estão as rotas existentes em nossa aplicação:
+
+GET /relatorios: Retorna uma lista de todos os relatórios presentes no banco de dados.
+
+POST /relatorios: Cria um novo relatório no sistema.
+
+GET /relatorio/{id}: Retorna os detalhes do relatório com o ID especificado.
+
+POST /upload: Realiza o upload da gravação do vídeo.
+
+GET /get-video-url: Retorna a URL do vídeo correspondente ao ID especificado.
+
+### Detalhamento de implementação da API
+1) Definir os objetivos e requisitos da API: Compreendemos claramente o propósito da API, quais problemas ela visa resolver e quais requisitos funcionais e não funcionais devem ser atendidos. Isso incluiu a definição das funcionalidades esperadas, os formatos de entrada e saída de dados, os métodos HTTP suportados, a autenticação e autorização, entre outros.
+
+2) Escolher a tecnologia ou framework: Selecionamos a tecnologia ou framework adequados para implementar a API. Dito isso, escolhemos o FastAPI que utiliza python como linguagem para realizar a implementação da API.
+
+3) Projetar a arquitetura da API: Definimos a estrutura geral da API, incluindo os endpoints, a estrutura dos dados, a organização lógica dos recursos e a relação entre eles. 
+
+4) Implementar os endpoints: Codificamos a lógica de cada endpoint da API. Isso inclui mapeamento das URLs (endpoints) para as funções ou métodos correspondentes, realizar a validação dos dados de entrada, interagir com bancos de dados ou outros serviços, executar as regras de negócio e retornar as respostas adequadas.
+
+5) Testar a API: Realizamos testes unitários e testes de integração para garantir que a API esteja funcionando corretamente. Isso envolve a execução de casos de teste para verificar se os endpoints retornam as respostas esperadas.
+
+### Testes realizados
 
 ### Websocket
 

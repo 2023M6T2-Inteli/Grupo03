@@ -608,6 +608,17 @@ Comunicação WebSocket
 
 Observação: Certifique-se de que os parâmetros necessários estejam corretamente fornecidos nas solicitações e os modelos (Relatorio) e serviços (ReportService, VideoService) estejam implementados corretamente para o funcionamento adequado das rotas.
 
+#### Detalhamento de implementação da API
+1) Definir os objetivos e requisitos da API: Compreendemos claramente o propósito da API, quais problemas ela visa resolver e quais requisitos funcionais e não funcionais devem ser atendidos. Isso incluiu a definição das funcionalidades esperadas, os formatos de entrada e saída de dados, os métodos HTTP suportados, a autenticação e autorização, entre outros.
+
+2) Escolher a tecnologia ou framework: Selecionamos a tecnologia ou framework adequados para implementar a API. Dito isso, escolhemos o FastAPI que utiliza python como linguagem para realizar a implementação da API.
+
+3) Projetar a arquitetura da API: Definimos a estrutura geral da API, incluindo os endpoints, a estrutura dos dados, a organização lógica dos recursos e a relação entre eles. 
+
+4) Implementar os endpoints: Codificamos a lógica de cada endpoint da API. Isso inclui mapeamento das URLs (endpoints) para as funções ou métodos correspondentes, realizar a validação dos dados de entrada, interagir com bancos de dados ou outros serviços, executar as regras de negócio e retornar as respostas adequadas.
+
+5) Testar a API: Realizamos testes unitários e testes de integração para garantir que a API esteja funcionando corretamente. Isso envolve a execução de casos de teste para verificar se os endpoints retornam as respostas esperadas.
+
 ### Websocket
 
 O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:

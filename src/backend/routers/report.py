@@ -1,3 +1,4 @@
+import httpx
 from fastapi import APIRouter
 from models.report import Relatorio
 from services.report_service import ReportService

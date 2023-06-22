@@ -1,7 +1,7 @@
 from config.supabase_client import SupabaseClient
 
 SCHEMA_NAME = "public"  
-TABLE_NAME = "Relatorio"
+TABLE_NAME = "reports"
 
 class ReportService():
     def __init__(self):

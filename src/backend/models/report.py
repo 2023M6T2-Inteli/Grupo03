@@ -1,13 +1,14 @@
 from dotenv import load_dotenv
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from itertools import count
 
-# Carrega variáveis do arquivo .env
 load_dotenv()
 
 class Relatorio(BaseModel):
-    id: int
+    id: int = Field(default_factory=lambda: next(Relatorio._id_generator))
     nome_local: str
     endereco: str
     data: str
-    gas: float
     observacoes: str
+    gas: int
+    _id_generator = count(1)

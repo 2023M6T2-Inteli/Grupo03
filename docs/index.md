@@ -256,6 +256,17 @@ A escolha cuidadosa de tecnologia produtiva e materiais empregados é fundamenta
 
 A Gerdau possui sedes industriais em 9 países nas Américas, mas neste projeto consideraremos apenas as unidades localizadas no Brasil. De acordo com as informações fornecidas no site oficial da empresa, existem 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em território nacional. Levando em conta a necessidade de implementação de 1 robô por unidade para alcançar o resultado desejado, seria preciso adquirir um total de 39 robôs. Isso exigiria um investimento inicial estimado em R$1.076.700,00. Para a manutenção da solução, estima-se um custo anual de R$338.100,00, que inclui despesas de manutenção, custos operacionais e uma margem de cerca de 15% para eventuais problemas. Com base na descrição anterior, a receita esperada com o projeto é de R$3.942.900,00 por ano. Portanto, já no primeiro ano, espera-se um lucro de R$2.528.100,00, considerando a diferença entre a receita anual e o custo anual.
 
+É importante ressaltar que a análise financeira apresentada refere-se à prova de conceito do projeto de implementação de robôs nas unidades da Gerdau no Brasil. Essa análise inicial serve como base para estimar os custos e lucros iniciais, considerando-se os dados fornecidos pelo site oficial da empresa.
+
+No entanto, ao se realizar a implementação final, é necessário levar em conta outros fatores e valores que podem influenciar os resultados financeiros. Dentre esses fatores, destacam-se:
+
+1. Custos de implementação: Além do investimento inicial em robôs, pode haver custos adicionais relacionados à infraestrutura, treinamento de pessoal, integração de sistemas e outros elementos necessários para a implementação completa da solução.
+2. Custos operacionais: Os custos operacionais podem variar com base em fatores como energia elétrica, manutenção contínua, atualização de softwares e possíveis melhorias necessárias ao longo do tempo.
+3. Receitas adicionais ou economias: A implementação de robôs pode gerar receitas adicionais ou economias além das estimadas inicialmente. Por exemplo, a automação pode aumentar a produtividade, reduzir erros, diminuir o tempo de ciclo de produção ou melhorar a eficiência geral dos processos.
+4. Riscos e incertezas: A análise financeira inicial pode não considerar todos os riscos e incertezas associados à implementação do projeto. É importante avaliar possíveis desafios, como resistência à mudança, necessidade de adaptação de processos e possíveis obstáculos técnicos ou operacionais.
+
+Portanto, ao considerar a implementação final da solução de robôs nas unidades da Gerdau no Brasil, é essencial realizar uma análise financeira mais abrangente e detalhada, levando em conta todos os fatores relevantes para uma tomada de decisão informada e precisa.
+
 ### Custos
 
 - Custo do hardware (TurtleBot, Raspberry Pi 3, câmera DobotMagical, sensores de gases)
@@ -552,28 +563,52 @@ Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pel
 
 A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
 
-### APIs e rotas
-Estamos utilizando o FastAPI para implementar as rotas e facilitar a comunicação entre diferentes softwares.
+#### API
 
-O FastAPI é um framework de desenvolvimento web em Python que permite a criação rápida e eficiente de APIs. Ele é conhecido por sua alta performance e produtividade, além de fornecer recursos avançados, como tipagem estática de dados, geração automática de documentação interativa e suporte nativo para async/await.
+#### Rotas
 
-Ao utilizar o FastAPI, podemos definir as rotas da nossa aplicação de forma simples e intuitiva. Podemos especificar os métodos HTTP suportados (GET, POST, PUT, DELETE, etc.), os parâmetros necessários, os tipos de dados esperados e as respostas retornadas pela API.
+**Endpoint WebSocket para Bateria (/battery)** : Estabelece uma conexão WebSocket para dados relacionados à bateria.
 
-Além disso, o FastAPI possui uma sintaxe declarativa que nos permite aproveitar a validação automática dos dados de entrada e saída, bem como a geração automática de documentação interativa, tornando mais fácil para os desenvolvedores entenderem e utilizarem a nossa API.
+Manipulação da Conexão
+- Upgrade da Conexão: GET /battery
+  - Atualiza a conexão para uma conexão WebSocket.
 
-A seguir, estão as rotas existentes em nossa aplicação:
+Comunicação WebSocket
+- Enviar Mensagem: Envia uma mensagem de texto contendo dados da bateria para o servidor.
+- Receber Mensagem: Recebe uma mensagem de texto contendo dados da bateria do servidor.
+  
+**Endpoint WebSocket para Frames (/frames)** : Estabelece uma conexão WebSocket para dados relacionados a frames.
 
-GET /relatorios: Retorna uma lista de todos os relatórios presentes no banco de dados.
+Manipulação da Conexão
+- Upgrade da Conexão: GET /frames
+  - Atualiza a conexão para uma conexão WebSocket.
 
-POST /relatorios: Cria um novo relatório no sistema.
+Comunicação WebSocket
+- Enviar Mensagem: Envia uma mensagem de texto contendo dados de frames para o servidor.
+- Receber Mensagem: Recebe uma mensagem de texto contendo dados de frames do servidor.
 
-GET /relatorio/{id}: Retorna os detalhes do relatório com o ID especificado.
+**Relatórios (/relatorios)** : Lida com operações relacionadas a relatórios.
 
-POST /upload: Realiza o upload da gravação do vídeo.
+- Criar Relatório: POST /relatorios
+  - Cria um novo relatório com base nos dados fornecidos.
 
-GET /get-video-url: Retorna a URL do vídeo correspondente ao ID especificado.
+- Obter Relatórios: GET /relatorios
+  - Obtém uma lista de todos os relatórios existentes.
 
-### Detalhamento de implementação da API
+- Obter Relatório por ID: GET /relatorios/{id}
+  - Obtém um relatório específico com base no ID fornecido.
+
+**Serviços de Vídeo (/upload, /get-video-url)** : Lida com operações relacionadas a vídeos.
+
+- Upload de Vídeo: POST /upload
+  - Realiza o upload de um vídeo com o ID fornecido.
+
+- Obter URL do Vídeo: GET /get-video-url
+  - Obtém a URL de um vídeo com base no ID fornecido.
+
+Observação: Certifique-se de que os parâmetros necessários estejam corretamente fornecidos nas solicitações e os modelos (Relatorio) e serviços (ReportService, VideoService) estejam implementados corretamente para o funcionamento adequado das rotas.
+
+#### Detalhamento de implementação da API
 1) Definir os objetivos e requisitos da API: Compreendemos claramente o propósito da API, quais problemas ela visa resolver e quais requisitos funcionais e não funcionais devem ser atendidos. Isso incluiu a definição das funcionalidades esperadas, os formatos de entrada e saída de dados, os métodos HTTP suportados, a autenticação e autorização, entre outros.
 
 2) Escolher a tecnologia ou framework: Selecionamos a tecnologia ou framework adequados para implementar a API. Dito isso, escolhemos o FastAPI que utiliza python como linguagem para realizar a implementação da API.
@@ -583,8 +618,6 @@ GET /get-video-url: Retorna a URL do vídeo correspondente ao ID especificado.
 4) Implementar os endpoints: Codificamos a lógica de cada endpoint da API. Isso inclui mapeamento das URLs (endpoints) para as funções ou métodos correspondentes, realizar a validação dos dados de entrada, interagir com bancos de dados ou outros serviços, executar as regras de negócio e retornar as respostas adequadas.
 
 5) Testar a API: Realizamos testes unitários e testes de integração para garantir que a API esteja funcionando corretamente. Isso envolve a execução de casos de teste para verificar se os endpoints retornam as respostas esperadas.
-
-### Testes realizados
 
 ### Websocket
 
@@ -832,3 +865,8 @@ Ao utilizar a biblioteca DHT.h, foi possível obter os valores de temperatura e 
 Devido à falta de portas analógicas do microprocessador Raspberry Pi 4 e também do microcontrolador OPEN-CR (integrados ao robô), foi necessário utilizar um microcontrolador externo para a coleta dos dados dos sensores. Com esse intuito, foi utilizado um microcontrolador Arduino Uno, que apresenta portas analógicas para a coleta dos dados dos sensores. A comunicação entre o microcontrolador e o Raspberry Pi 4 foi realizada por meio de uma comunicação serial, utilizando um cabo USB.
 
 # Validação da eficácia do sistema
+
+A seguir, apresentamos um vídeo de teste do TurtleBot 3, onde está sendo demonstrado a capacidade de navegação e desvio de obstáculos deste robô ágil e inteligente. Com o objetivo de demonstrar a eficiência do sistema Nav 2, o TurtleBot 3 é colocado à prova em um ambiente desafiador, onde ele é capaz de se movimentar de forma autônoma, evitando obstáculos e traçando trajetos precisos. Através deste vídeo, você poderá visualizar as habilidades avançadas do TurtleBot 3 e compreender como ele pode ser uma solução eficaz para aplicações de navegação robótica em diversos cenários.
+
+Video: 
+

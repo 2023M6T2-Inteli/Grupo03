@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers.battery import router as battery_router
 from routers.report import router as report_router
 from routers.frames import router as frames_router
+from routers.video import router as video_router
 
 app = FastAPI()
 
@@ -18,6 +19,7 @@ app.add_middleware(
 app.include_router(battery_router)
 app.include_router(report_router)
 app.include_router(frames_router)
+app.include_router(video_router)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -3,7 +3,7 @@ from fastapi import APIRouter, WebSocket
 router = APIRouter()
 
 battery_clients = set()
-@router.websocket("/frames")
+@router.websocket("/battery")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     battery_clients.add(websocket)

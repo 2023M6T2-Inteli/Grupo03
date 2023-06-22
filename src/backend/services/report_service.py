@@ -2,8 +2,6 @@ from config.supabase_client import SupabaseClient
 
 SCHEMA_NAME = "public"  
 TABLE_NAME = "Relatorio"
-# URL: str = "https://qeqhovaiuqfkrjywqayz.supabase.co"
-# KEY: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFlcWhvdmFpdXFma3JqeXdxYXl6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NTAxNjgwOSwiZXhwIjoyMDAwNTkyODA5fQ.0tuA_64ZpGS8olQikZBDzacoWr1Hj-srdCe46-5Mq90"  
 
 class ReportService():
     def __init__(self):

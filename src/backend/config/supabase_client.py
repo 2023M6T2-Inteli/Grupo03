@@ -1,11 +1,14 @@
 import os
 from dotenv import load_dotenv
-from supabase import create_client, Client
+from supabase import Client
 
-# Carrega variáveis do arquivo .env
 load_dotenv()
 
-def SupabaseClient():
-        return create_client(supabase_url=os.getenv("SUPABASE_URL"), supabase_key=os.getenv("SUPABASE_KEY"))
+class SupabaseClient(Client):
+    def __init__(self):
+        self.url = os.getenv("SUPABASE_URL")
+        self.key = os.getenv("SUPABASE_KEY")
+        self.bucket_name = os.getenv("SUPABASE_BUCKET_NAME")
+        super().__init__(supabase_url=self.url, supabase_key=self.key)
 
 SupabaseClient()

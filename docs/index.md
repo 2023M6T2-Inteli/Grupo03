@@ -56,26 +56,41 @@ Simulação de robôs para aplicações diversas.
 
 # Visão geral do projeto
 
+A seguir, apresentaremos uma visão geral do projeto, destacando seus objetivos, escopo e principais características. 
+
 ## Empresa
 
-Presente em 10 países, a Gerdau é pioneira no setor do aço na implantação de iniciativas de inovação digital. Esse é o resultado do trabalho conjunto de todos os mais de 30 mil colaboradores.
-A Gerdau é a maior empresa Brasileira produtora de aço e uma das principais fornecedoras de aços longos nas Américas e de aços especiais no mundo. No Brasil, também produz aços planos e minério de ferro. Além disso, é a maior recicladora da América Latina e, no mundo, transforma, anualmente, milhões de toneladas de sucata em aço, reforçando seu compromisso com o desenvolvimento sustentável das regiões onde atua. As ações das empresas Gerdau estão listadas nas bolsas de valores de São Paulo (B3), Nova Iorque (NYSE) e Madri (Latibex).
+Presente em 10 países, a Gerdau é pioneira no setor do aço na implantação de iniciativas de inovação digital. Esse resultado é fruto do trabalho conjunto de todos os seus mais de 30 mil colaboradores.
+
+A Gerdau é a maior empresa brasileira produtora de aço e uma das principais fornecedoras de aços longos nas Américas, além de ser uma das principais fornecedoras de aços especiais em nível global. No Brasil, também produz aços planos e minério de ferro. Além disso, é a maior recicladora da América Latina e, anualmente, transforma milhões de toneladas de sucata em aço, reforçando o seu compromisso com o desenvolvimento sustentável nas regiões onde atua. As ações da Gerdau estão listadas nas bolsas de valores de São Paulo (B3), Nova Iorque (NYSE) e Madri (Latibex).
 
 ## Problema
 
-## Objetivos
+Um dos riscos críticos identificados nas operações da Gerdau é o Espaço Confinado. Esses são ambientes que não foram projetados para a permanência humana contínua e apresentam condições desafiadoras, como acesso limitado, ventilação insuficiente e possíveis alterações nos níveis de oxigênio. Considerando a importância da segurança como valor fundamental em todas as nossas decisões diárias e nosso compromisso com o objetivo de alcançar o "acidente zero", é crucial enfrentar esse problema.
 
-### Objetivos gerais
+Embora tenhamos rigorosos padrões de operação e manutenção definidos por diretrizes corporativas, bem como normas regulamentadoras, como a NR 33 no Brasil, a verificação dos espaços confinados ainda é realizada periodicamente, com rotinas de inspeção geralmente planejadas e conduzidas externamente a esses ambientes. Isso significa que os acessos a esses espaços são limitados às atividades previamente programadas, o que pode não ser suficiente para garantir a segurança total dos colaboradores.
 
-### Objetivos específicos
+Atualmente, a pré-avaliação desses espaços confinados por meio de equipamentos tecnológicos, como robôs e drones, já é uma prática adotada. No entanto, essas soluções ainda apresentam custos elevados, o que as torna utilizadas apenas de forma pontual na indústria como um todo. Contudo, é importante ressaltar que diversas universidades e centros de pesquisa estão dedicando esforços para estudar e aprimorar essas tecnologias, dada a relevância do tema e a necessidade de avançar na mitigação dos riscos e melhorar os indicadores de segurança para nossos colaboradores.
 
-### Escopo macro
+Assim, é essencial abordar o problema dos espaços confinados de forma abrangente, buscando soluções inovadoras e eficazes para aprimorar a segurança em nossas operações. A conscientização sobre os riscos envolvidos, a implementação de medidas preventivas mais abrangentes e o investimento em tecnologias de pré-avaliação acessíveis são elementos fundamentais para garantir um ambiente de trabalho seguro e promover a cultura de segurança em toda a organização.
 
-Inicialmente, é esperado uma sensibilização da relevância do tema durante o curso. E as motivações para avançarmos no desenvolvimento de tecnologias disruptivas para redução da exposição a riscos. É desejável que os alunos tenham uma aula sobre algumas definições com relação a Segurança. (Ex: conceitos de Risco x Perigo,
-conceitos de gerenciamento de riscos, prevenção de acidentes ie: barreiras físicas, sistêmicas).
-É esperado deste projeto que os alunos desenvolvam, em simulação, um robô capaz de se locomover em um ambiente de espaço confinado e coletar informações do mesmo, sem a utilização de geolocalização. Este robô pode se locomover via superfície ou por vias aéreas em ambientes que necessitem dessa abordagem. A simulação pode ser feita através de simuladores computacionais em conjunto com o ROS (Robot Operating System). A simulação física do robô é um adicional desejável.
-Este robô poderá ser utilizado por operadores e mantenedores em atividades de espaço confinado, utilizado como ferramenta para diagnóstico preliminar da atividade.
-A solução passará por uma avaliação de validação dos times de inovação, segurança e gestão de riscos. A solução também será apresentada aos líderes de negócio.
+## Objetivo geral
+
+Por meio de uma solução de simulação, espera-se que um robô seja capaz de se locomover em ambientes de espaço confinado, coletar dados por meio de sensores, com foco especial em monitorar níveis de oxigênio e outros gases, além de utilizar filmagens para auxiliar na inspeção prévia da estrutura.
+
+## Benefícios esperados
+
+Segurança em primeiro lugar. Para nós, não há resultado mais importante do que preservar a vida das pessoas. É por isso que a Gerdau está empenhada em investir em soluções tecnológicas que visam reduzir a exposição dos nossos colaboradores em atividades de risco.
+
+Pensando no futuro que almejamos construir, a Gerdau tem o compromisso de desenvolver nossos valores nos futuros líderes, de modo que eles possam manter uma constante preocupação com a saúde e segurança dos colaboradores, independentemente de sua área de atuação.
+
+## Escopo macro
+
+Inicialmente, espera-se que haja uma conscientização sobre a importância do tema ao longo do curso, bem como as motivações para avançarmos no desenvolvimento de tecnologias disruptivas visando a redução da exposição a riscos. É desejável que os alunos recebam uma aula introdutória sobre definições relacionadas à segurança, como os conceitos de Risco x Perigo, gerenciamento de riscos e prevenção de acidentes, incluindo barreiras físicas e sistêmicas.
+
+Neste projeto, espera-se que os alunos desenvolvam, por meio de simulação, um robô capaz de se locomover em ambientes de espaço confinado e coletar informações sem a necessidade de geolocalização. Esse robô poderá se movimentar tanto na superfície quanto por vias aéreas, adaptando-se às exigências de cada ambiente. A simulação poderá ser realizada por meio de simuladores computacionais em conjunto com o ROS (Robot Operating System). É desejável também a implementação física do robô para fins de demonstração.
+
+O objetivo do projeto é fornecer uma ferramenta aos operadores e mantenedores para auxiliar em atividades de espaço confinado, permitindo um diagnóstico preliminar da situação. A solução desenvolvida será submetida a uma avaliação de validação pelos times de inovação, segurança e gestão de riscos. Além disso, a solução será apresentada aos líderes de negócio, visando a possibilidade de implementação em escala maior.
 
 ## Partes interessadas
 
@@ -83,6 +98,8 @@ A solução passará por uma avaliação de validação dos times de inovação,
 - Gerdau
 
 # Análise do problema
+
+No tópico de análise do problema, serão abordados diferentes aspectos relacionados à identificação e compreensão dos desafios existentes. Serão discutidos os riscos críticos presentes nas operações da Gerdau, com destaque para o Espaço Confinado, um dos principais focos de atenção. Serão explorados os procedimentos atuais de verificação e inspeção desses espaços, bem como as limitações e lacunas existentes.
 
 ## Proposta de valor (Value Proposition Canvas)
 
@@ -112,122 +129,150 @@ A matriz de riscos é uma ferramenta visual utilizada para identificar e avaliar
 
 ### Abordagens
 
-- Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
-
-- Manutenabilidade do Hardware: Como estamos lidando com uma implementação física, ela estará exposta às intempéries que podem diminuir a vida útil de seus componentes. Como plano de ação para esse risco, vamos considerar opções de proteção do hardware.
-
-- Falhas de comunicação na equipe que está desenvolvendo o projeto: Para mitigar esse risco, aplicaremos derivações da metodologia ágil para manter a comunicação entre os membros do grupo sempre alinhada e focada no consenso entre as partes. Além disso, definiremos claramente os papéis e responsabilidades de cada membro da equipe, a fim de evitar ambiguidades e conflitos.
-
-- Falhas de comunicação na transmissão de dados: Estudaremos formas de manter a comunicação via wifi o mais estável possível, considerando a melhor eficiência do sistema implementado. Também estabeleceremos procedimentos para monitorar continuamente a qualidade da transmissão de dados e para solucionar rapidamente quaisquer problemas que possam surgir.
-
-- Falta de resistência do hardware a ambientes hostis: Para garantir a resistência do sistema a possíveis condições hostis, como temperaturas diferentes do ambiente, selecionaremos componentes de alta qualidade e resistência, além de considerar soluções de proteção adicionais, como caixas de proteção e materiais de vedação.
-
-- Aumento exagerado do escopo do projeto: Para garantir a entrega da melhor solução possível, pensando nos riscos anteriormente citados, definiremos claramente o escopo do projeto e as funcionalidades a serem desenvolvidas. Também implementaremos processos de gerenciamento de mudanças para avaliar qualquer nova solicitação de funcionalidade e garantir que ela seja consistente com os objetivos do projeto e viável em termos de prazo e recursos.
-
-- Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
-
+1. Falta de conhecimento prévio sobre o projeto: Como plano de ação para esse risco, nós, estudantes do Inteli desenvolvendo o projeto, nos comprometemos a realizar todos os estudos necessários para cumprir com excelência todas as regras de negócio propostas pelo parceiro para o projeto.
+2. Manutenabilidade do Hardware: Como estamos lidando com uma implementação física, ela estará exposta às intempéries que podem diminuir a vida útil de seus componentes. Como plano de ação para esse risco, vamos considerar opções de proteção do hardware.
+3. Falhas de comunicação na equipe que está desenvolvendo o projeto: Para mitigar esse risco, aplicaremos derivações da metodologia ágil para manter a comunicação entre os membros do grupo sempre alinhada e focada no consenso entre as partes. Além disso, definiremos claramente os papéis e responsabilidades de cada membro da equipe, a fim de evitar ambiguidades e conflitos.
+4. Falhas de comunicação na transmissão de dados: Estudaremos formas de manter a comunicação via wifi o mais estável possível, considerando a melhor eficiência do sistema implementado. Também estabeleceremos procedimentos para monitorar continuamente a qualidade da transmissão de dados e para solucionar rapidamente quaisquer problemas que possam surgir.
+5. Falta de resistência do hardware a ambientes hostis: Para garantir a resistência do sistema a possíveis condições hostis, como temperaturas diferentes do ambiente, selecionaremos componentes de alta qualidade e resistência, além de considerar soluções de proteção adicionais, como caixas de proteção e materiais de vedação.
+6. Aumento exagerado do escopo do projeto: Para garantir a entrega da melhor solução possível, pensando nos riscos anteriormente citados, definiremos claramente o escopo do projeto e as funcionalidades a serem desenvolvidas. Também implementaremos processos de gerenciamento de mudanças para avaliar qualquer nova solicitação de funcionalidade e garantir que ela seja consistente com os objetivos do projeto e viável em termos de prazo e recursos.
+7. Vazamento eletrostático ou outro tipo de reação que pode colocar o gás dentro do duto em combustão: Como plano de ação para mitigar esse risco, isolaremos os circuitos para evitar vazamentos eletrostáticos.
+   
 ## Matriz Oceano Azul
 
 A matriz oceano azul foi desenvolvida com o objetivo de descobrir novas oportunidades de mercado e criar um produto único de alta qualidade, diferente dos concorrentes. Ademais, é possível ter um maior entendimento do que a Gerdau precisa e trazer melhorias/adaptações para o protótipo final atendendo às expectativas e necessidades da empresa.
 
-Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados.
-Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
+Nossa matriz oceano azul foi feita com base na análise entre nosso produto e os atuais concorrentes no mercado de robôs confinados. Levamos em conta 6 atributos, são eles: preço, qualidade, tecnologia, conforto, comodidade e praticidade.
+
+1. Preço: Neste atributo, buscamos oferecer um preço competitivo em relação aos concorrentes, levando em consideração o valor percebido pelos clientes. A ideia é fornecer uma solução acessível e que proporcione um excelente custo-benefício.
+2. Qualidade: A qualidade é um elemento crucial para o sucesso do produto. Buscamos entregar um robô em espaço confinado que seja robusto, durável e confiável, capaz de lidar com as demandas e desafios desse ambiente de forma eficiente e segura.
+3. Tecnologia: A inovação tecnológica é um diferencial importante. Nosso objetivo é oferecer uma solução que utilize as tecnologias mais avançadas disponíveis, como sensores de alta precisão, algoritmos inteligentes de processamento de dados e sistemas de comunicação de última geração.
+4. Conforto: A experiência do usuário é um fator determinante. Nosso robô em espaço confinado será projetado levando em consideração o conforto e a ergonomia, permitindo uma interação fácil e intuitiva para os operadores, mesmo em ambientes desafiadores.
+5. Comodidade: Além de fornecer uma solução eficiente, buscamos facilitar o uso e a integração do robô em espaço confinado com os processos existentes. Isso inclui aspectos como a facilidade de transporte, configuração rápida e interface amigável, visando minimizar o tempo de implantação e aumentar a conveniência para os usuários.
+6. Praticidade: A praticidade está relacionada à facilidade de uso, manutenção e suporte técnico. Nosso produto será projetado para simplificar as operações, minimizando a necessidade de treinamento extenso e oferecendo recursos de manutenção simplificados, com suporte técnico ágil e eficiente.
 
 ![Matriz Oceano Azul](https://github.com/2023M6T2-Inteli/Splinters/blob/dev/docs/assets/matriz%20oceano%20azul.png)
 
 Justificativa das pontuações referentes ao oceano azul:
 
-- Preço: Através da parceria entre Inteli e Gerdau e da análise financeira realizada pelo grupo, concluímos que nosso produto tem um preço mais acessível em comparação aos produtos já consolidados no mercado, o que resultou em uma nota 8 na matriz.
+1. Preço: A parceria entre Inteli e Gerdau permitiu uma análise financeira detalhada, resultando em um produto com um preço mais acessível em comparação aos produtos já consolidados no mercado. Essa estratégia busca conquistar clientes que buscam uma solução de qualidade a um custo mais atrativo, refletindo na pontuação de 8 na matriz.
+2. Qualidade: Considerando o contexto educacional do projeto, no qual o produto será desenvolvido por estudantes, é importante reconhecer que a equipe possui recursos e experiência limitados em relação a concorrentes que contam com engenheiros formados e empresas estabelecidas. Portanto, embora se busque entregar um produto de alta qualidade, a pontuação pode ser um pouco menor em comparação aos competidores.
+3. Tecnologia: No desenvolvimento do projeto, serão utilizados softwares de ponta, alinhados com as demandas do mercado. No entanto, é importante mencionar que o hardware será fornecido pela faculdade, o que pode impactar a excelência da solução proposta. Essa limitação é decorrente do contexto educacional do projeto e é necessário considerá-la na avaliação da pontuação atribuída.
+4. Conforto: A parceria entre Inteli e Gerdau oferece ao cliente a oportunidade de participar ativamente no processo de desenvolvimento do produto, sugerindo modificações e acompanhando de perto o progresso. Essa interação direta proporciona maior conforto ao cliente, garantindo que suas necessidades sejam atendidas de forma personalizada.
+5. Comodidade: A presença da Gerdau durante todo o desenvolvimento do produto permite uma abordagem personalizada e customizada para atender às necessidades específicas do cliente. Essa proximidade e colaboração com a empresa garantem um processo mais conveniente e alinhado com as expectativas do cliente.
+6. Praticidade: Embora possa exigir mais tempo e esforço em comparação com a simples compra de um robô pronto para uso, o produto será customizado de acordo com as necessidades do cliente. Essa abordagem resulta em uma solução mais prática em termos de manutenção e utilização, atendendo às demandas específicas do ambiente confinado.
 
-- Qualidade: Considerando que o produto será desenvolvido por estudantes em um contexto educacional, a nota dada à qualidade é um pouco menor em relação aos concorrentes que possuem uma equipe de engenheiros já formados e uma empresa já estabelecida.
-
-- Tecnologia: Para o desenvolvimento do projeto, utilizaremos softwares importantes e requisitados no mercado, mas o hardware será fornecido pela faculdade, o que pode não ser ideal para a solução proposta. Isso ocorre devido ao contexto educacional do projeto.
-
-- Conforto: A parceria entre Inteli e Gerdau oferece ao cliente a possibilidade de sugerir e acompanhar de perto o desenvolvimento do produto, o que garante mais liberdade e conforto durante o processo.
-
-- Comodidade: A presença da Gerdau durante o desenvolvimento do produto garante que o serviço seja customizado de acordo com as necessidades do cliente, trazendo comodidade na hora de desenvolver a solução.
-
-- Praticidade: Embora não seja tão prático quanto simplesmente comprar um robô sob demanda, o produto será customizado para o cliente, o que resultará em facilidade de manutenção e utilização.
-
-Após análise cuidadosa do gráfico, identificamos fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Além disso, observamos que o nosso produto se encontra no mesmo quadrante que produtos já consolidados no mercado, o que nos leva a propor um projeto com similaridades.
+Após uma análise cuidadosa do gráfico, identificamos os fatores que devem ser eliminados, reduzidos, aumentados e criados em nosso projeto. Além disso, notamos que nosso produto se encontra no mesmo quadrante que produtos já consolidados no mercado, o que nos leva a propor um projeto com similaridades. Essa abordagem nos permitirá construir sobre as melhores práticas existentes, ao mesmo tempo em que buscamos diferenciar-nos com melhorias e adaptações específicas para atender às expectativas e necessidades da empresa Gerdau.
 
 **Eliminar**
 
-- Robôs grandes e desajeitados que não podem manobrar em espaços estreitos
-- Robôs que não são seguros para uso em ambientes perigosos e confinados
-- Robôs que não têm sensores para ajudar na navegação e na análise de dados atmosféricos
+- Robôs grandes e desajeitados que não podem manobrar em espaços estreitos: A proposta é eliminar a limitação de tamanho e tornar o robô mais compacto e ágil, capaz de operar em ambientes confinados e de difícil acesso.
+- Robôs que não são seguros para uso em ambientes perigosos e confinados: Buscamos eliminar qualquer risco de segurança, desenvolvendo um robô projetado especificamente para operar em ambientes confinados, com recursos de segurança aprimorados e certificações adequadas.
+- Robôs que não têm sensores para ajudar na navegação e na análise de dados atmosféricos: O objetivo é eliminar a limitação de coleta de informações ambientais, incorporando sensores avançados que permitam uma análise precisa dos dados atmosféricos, identificando riscos e fornecendo alertas em tempo real.
 
 **Reduzir**
 
-- Custo de fabricação de robôs, mantendo a qualidade e a segurança
-- Complexidade de operação do robô, tornando-o fácil de usar
-- Tempo necessário para a manutenção do robô
+- Custo de fabricação de robôs, mantendo a qualidade e a segurança: Buscamos otimizar os processos de fabricação, explorar parcerias estratégicas e utilizar tecnologias eficientes para reduzir os custos de produção, sem comprometer a qualidade e a segurança do produto final.
+- Complexidade de operação do robô, tornando-o fácil de usar: Simplificaremos a interface e a operação do robô, desenvolvendo uma solução intuitiva e fácil de usar, mesmo para usuários não especializados. Isso reduzirá a curva de aprendizado e facilitará a adoção da tecnologia.
+- Tempo necessário para a manutenção do robô: Projetaremos o robô com uma arquitetura modular e componentes de fácil substituição, reduzindo o tempo necessário para a manutenção e minimizando as interrupções nas operações.
 
 **Elevar**
 
-- Agilidade e capacidade de manobra do robô em terrenos difíceis, bem como uma melhor análise e coleta de dados atmoféricos
-- Confiabilidade e durabilidade do robô
-- Capacidade de navegação autônoma em ambientes confinados
+- Agilidade e capacidade de manobra do robô em terrenos difíceis, bem como uma melhor análise e coleta de dados atmosféricos: Nossa solução se concentrará em aprimorar a mobilidade do robô em terrenos desafiadores, tornando-o capaz de navegar com facilidade e coletar dados atmosféricos de forma precisa e abrangente.
+- Confiabilidade e durabilidade do robô: Buscaremos aprimorar a confiabilidade e a durabilidade do robô, utilizando materiais de alta qualidade, testes rigorosos e implementando medidas de segurança adicionais para garantir um desempenho consistente e uma vida útil prolongada.
+- Capacidade de navegação autônoma em ambientes confinados: Nosso objetivo é desenvolver algoritmos avançados de navegação autônoma, permitindo que o robô mapeie e navegue de forma independente em ambientes confinados, otimizando a eficiência e minimizando a necessidade de intervenção humana.
 
 **Criar**
 
-- Novas funcionalidades para o robô, como a capacidade de detectar e responder a emergências em tempo real
-- Novas formas de comunicação do robô com o operador
-- Criar uma nova feature integrável com o sistema da Gerdau
+- Novas funcionalidades para o robô, como a capacidade de detectar e responder a emergências em tempo real: Implementaremos recursos avançados de detecção de emergências, como a identificação de gases tóxicos, incêndios ou situações de perigo iminente, permitindo uma resposta rápida e eficaz.
+- Novas formas de comunicação do robô com o operador: Exploraremos tecnologias de comunicação inovadoras, como transmissão de vídeo em tempo real e interfaces de realidade aumentada, para aprimorar a interação e a colaboração entre o robô e o operador, mesmo à distância.
+- Criar uma nova feature integrável com o sistema da Gerdau: Desenvolveremos uma funcionalidade exclusiva e personalizada que poderá ser integrada perfeitamente ao sistema existente da Gerdau, proporcionando uma solução completa e adaptada às necessidades específicas da empresa.
 
 # Entendimento do Metadesign
 
 ## Fatores mercadológicos
 
 **Qual é o seu produto e como ele se orienta ao mercado? Como ele é precificado?**
-Nosso produto consiste no robô "TurtleBot 3 Burger", programado para operar em ambientes confinados e coletar dados a partir de sensores de alta precisão. Esses dados são analisados por um operador, por meio de uma interface, para fornecer informações valiosas sobre o ambiente e suas condições atmosféricas, ajudando a prevenir acidentes e melhorar a produtividade. Para determinar o preço do nosso produto, consideramos vários fatores, incluindo o custo dos componentes e sensores utilizados, mão de obra necessária para desenvolvimento e implementação, despesas anuais de manutenção e o custo geral do projeto. Esses fatores são avaliados por meio de uma análise financeira, que nos permite chegar a um preço justo e competitivo para o mercado.
+
+Nosso projeto proposto consiste em desenvolver um robô para inspeção de ambientes confinados, visando garantir a segurança dos funcionários e evitar acidentes decorrentes das condições atmosféricas. O robô será equipado com sensores de alta precisão para analisar a presença de gases e outras condições ambientais, fornecendo informações em tempo real aos operadores. Nosso produto se orienta ao mercado industrial, principalmente em setores como manufatura, logística e transporte, onde a adoção de tecnologias de automação, como AGVs, está se tornando cada vez mais comum.
+
+A precificação do nosso produto levará em consideração diversos fatores, como o custo dos componentes e sensores utilizados, mão de obra necessária para o desenvolvimento e implementação, despesas anuais de manutenção e o custo geral do projeto. Realizaremos uma análise financeira abrangente para determinar um preço justo e competitivo para o mercado, considerando também a demanda e o valor agregado que nossa solução oferece em termos de segurança e eficiência.
 
 **Qual é o cenário do mercado no qual o projeto se insere?**
-A adoção de AGVs na manutenção industrial tem se tornado cada vez mais comum em escala global, principalmente em empresas de manufatura, logística e transporte que buscam aumentar sua eficiência e competitividade. No entanto, em São Paulo, Brasil, essa tecnologia ainda está em estágio inicial de adoção, com apenas algumas empresas de grande porte implementando AGVs em seus processos de transporte e manutenção. Apesar disso, a crescente demanda por eficiência e redução de custos pode levar a uma maior adoção de AGVs na manutenção industrial em São Paulo e em outras regiões do Brasil. Ademais, a falta de mão de obra qualificada na indústria pode impulsionar ainda mais a adoção de tecnologias de automação e robótica, incluindo AGVs.
 
-Por fim, o projeto que estamos desenvolvendo se insere em um nicho específico, mas de grande importância para empresas que priorizam a segurança em seus processos industriais. Nosso objetivo é utilizar robôs para a manutenção e segurança de espaços confinados, fornecendo informações precisas e em tempo real sobre as condições ambientais e evitando a exposição de operadores humanos a riscos.
+A adoção de robôs AGVs na indústria está em ascensão globalmente, com empresas buscando aumentar sua eficiência operacional e reduzir custos por meio da automação. No entanto, no contexto específico de São Paulo, Brasil, a utilização de AGVs na manutenção industrial ainda está em estágio inicial, sendo adotada apenas por algumas grandes empresas. Apesar disso, a demanda por eficiência e a escassez de mão de obra qualificada na indústria podem impulsionar a adoção de tecnologias de automação e robótica, incluindo AGVs, em São Paulo e outras regiões do Brasil.
+
+Nosso projeto se insere em um nicho específico, com foco na segurança em ambientes confinados. Visamos atender empresas que priorizam a segurança de seus processos industriais, oferecendo uma solução inovadora e tecnologicamente avançada. Ao considerar o cenário brasileiro de AGVs e as necessidades específicas de nossos clientes, buscamos contribuir para a modernização e automação dos processos de segurança na indústria.
 
 **Qual a visão do projeto proposto?**
 
-Assim, o projeto tem como objetivo criar um AGV (Automated Guided Vehicle) capaz de entrar em espaços confinados e, por meio de sensores, analisar a presença de gases no ambiente, enviando essas leituras para o operador. Acreditamos que nossa solução pode modernizar e automatizar processos de segurança na Gerdau, melhorando a segurança dos funcionários durante a realização desses procedimentos.
-
-Embora o uso de AGVs na segurança industrial ainda seja incipiente em São Paulo, no Brasil como um todo há um grande investimento nessa tecnologia. Não há restrições específicas para o uso de AGVs no país, mas existem normas de segurança que devem ser seguidas para garantir a integridade física dos trabalhadores e evitar acidentes.
-
-Ao desenvolvermos nosso projeto, consideramos as restrições locais e o cenário brasileiro de AGVs, focando em atender às necessidades específicas de nosso cliente e agregar segurança ao processo de análise do ambiente.
+O projeto proposto tem como visão principal criar uma simulação de um robô de inspeção para ambientes confinados que possa ser utilizado pela Gerdau, visando melhorar a segurança dos funcionários durante os procedimentos realizados nesses espaços. Através da automação e coleta de dados precisos, pretendemos modernizar e aprimorar os processos de segurança industrial, contribuindo para um ambiente de trabalho mais seguro e eficiente.
 
 ## Sistema produto/design
 
 **Qual a missão do projeto proposto?**
-O projeto tem como objetivo principal que um robô faça a inspeção das condições atmosféricas de um ambiente confinado, que por conceito, designa um espaço fechado que pode apresentar condições inapropriadas para a presença humana. Essa inspeção é necessária para garantir que uma pessoa adentre o ambiente sem sofrer danos à sua saúde, ou haver algum tipo de acidente decorrente das condições atmosféricas. Portanto, a principal missão do projeto é garantir a segurança dos funcionários da Gerdau, de modo a evitar acidentes e aumentar a produtividade.
+
+A principal missão do nosso projeto é garantir a segurança dos funcionários da Gerdau, fornecendo um robô de inspeção de ambientes confinados. Esse robô, equipado com sensores de alta precisão, será capaz de analisar as condições atmosféricas e fornecer informações em tempo real aos operadores, evitando a exposição humana a riscos e prevenindo acidentes decorrentes dessas condições. Além disso, buscamos aumentar a produtividade por meio da automação de tarefas de inspeção, permitindo que os funcionários se concentrem em atividades de maior valor agregado.
 
 **Como se pensa em manter uma unidade formal entre o design do produto, as formas de divulgação e venda?**
-De uma maneira geral, o produto buscará compartilhar confiança em atuar na manutenção do setor, por meio de inovações tecnológicas na análise e mapeamento de zonas confinadas improprias a pessoas. A associação da marca ao propósito da solução buscará melhor reflexão do setor de segurança no trabalho ao contextos ao qual o robô irá se inserir, sendo relevante a demonstração da evolução do setor ao longos dos tempos ao momento de termos processos que não é mais necessário vidas humanas em serviços arriscados, sendo isso uma proposta de marketing e venda apresentada a partir de uma percepção evolutiva do problema e solução.
+
+A unidade formal entre o design do produto, as formas de divulgação e venda é essencial para transmitir uma mensagem consistente e fortalecer a identidade da solução. A estética do produto deve refletir sua função e propósito, transmitindo confiança e inovação. O design deve ser intuitivo, com interfaces claras e amigáveis para os operadores.
+
+Na divulgação e venda da solução, é importante destacar os benefícios de segurança, eficiência e sustentabilidade ambiental que nosso produto oferece. Utilizaremos estratégias de marketing que enfatizem a evolução do setor de segurança industrial, destacando a importância de investir em tecnologias avançadas para prevenir acidentes e proteger os trabalhadores. Além disso, podemos utilizar materiais promocionais, como folhetos, vídeos e apresentações, para transmitir a proposta de valor do produto de forma clara e persuasiva.
+
+A unidade formal entre o design do produto e as formas de divulgação e venda contribuirá para uma identidade consistente da solução, fortalecendo sua aceitação no mercado e facilitando a compreensão de seus benefícios pelos clientes em potencial.
 
 ## Sustentabilidade ambiental
 
-Nosso produto é desenvolvido com foco na ecoeficiência, utilizando fontes renováveis de energia, como baterias recarregáveis, em vez de baterias alcalinas, sem a utilização de combustíveis fósseis. Além disso, o robô é projetado para ter uma vida útil prolongada, permitindo seu uso em futuros projetos da empresa e reduzindo a necessidade de substituição constante.
+Nosso projeto tem um forte compromisso com a sustentabilidade ambiental. O design do produto é orientado para a ecoeficiência, buscando minimizar o impacto ambiental. Optamos por utilizar fontes renováveis de energia, como baterias recarregáveis, em vez de baterias alcalinas e combustíveis fósseis. Dessa forma, reduzimos as emissões de gases de efeito estufa e promovemos a transição para uma matriz energética mais limpa.
 
-Equipado com sensores de última geração, o robô realiza análises precisas do ambiente, reduzindo acidentes e prevenindo falhas que possam afetar o meio ambiente. Isso garante a preservação da saúde dos trabalhadores envolvidos nas inspeções e contribui para um ambiente de trabalho mais seguro.
+Além disso, nosso robô é projetado para ter uma vida útil prolongada, com possibilidade de reutilização em futuros projetos da empresa, reduzindo a geração de resíduos eletrônicos e a necessidade de substituição frequente. A escolha de sensores de alta precisão contribui para a análise precisa do ambiente, prevenindo acidentes que poderiam resultar em danos ao meio ambiente.
 
-Além disso, nosso objetivo é envolver os trabalhadores no processo, garantindo sua participação sem comprometer sua segurança ou saúde. Com isso, buscamos não apenas oferecer um produto eficiente, mas também promover uma cultura de responsabilidade ambiental e social dentro da empresa.
+Para promover uma cultura de responsabilidade ambiental e social, buscamos envolver os trabalhadores no processo, garantindo sua participação e segurança. Além disso, podemos promover treinamentos e conscientização sobre questões ambientais e incentivar práticas sustentáveis dentro da empresa, como a redução do consumo de energia e a gestão adequada de resíduos.
 
-## Análise Financeira
+Ao considerar a sustentabilidade ambiental em nosso projeto, não apenas oferecemos uma solução eficiente, mas também contribuímos para a preservação do meio ambiente e promovemos uma atitude responsável em relação aos recursos naturais.
 
-A Gerdau tem sedes industriais em 9 países nas Américas, mas consideraremos a implementação apenas para as unidades no Brasil. Segundo o site oficial da empresa, a Gerdau possui 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em território nacional. Considerando que para obter o resultado desejado seja necessário a implementação de 1 robô por unidade, seriam necessários 39 robôs, o que exigiria um investimento inicial de R$1.076.700,00. Para a manutenção da solução, estima-se um gasto anual de R$338.100,00, incluindo manutenção, custos operacionais e uma margem de aproximadamente 15% para possíveis problemas. A receita esperada com o projeto, como descrito anteriormente, é de R$3.942.900,00/ano, ou seja, é esperado já no primeiro ano um lucro de R$2.528.100,00. #(custo anual - receita anual)
+## Influências socioculturais
+Nosso projeto é influenciado pelas demandas e necessidades socioculturais relacionadas à segurança dos trabalhadores e à eficiência operacional na indústria. Há uma crescente preocupação com a segurança no ambiente de trabalho e um maior interesse em adotar tecnologias avançadas para prevenir acidentes e proteger os funcionários. Além disso, a automação e a robótica estão se tornando cada vez mais comuns na indústria, refletindo uma mudança cultural em direção à modernização e eficiência.
+
+Nossa solução busca atender essas influências socioculturais, oferecendo um robô de inspeção que contribua para um ambiente de trabalho seguro e produtivo. Através da automação e coleta de dados precisos, nosso projeto reflete a preocupação com a segurança e a busca por melhores condições de trabalho. Além disso, promovemos uma cultura de inovação e avanço tecnológico, incentivando a adoção de soluções mais eficientes e sustentáveis na indústria.
+
+## Tipológico-formais e ergonômicos
+O design do nosso produto é orientado por considerações tipológico-formais e ergonômicas. Buscamos criar um robô de inspeção que seja funcional e eficiente em sua forma, levando em consideração as necessidades operacionais e as restrições de espaços confinados. O tamanho e a forma do robô são projetados para permitir fácil manobrabilidade e acesso a áreas de difícil alcance, garantindo uma inspeção abrangente e precisa.
+
+Além disso, consideramos a ergonomia na interação do operador com o robô. As interfaces e controles são projetados de forma intuitiva e ergonomicamente correta, minimizando a fadiga e o esforço durante a operação. Também levamos em consideração a segurança do operador, garantindo que o robô seja equipado com mecanismos de parada de emergência e sistemas de detecção de colisão.
+
+A combinação de considerações tipológico-formais e ergonômicas resulta em um design que atende tanto às necessidades operacionais quanto às exigências de segurança e eficiência.
+
+## Tecnologia produtiva e materiais empregados
+Nossa solução se baseia em tecnologia avançada para garantir a eficiência e a confiabilidade do produto. Utilizamos o Robot Operating System (ROS2) como base para o desenvolvimento do sistema embarcado, permitindo uma coordenação eficiente dos movimentos do robô e a integração dos sensores de alta precisão. Além disso, implementamos interfaces de comunicação pub/sub (publisher/subscriber) e HTTP para garantir a troca de informações em tempo real entre o robô, o backend e o frontend do sistema.
+
+Em relação aos materiais empregados, utilizamos componentes duráveis e de alta qualidade para garantir a resistência e a longevidade do robô. O uso de materiais leves, mas robustos, contribui para a mobilidade e a facilidade de manobra do robô em ambientes confinados. Também priorizamos a utilização de materiais e componentes que sejam sustentáveis e ecologicamente corretos, reduzindo o impacto ambiental do produto.
+
+A tecnologia produtiva empregada envolve processos de fabricação avançados, como usinagem de precisão, montagem automatizada e testes rigorosos para garantir a qualidade do produto final. Buscamos otimizar os processos produtivos para garantir uma produção eficiente e atender à demanda do mercado.
+
+A escolha cuidadosa de tecnologia produtiva e materiais empregados é fundamental para a qualidade, desempenho e sustentabilidade do nosso produto.
+
+# Análise Financeira
+
+A Gerdau possui sedes industriais em 9 países nas Américas, mas neste projeto consideraremos apenas as unidades localizadas no Brasil. De acordo com as informações fornecidas no site oficial da empresa, existem 25 usinas siderúrgicas, 10 unidades de transformação e corte e dobra, 2 unidades de mineração e 2 unidades de aços em território nacional. Levando em conta a necessidade de implementação de 1 robô por unidade para alcançar o resultado desejado, seria preciso adquirir um total de 39 robôs. Isso exigiria um investimento inicial estimado em R$1.076.700,00. Para a manutenção da solução, estima-se um custo anual de R$338.100,00, que inclui despesas de manutenção, custos operacionais e uma margem de cerca de 15% para eventuais problemas. Com base na descrição anterior, a receita esperada com o projeto é de R$3.942.900,00 por ano. Portanto, já no primeiro ano, espera-se um lucro de R$2.528.100,00, considerando a diferença entre a receita anual e o custo anual.
 
 ### Custos
 
 - Custo do hardware (TurtleBot, Raspberry Pi 3, câmera DobotMagical, sensores de gases)
-  - TutleBot + raspberry Pi 3 -> R$17000/robo
-  - Sensores de gases -> R$400/robo
-  - Camera -> R$400/robo
+  - TurtleBot + Raspberry Pi 3: R$17.000/robô
+  - Sensores de gases: R$400/robô
+  - Câmera: R$400/robô
+
 - Custos de mão de obra (desenvolvimento de software, montagem, testes)
-  - 2 Meses; equipe de 3 engenheiros -> R$51000 (fonte: Glassdoor)
-  - Implementação do projeto (1 engenheiro) -> R$8.500/local (fonte: Glassdoor)
+  - Duração: 2 meses
+  - Equipe: 3 engenheiros
+  - Custo: R$51.000 (fonte: Glassdoor)
+  - Implementação do projeto (1 engenheiro): R$8.500/local (fonte: Glassdoor)
+
 - Custos de manutenção e atualização do software
-  - Alocação da aplicação WEB - R$60.000/ano
-  - Manutenção Hardware - R$1000/ano*robo
-  - Custo Operacional - R$5000/ano*robo
+  - Alocação da aplicação WEB: R$60.000/ano
+  - Manutenção de hardware: R$1.000/ano*robô
+  - Custo operacional: R$5.000/ano*robô
 
 ### Receitas
 
@@ -252,7 +297,9 @@ Com a implementação do robô, esperamos prevenir 90% dos acidentes, o que nos 
 
 # Arquitetura do Sistema
 
-## Diagrama de blocos - Versão 1
+A arquitetura do sistema proposta para a simulação e demonstração de um robô em espaço confinado com capacidade de obtenção de informações do ambiente e avaliação preliminar de atividades de operação e/ou manutenção é baseada em um conceito de Prova de Conceito (POC) e Produto Mínimo Viável (MVP). O objetivo é desenvolver um sistema robótico autônomo que possa explorar e interagir com o ambiente confinado de forma segura e eficiente. A arquitetura envolve a integração de diferentes componentes, como sensores para detecção de riscos atmosféricos, sistemas de navegação autônoma, algoritmos de tomada de decisão e um sistema de alerta sonoro ou outro meio de comunicação para notificar a presença de riscos. Além disso, a solução inclui a implementação de uma versão física simplificada do robô para fins de demonstração. Através dessa abordagem, busca-se validar a viabilidade e eficácia do conceito antes de um desenvolvimento completo do produto.
+
+## Diagrama de blocos
 
 <img src = "https://user-images.githubusercontent.com/99203402/235358909-034028ef-b4c0-4321-baf8-dd8a06624598.jpg" width="600">
 
@@ -272,21 +319,21 @@ Temos três componentes principais na arquitetura do sistema:
 
 ## Análise de requisitos
 
-### Requisitos Funcionais
+**Requisitos Funcionais**
 
-- Inspeção dos ambientes durante e após da manutenção
-- Detecção de condições atmosféricas (presença de gases tóxicos) dos espaços confinados
-- Sensores para detectar os gases, e talvez detectar colisões
-- Robô ser capaz de retornar ao ponto inicial em casos de erros/defeitos/objetos no meio do caminho
-- Movimentação por joystick (casos de emergência)
-- Interface web apresentando um dashboard com dados coletados e imagens em tempo real, além de poder gerar relatórios em PDF
+1. Inspeção dos ambientes durante e após da manutenção
+2. Detecção de condições atmosféricas (presença de gases tóxicos) dos espaços confinados
+3. Sensores para detectar os gases, e talvez detectar colisões
+4. Robô ser capaz de retornar ao ponto inicial em casos de erros/defeitos/objetos no meio do caminho
+5. Movimentação por joystick (casos de emergência)
+6. Interface web apresentando um dashboard com dados coletados e imagens em tempo real, além de poder gerar relatórios em PDF
 
-### Requisitos não funcionais
+**Requisitos não funcionais**
 
-- Funcionamento confiável e eficiente no processo de monitoramento e inspeção
-- Confiança nos dados gerados
-- Monitoramento e inspeção em tempo real
-- Interface web de fácil compreensão por aqueles usuários que a utilizem
+1. Funcionamento confiável e eficiente no processo de monitoramento e inspeção
+2. Confiança nos dados gerados
+3. Monitoramento e inspeção em tempo real
+4. Interface web de fácil compreensão por aqueles usuários que a utilizem
 
 ## Análise de viabilidade técnica
 
@@ -296,7 +343,7 @@ Ademais, o robô será equipado com sensores integrados projetados para detectar
 
 Por fim, no que diz respeito ao armazenamento de dados, o robô contará com um sistema de comunicação baseado em tópicos, sendo assim essa configuração permite que as informações sejam transmitidas e armazenadas de forma eficiente.
 
-# Interface web (frontend)
+# Interface de usuário (frontend)
 
 Em nossa interface atual, estamos implementando algumas atualizações para melhorar a experiência do usuário. Começamos com a adição de uma tela de login que utiliza o nextAuth, uma biblioteca que nos permite autenticar apenas usuários com domínio da Gerdau. Isso garante que apenas pessoas autorizadas tenham acesso ao sistema.
 
@@ -318,7 +365,6 @@ Essas melhorias na interface visam tornar o uso do sistema mais intuitivo, efici
 ### Página de histórico
 <img width="600" alt="Captura de tela 2023-05-29 141457" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/f0c50d63-ca09-4d20-bac0-31f589e2a17c">
 
-
 ## Entradas e saídas
 
 a) Definição das entradas e saídas necessárias para a interação com o usuário de modo a atender suas necessidades.
@@ -338,13 +384,17 @@ Para proporcionar uma experiência de usuário otimizada, decidimos desenvolver 
 
 <img width="565" alt="Captura de tela 2023-05-09 155102 (1)" src="https://github.com/2023M6T2-Inteli/Splinters/assets/99203402/1fd27f43-12cc-4b77-93ce-5603a29dff43">
 
-# Simulação de rota
+# Sistema de locomoção e otimização de rota
 
-A otimização de rotas é um elemento essencial no desenvolvimento de um sistema eficiente para um robô móvel. Neste contexto, a simulação apresentará os principais aspectos a serem abordados ao implementar um sistema de otimização de rota.
+A otimização de rotas é um componente fundamental para o desenvolvimento de um sistema eficiente em um robô móvel. Com o objetivo de abordar essa questão de forma inteligente, a simulação desempenha um papel crucial, pois nos permite explorar e compreender os principais aspectos relacionados à implementação de um sistema de otimização de rotas.
 
-Inicialmente, foi realizada uma análise detalhada e enumeração das possíveis rotas de navegação do robô, levando em consideração as exigências específicas da aplicação em questão e o caminho mais rápido. Em seguida, discutimos a importância de uma representação precisa do ambiente e das rotas escolhidas, utilizando grafos como uma ferramenta eficiente para visualizar e modelar as conexões entre os pontos relevantes.
+Em um primeiro momento, é imprescindível realizar uma análise minuciosa, examinando e enumerando todas as possíveis rotas de navegação que o robô pode seguir. Nesse processo, levam-se em consideração as exigências específicas da aplicação em questão, bem como a busca pelo caminho mais rápido e eficiente. A identificação dessas rotas viáveis é crucial para garantir um planejamento adequado e assertivo.
 
-A seguir, temos o algoritmo em grafo para otimizar as rotas, com base em uma heurística que faça sentido no contexto do projeto.
+Posteriormente, é crucial reconhecer a importância de uma representação precisa do ambiente e das rotas selecionadas. Para isso, os grafos surgem como uma ferramenta extremamente eficaz, permitindo a visualização e modelagem das conexões entre os pontos relevantes. Essa representação gráfica oferece uma perspectiva clara das interações espaciais entre os locais a serem visitados, auxiliando na análise e tomada de decisões.
+
+Uma vez que as rotas foram mapeadas e o ambiente foi devidamente representado, é possível utilizar algoritmos em grafos para otimizar essas rotas. Esses algoritmos podem ser embasados em heurísticas que sejam coerentes e adequadas ao contexto do projeto em questão. A aplicação de heurísticas é essencial para orientar o robô na seleção da melhor rota possível, levando em consideração fatores como distância, tempo, obstáculos e outras restrições específicas.
+
+Dessa forma, a simulação e a aplicação de algoritmos em grafos oferecem uma abordagem inteligente para otimizar as rotas em sistemas de robôs móveis. Essa metodologia permite uma análise abrangente, considerando diferentes cenários e restrições, e contribui para o desenvolvimento de sistemas eficientes e confiáveis. Ao buscar constantemente melhorias nessa área, abre-se espaço para avanços significativos em termos de produtividade, economia de recursos e eficiência operacional.
 
 ## Algoritmo em grafo e movimentação
 
@@ -360,21 +410,25 @@ O código também define uma função de retorno de chamada pose_callback para a
 
 Finalmente, o código define uma função main que cria um grafo de nós e arestas usando a entrada do usuário, encontra o melhor caminho através de todos os nós usando o algoritmo do problema do caixeiro viajante da biblioteca networkx, e controla um robô tartaruga para se mover ao longo do caminho usando rclpy. A função main inicializa rclpy, cria uma instância da classe TurtleController com o caminho calculado, gira até ser interrompida por um evento de usuário ou sistema, depois a destroi e desliga rclpy.
 
-### Sistema anticolisão
+## Sistema anticolisão (sistema de segurança)
 
-O sistema de anti-colisão implementado neste script utiliza o LIDAR (Light Detection and Ranging) do Turtlebot para verificar continuamente a presença de obstáculos à frente do robô. O LIDAR gera uma lista de pontos, representando as distâncias em relação ao robô. Os pontos selecionados para verificação correspondem às distâncias à frente do robô.
+O sistema de anticolisão implementado neste script representa uma abordagem inteligente para garantir a segurança do robô. Ele utiliza o LIDAR (Light Detection and Ranging) do Turtlebot, um dispositivo capaz de detectar a presença de obstáculos à frente do robô. O LIDAR gera uma lista de pontos que representam as distâncias entre o robô e os objetos ao seu redor. Nesse sistema, são selecionados os pontos que correspondem às distâncias à frente do robô para verificação contínua.
 
-Caso seja detectado um objeto a uma distância inferior a 30cm do robô, e diretamente em sua trajetória, ou seja, se o robô continuar avançando, ocorrerá uma colisão iminente. Nesse momento, o modo de movimentação automática é interrompido e o controle passa para o modo manual.
+Se o sistema detectar um objeto a uma distância inferior a 30cm do robô, diretamente em sua trajetória, é considerada uma colisão iminente. Nesse momento, o modo de movimentação automática é interrompido e o controle é transferido para o modo manual.
 
-No modo manual, o robô monitora as entradas do terminal, especificamente os comandos 'a', 'd', 'w', 'x' e 's', que correspondem a aumentar a velocidade angular para a esquerda, aumentar a velocidade angular para a direita, aumentar a velocidade linear para a frente, aumentar a velocidade linear para trás e parar completamente o robô, respectivamente. Essa funcionalidade permite que o operador do robô possa movimentá-lo para entender melhor o obstáculo através da câmera e desviar dele.
+No modo manual, o robô monitora os comandos inseridos pelo operador no terminal. Esses comandos incluem 'a', 'd', 'w', 'x' e 's', que aumentam a velocidade angular para a esquerda, aumentam a velocidade angular para a direita, aumentam a velocidade linear para a frente, aumentam a velocidade linear para trás e param completamente o robô, respectivamente. Essa funcionalidade permite que o operador do robô movimente-o manualmente para avaliar melhor o obstáculo por meio da câmera e desviá-lo de forma precisa.
 
-Além disso, o código também verifica a entrada 'k' para retornar ao modo automático. Quando essa entrada é recebida, o robô retoma o percurso preestabelecido e continua em direção ao próximo ponto que estava seguindo antes da interrupção.
+Além disso, o código também verifica o comando 'k' para retornar ao modo automático. Quando esse comando é recebido, o robô retoma sua rota predefinida e continua em direção ao próximo ponto que estava seguindo antes da interrupção.
 
-O objetivo principal desse sistema é garantir a segurança do robô, evitando colisões com obstáculos. Ele proporciona ao operador a capacidade de controlar manualmente o robô para analisar e evitar obstáculos de maneira mais precisa, antes de retornar ao modo automático e prosseguir com sua rota planejada.
+O objetivo principal desse sistema é assegurar a segurança do robô, evitando colisões com obstáculos. Ele oferece ao operador a capacidade de controlar manualmente o robô para analisar e evitar obstáculos de maneira mais precisa antes de retornar ao modo automático e prosseguir com sua rota planejada. Essa abordagem inteligente combina a detecção de obstáculos por meio do LIDAR, o controle manual e a retomada automática da rota para fornecer um sistema de segurança eficiente e confiável.
 
 <a href="https://www.youtube.com/watch?v=KR6Fwj-3By8">Video demontrando movimentação do robo com sistema de otimização de rotas e sistema anti colisão</a>
 
 # Sistema de visão computacional
+
+O sistema de visão computacional é uma área da inteligência artificial que visa capacitar computadores a interpretar e compreender o mundo visual, assim como os seres humanos. Utilizando algoritmos e técnicas avançadas, esse sistema é capaz de processar imagens e vídeos, identificar objetos, reconhecer padrões, realizar detecção de movimento, entre outras tarefas. 
+
+Dessa maneira, no projeto foi implementado o sistema de visão computacional utilizando o modelo YOLOv8 para detecção de rachaduras em paredes de concreto. Por meio da análise de imagens em tempo real capturadas por uma câmera, o sistema é capaz de identificar com precisão a presença de rachaduras, oferecendo uma solução eficiente para inspeções dos espaços confinados e manutenção preventiva.
 
 ## Implementação do sistema de visão computacional
 
@@ -432,6 +486,8 @@ No código acima, cada quadro capturado é passado para o modelo YOLO, que reali
 
 ## Validação da eficácia e performance do sistema de visão computacional
 
+A validação da eficácia e performance do sistema de visão computacional é um processo essencial para avaliar a capacidade do sistema em fornecer resultados precisos e confiáveis na detecção e análise de informações visuais. Durante essa validação, foram realizadas análises detalhadas das curvas de precisão do sistema, permitindo uma avaliação criteriosa de sua capacidade de identificar e classificar objetos com alta acurácia.
+
 ### Curva de confiança F1
 
 A F1 Confidence Curve é uma métrica usada para avaliar a confiabilidade de um modelo de aprendizado de máquina em tarefas de classificação binária, representando a relação entre o valor de confiança atribuído pelo modelo a uma previsão e a pontuação F1 resultante dessa previsão.
@@ -481,6 +537,122 @@ A matriz organiza as previsões em quatro categorias: verdadeiros positivos (TP)
 Quando os valores superiores são 0.79 e 1, indica que o modelo obteve uma alta taxa de acerto para a classe positiva, ou seja, isso significa que 79% das instâncias positivas foram corretamente classificadas como positivas, enquanto todas as instâncias negativas foram corretamente classificadas como negativas. 
 
 Já os valores inferiores, indicam que 21% das instâncias negativas foram erroneamente classificadas como positivas (falsos positivos), enquanto as demais instâncias negativas foram corretamente classificadas como negativas.
+
+# Backend
+
+O backend é uma parte essencial da arquitetura do sistema, fornecendo a infraestrutura necessária para processar e gerenciar os dados. Utilizamos o framework FastAPI e o Supabase para criar APIs eficientes e armazenar arquivos. Ele lida com operações como registro de imagens, interação com o banco de dados e acesso aos registros da visão computacional. Além disso, o websocket integra o ROS2 com o frontend, permitindo a transmissão em tempo real dos frames processados pelo modelo YOLO. Essa integração é fundamental para garantir uma comunicação eficiente entre os componentes do sistema.
+
+### Supabase e FastAPI
+
+Implementamos nossa infraestrutura de backend utilizando o framework FastAPI, uma solução que permite a criação eficiente e ágil de APIs. Todo o código está organizado em um arquivo principal chamado main.py, responsável por iniciar o servidor.
+
+Ao iniciar o servidor, disponibilizamos uma variedade de rotas (também conhecidas como endpoints) que viabilizam diferentes operações. Essas rotas foram desenvolvidas para lidar com o registro de imagens, interação com o banco de dados e acesso aos registros de imagens e frames analisados por meio da visão computacional previamente implementada.
+
+Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pelo YoloV8 para o Supabase, um serviço online utilizado para armazenar e gerenciar os arquivos. Essa API possibilita o envio seguro das imagens ao Supabase, garantindo seu armazenamento e permitindo a recuperação posterior, caso necessário.
+
+A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
+
+#### APIs e rotas
+
+### Websocket
+
+O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
+
+```
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    await websocket.accept()
+    connected_clients.add(websocket)
+    try:
+        while True:
+            data = await websocket.receive_text()
+            for client in connected_clients:
+                await client.send_text(data)
+    except Exception as e:
+        print(f"WebSocket connection closed with exception: {e}")
+    finally:
+        connected_clients.remove(websocket)
+```
+
+- Nesse sentido, esse canal wenbsocket é utilizada pelo subscriber do tópico "/camera" presente no arquivo streaming e implementado na classe "Streaming":
+
+```
+class Streaming(Node):
+
+  def __init__(self):
+    super().__init__('image_subscriber')
+    self.subscription = self.create_subscription(
+      Image, 
+      '/camera', 
+      self.listener_callback, 
+      10)
+    self.subscription 
+    self.bridge = CvBridge()
+    self.websocket_url = "ws://localhost:8000/ws"
+    self.websocket = websockets.connect(self.websocket_url)
+
+  async def send_frame_via_websocket(self, frame_base64):
+    async with self.websocket as websocket:
+      await websocket.send(frame_base64)
+
+  def listener_callback(self, data):
+    self.get_logger().info('Receiving video frame')
+    current_frame = self.bridge.imgmsg_to_cv2(data)
+    model = YOLO("./yolo/best.pt")
+    result = model.predict(current_frame, conf=0.6)
+    annotated = result[0].plot()
+    _, frames = cv2.imencode(".jpg", annotated)
+    frame_base64 = base64.b64encode(frames).decode("utf-8")
+    print ("início        " + frame_base64 + "        fim")
+    asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
+```
+
+- Segue uma foto que demonstra essa integração:
+
+![img_4917_720](https://github.com/2023M6T2-Inteli/Splinters/assets/89201795/a98ebefd-bad5-4b18-8c63-55f2d8117a7c)
+
+- Continuando no âmbito de comunicação via websocket, temos também dados de bateria protos para serem levados para o frontend via websocket. Aqui, nós estamos tendo ainda alguns problemas para deixar estável a comunicação tanto da bateria, quanto dos frames da câmera ( tentaremos nessa sprint explorar o socketio para testar se conseguimos melhorar essa trasmissão ). Abaixo o cógiddo da so subscriber da bateria, coletando dados de da voltagem publicados no tópico ```/battery_state```. O código também contempla o cálculo para retonar para o frontend a porcentagem da bateria do robô em tempo real:
+
+```
+import rclpy
+import asyncio
+import websockets
+from rclpy.node import Node
+from sensor_msgs.msg import BatteryState
+
+
+class Battery(Node):
+    def __init__(self):
+        super().__init__('battery_subscriber')
+        self.subscription = self.create_subscription(
+            BatteryState,
+            '/battery_state', 
+            self.listener_callback, 
+            10)
+        
+    async def send_battery_via_websocket(self, relative_battery_percent):
+        async with websockets.connect("ws://localhost:8000/battery") as websocket:
+            await websocket.send(relative_battery_percent)
+
+    def listener_callback(self, battery):
+        relative_battery_percent = (battery.voltage - 11)/1.6
+
+        asyncio.get_event_loop().run_until_complete(self.send_battery_via_websocket(str(relative_battery_percent)))
+        print(relative_battery_percent)
+
+def main():
+    rclpy.init()
+    battery = Battery()
+    rclpy.spin(battery)
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+```
+
+# Integração de sistemas
+
+A integração de sistemas desempenha um papel fundamental na arquitetura do sistema, permitindo que os três componentes principais - embarcado, backend e frontend - trabalhem de forma harmoniosa e coordenada. Através de uma cuidadosa integração, é possível estabelecer uma comunicação eficiente e confiável entre o robô, o backend e o frontend, garantindo o fluxo adequado de informações e a sincronização das funcionalidades. Essa integração se baseia na utilização de protocolos de comunicação como o ROS2, pub/sub e HTTP, que possibilitam a troca de dados entre os diferentes componentes do sistema. Através da integração de sistemas, é possível alcançar uma arquitetura robusta e escalável, capaz de oferecer um desempenho eficiente e uma experiência de usuário aprimorada.
 
 ## Integração do sistema de visão computacional com a arquitetura ROS2:
 
@@ -605,117 +777,7 @@ Para a implementação dessa integração foi necessário contruir um publisher 
     
 **Demonstração em vídeo:** https://www.youtube.com/watch?v=YvxhzSp2Roo
 
-## Backend
-
-### Supabase e FastAPI
-
-Implementamos nossa infraestrutura de backend utilizando o framework FastAPI, uma solução que permite a criação eficiente e ágil de APIs. Todo o código está organizado em um arquivo principal chamado main.py, responsável por iniciar o servidor.
-
-Ao iniciar o servidor, disponibilizamos uma variedade de rotas (também conhecidas como endpoints) que viabilizam diferentes operações. Essas rotas foram desenvolvidas para lidar com o registro de imagens, interação com o banco de dados e acesso aos registros de imagens e frames analisados por meio da visão computacional previamente implementada.
-
-Uma das APIs centrais tem a responsabilidade de enviar as imagens analisadas pelo YoloV8 para o Supabase, um serviço online utilizado para armazenar e gerenciar os arquivos. Essa API possibilita o envio seguro das imagens ao Supabase, garantindo seu armazenamento e permitindo a recuperação posterior, caso necessário.
-
-A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolvidas, juntamente com as informações necessárias para sua utilização e os caminhos de acesso correspondentes. O objetivo dessa descrição é fornecer uma compreensão clara das funcionalidades e capacidades do nosso backend, permitindo que os desenvolvedores interajam de forma adequada e eficaz com as APIs, inclusive aproveitando a API para enviar imagens ao Supabase.
-
-#### APIs e rotas
-
-### Websocket
-
-O websocket é implementado no nosso sistema para a integração do ros2 com o frontend para a transmissão dos frames, mediante utput do modelo YOLO, no frontend. O código abaixo descreve essa impmentação, a qual está presente no arquivo ```src/backend/app.py```:
-
-```
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    connected_clients.add(websocket)
-    try:
-        while True:
-            data = await websocket.receive_text()
-            for client in connected_clients:
-                await client.send_text(data)
-    except Exception as e:
-        print(f"WebSocket connection closed with exception: {e}")
-    finally:
-        connected_clients.remove(websocket)
-```
-
-- Nesse sentido, esse canal wenbsocket é utilizada pelo subscriber do tópico "/camera" presente no arquivo streaming e implementado na classe "Streaming":
-
-```
-class Streaming(Node):
-
-  def __init__(self):
-    super().__init__('image_subscriber')
-    self.subscription = self.create_subscription(
-      Image, 
-      '/camera', 
-      self.listener_callback, 
-      10)
-    self.subscription 
-    self.bridge = CvBridge()
-    self.websocket_url = "ws://localhost:8000/ws"
-    self.websocket = websockets.connect(self.websocket_url)
-
-  async def send_frame_via_websocket(self, frame_base64):
-    async with self.websocket as websocket:
-      await websocket.send(frame_base64)
-
-  def listener_callback(self, data):
-    self.get_logger().info('Receiving video frame')
-    current_frame = self.bridge.imgmsg_to_cv2(data)
-    model = YOLO("./yolo/best.pt")
-    result = model.predict(current_frame, conf=0.6)
-    annotated = result[0].plot()
-    _, frames = cv2.imencode(".jpg", annotated)
-    frame_base64 = base64.b64encode(frames).decode("utf-8")
-    print ("início        " + frame_base64 + "        fim")
-    asyncio.get_event_loop().run_until_complete(self.send_frame_via_websocket(frame_base64))
-```
-
-- Segue uma foto que demonstra essa integração:
-
-![img_4917_720](https://github.com/2023M6T2-Inteli/Splinters/assets/89201795/a98ebefd-bad5-4b18-8c63-55f2d8117a7c)
-
-- Continuando no âmbito de comunicação via websocket, temos também dados de bateria protos para serem levados para o frontend via websocket. Aqui, nós estamos tendo ainda alguns problemas para deixar estável a comunicação tanto da bateria, quanto dos frames da câmera ( tentaremos nessa sprint explorar o socketio para testar se conseguimos melhorar essa trasmissão ). Abaixo o cógiddo da so subscriber da bateria, coletando dados de da voltagem publicados no tópico ```/battery_state```. O código também contempla o cálculo para retonar para o frontend a porcentagem da bateria do robô em tempo real:
-
-```
-import rclpy
-import asyncio
-import websockets
-from rclpy.node import Node
-from sensor_msgs.msg import BatteryState
-
-
-class Battery(Node):
-    def __init__(self):
-        super().__init__('battery_subscriber')
-        self.subscription = self.create_subscription(
-            BatteryState,
-            '/battery_state', 
-            self.listener_callback, 
-            10)
-        
-    async def send_battery_via_websocket(self, relative_battery_percent):
-        async with websockets.connect("ws://localhost:8000/battery") as websocket:
-            await websocket.send(relative_battery_percent)
-
-    def listener_callback(self, battery):
-        relative_battery_percent = (battery.voltage - 11)/1.6
-
-        asyncio.get_event_loop().run_until_complete(self.send_battery_via_websocket(str(relative_battery_percent)))
-        print(relative_battery_percent)
-
-def main():
-    rclpy.init()
-    battery = Battery()
-    rclpy.spin(battery)
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
-```
-
-## Descrição dos sensores
+## Sensores
 
 Com o intuito de possibilitar a coleta de dados que permitam a análise da segurança do ambiente confinado e da possibilidade de ocorrência de acidentes, foram selecionados sensores que permitem a obtenção de informações relevantes para a análise do ambiente. Os sensores selecionados foram:
 
@@ -736,3 +798,5 @@ Ao utilizar a biblioteca DHT.h, foi possível obter os valores de temperatura e 
 ## Utilização do microcontrolador
 
 Devido à falta de portas analógicas do microprocessador Raspberry Pi 4 e também do microcontrolador OPEN-CR (integrados ao robô), foi necessário utilizar um microcontrolador externo para a coleta dos dados dos sensores. Com esse intuito, foi utilizado um microcontrolador Arduino Uno, que apresenta portas analógicas para a coleta dos dados dos sensores. A comunicação entre o microcontrolador e o Raspberry Pi 4 foi realizada por meio de uma comunicação serial, utilizando um cabo USB.
+
+# Validação da eficácia do sistema

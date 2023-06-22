@@ -567,6 +567,46 @@ A seguir, apresentamos uma descrição abrangente de cada uma das APIs desenvolv
 
 #### Rotas
 
+**Endpoint WebSocket para Bateria (/battery)** : Estabelece uma conexão WebSocket para dados relacionados à bateria.
+
+Manipulação da Conexão
+- Upgrade da Conexão: GET /battery
+  - Atualiza a conexão para uma conexão WebSocket.
+
+Comunicação WebSocket
+- Enviar Mensagem: Envia uma mensagem de texto contendo dados da bateria para o servidor.
+- Receber Mensagem: Recebe uma mensagem de texto contendo dados da bateria do servidor.
+  
+**Endpoint WebSocket para Frames (/frames)** : Estabelece uma conexão WebSocket para dados relacionados a frames.
+
+Manipulação da Conexão
+- Upgrade da Conexão: GET /frames
+  - Atualiza a conexão para uma conexão WebSocket.
+
+Comunicação WebSocket
+- Enviar Mensagem: Envia uma mensagem de texto contendo dados de frames para o servidor.
+- Receber Mensagem: Recebe uma mensagem de texto contendo dados de frames do servidor.
+
+**Relatórios (/relatorios)** : Lida com operações relacionadas a relatórios.
+
+- Criar Relatório: POST /relatorios
+  - Cria um novo relatório com base nos dados fornecidos.
+
+- Obter Relatórios: GET /relatorios
+  - Obtém uma lista de todos os relatórios existentes.
+
+- Obter Relatório por ID: GET /relatorios/{id}
+  - Obtém um relatório específico com base no ID fornecido.
+
+**Serviços de Vídeo (/upload, /get-video-url)** : Lida com operações relacionadas a vídeos.
+
+- Upload de Vídeo: POST /upload
+  - Realiza o upload de um vídeo com o ID fornecido.
+
+- Obter URL do Vídeo: GET /get-video-url
+  - Obtém a URL de um vídeo com base no ID fornecido.
+
+Observação: Certifique-se de que os parâmetros necessários estejam corretamente fornecidos nas solicitações e os modelos (Relatorio) e serviços (ReportService, VideoService) estejam implementados corretamente para o funcionamento adequado das rotas.
 
 ### Websocket
 

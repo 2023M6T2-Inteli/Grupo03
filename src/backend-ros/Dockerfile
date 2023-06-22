@@ -1,8 +1,8 @@
-FROM ubuntu:22.04
+FROM osrf/ros:humble-desktop
 
-WORKDIR /backend
+WORKDIR /backend-ros
 
-COPY /backend .
+COPY /backend-ros .
 
 RUN apt-get update && apt-get install -y python3-pip
 

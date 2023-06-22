@@ -10,8 +10,9 @@ function Bateria() {
         };
     
         socket.onmessage = function(event) {
-          const data = JSON.parse(event.data);
-          document.getElementById('batteryData').innerText = data;
+          let data = JSON.parse(event.data);
+          const newData = (data*100);
+          document.getElementById('batteryData').innerText = newData.toFixed(2) + '%';
         };
     
         socket.onclose = function(event) {
@@ -24,7 +25,7 @@ function Bateria() {
   }, []);
 
   return (
-    <div id="batteryData"></div>
+    <div id="batteryData" className={styles.battery}></div>
   );
 }
 

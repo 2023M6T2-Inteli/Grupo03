@@ -3,7 +3,7 @@ import styles from './WebSocket.module.scss';
 
 function WebSocketComponent() {
   useEffect(() => {
-    const socket = new WebSocket("ws://10.128.68.32:8000/ws"); 
+    const socket = new WebSocket("ws://10.128.68.32:8000/frames"); 
 
     socket.onopen = function(event) {
       console.log("WebSocket connection established.");

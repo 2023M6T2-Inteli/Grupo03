@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - backend-ros-assets:/app/backend-ros/assets
+    command: python3 app.py
+
+  backend-ros:
+    platform: linux/x86_64
+    build:
+      context: .
+      dockerfile: ./backend-ros/Dockerfile
+    ports:
+      - 8001:8000
+    volumes:
+      - backend-ros-assets:/backend-ros/assets
+    command: python3 main.py
+    depends_on:
+      - backend
+
+volumes:
+  backend-ros-assets:

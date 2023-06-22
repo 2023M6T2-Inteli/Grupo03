@@ -1,54 +1,25 @@
-from fastapi import FastAPI, WebSocket
-from fastapi.responses import HTMLResponse
+import uvicorn
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from routers.battery import router as battery_router
+from routers.report import router as report_router
+from routers.frames import router as frames_router
+from routers.video import router as video_router
 
 app = FastAPI()
 
-html = """
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-  <img id="image-container" src="" alt="Received Image">
 
-  <script>
-    const socket = new WebSocket("ws://localhost:8000/ws"); // Substitua pelo URL correto do WebSocket
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-    socket.onopen = function(event) {
-      console.log("WebSocket connection established.");
-    };
+app.include_router(battery_router)
+app.include_router(report_router)
+app.include_router(frames_router)
+app.include_router(video_router)
 
-    socket.onmessage = function(event) {
-      const imageContainer = document.getElementById("image-container");
-      const receivedData = event.data;
-      imageContainer.src = "data:image/jpg;base64," + receivedData; // Define o src da tag img com o valor base64 recebido
-    };
-
-    socket.onclose = function(event) {
-      console.log("WebSocket connection closed.");
-    };
-  </script>
-</body>
-</html>
-
-"""
-
-@app.get("/frames")
-async def get():
-    return HTMLResponse(html)
-
-connected_clients = set()
-
-@app.websocket("/ws")
-async def websocket_endpoint(websocket: WebSocket):
-    await websocket.accept()
-    connected_clients.add(websocket)
-    try:
-        while True:
-            data = await websocket.receive_text()
-            for client in connected_clients:
-                await client.send_text(data)
-    except Exception as e:
-        print(f"WebSocket connection closed with exception: {e}")
-    finally:
-        connected_clients.remove(websocket)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

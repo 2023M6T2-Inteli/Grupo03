@@ -7,6 +7,17 @@ function ReportCard({id, nome_local, data}) {
   const [visible, setVisible] = React.useState(false);
   const handler = () => setVisible(true);
 
+  const submitHandler = async (event) =>{
+    const response = await fetch(f`http://127.0.0.1:8000/relatorios/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify(relatorioData),
+      });
+  }
+
   const closeHandler = () => {
     setVisible(false);
     console.log("closed");

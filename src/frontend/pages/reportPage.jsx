@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import Header from "@/components/Header/Header";
 import WebSocketComponent from "@/components/WebSocket/WebSocket";
 import Bateria from "@/components/Bateria/Bateria";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Home({ children }) {
   const addressInputRef = useRef();
@@ -17,8 +18,18 @@ export default function Home({ children }) {
     var timestamp = new Date().getTime();
     var date = new Date(timestamp);
     var formattedDate = date.toISOString();
+    
+    const generateNewId = () => {
+      const maxNumber = Math.pow(10, 2) - 1;
+      const newId = Math.floor(Math.random() * maxNumber);
+      const formattedId = newId.toString().padStart(2, '0');
+      return formattedId;
+    };
+    const newId = generateNewId(2);
+    console.log(newId);    
+    
     const relatorioData = {
-      id: 2,
+      id: 16,
       nome_local: ambienteValue,
       endereco: addressValue,
       data: formattedDate,

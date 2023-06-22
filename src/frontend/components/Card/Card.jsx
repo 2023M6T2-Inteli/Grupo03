@@ -8,7 +8,9 @@ function Card(props) {
     <div className={styles.main}>
       <h3>{props.title}</h3>
         <div className={styles.imageBox}>
-          <Bateria></Bateria>
+         <div>
+         <Bateria></Bateria>
+         </div>
         </div>
       
     </div>

@@ -23,6 +23,7 @@ export default function Historic({ children }) {
       setReports(data.data);
       setIsLoading(false);
     };
+
     fetchReports();
   }, []);
 
@@ -78,9 +79,7 @@ export default function Historic({ children }) {
             reports.map((report) => (
               <ReportCard
                 key={report.id}
-                id={report.id}
-                nome_local={report.nome_local}
-                data={report.data}
+                report={report}
                 onPressed={handler}
               />
             ))}

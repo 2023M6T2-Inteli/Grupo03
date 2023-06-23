@@ -21,15 +21,6 @@ export default function Home({ children }) {
     var date = new Date(timestamp);
     var formattedDate = date.toISOString();
 
-    const generateNewId = () => {
-      const maxNumber = Math.pow(10, 2) - 1;
-      const newId = Math.floor(Math.random() * maxNumber);
-      const formattedId = newId.toString().padStart(2, "0");
-      return formattedId;
-    };
-    const newId = generateNewId(2);
-    console.log(newId);
-
     const relatorioData = {
       nome_local: ambienteValue,
       endereco: addressValue,

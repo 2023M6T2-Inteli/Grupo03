@@ -8,30 +8,15 @@
 </tr>
 </table>
 
-# Nome do Projeto
+# Simulação de robôs para situações diversas - Gerdau
 
-## Nome do Grupo
+## Splinters
 
-## Integrantes: <a href="https://www.linkedin.com/in/victorbarq/">Goku Sayajin</a>, <a href="https://www.linkedin.com/in/victorbarq/">Saitama One</a>, <a href="https://www.linkedin.com/in/victorbarq/">Ikki de Fenix</a>, <a href="https://www.linkedin.com/in/victorbarq/">Yusuke Urameshi</a>, <a href="https://www.linkedin.com/in/victorbarq/">Roronoa Zoro</a>
+## Integrantes: Bianca Cassemiro, Gabriel Pascoli, Henrique Santos, Jackson Aguiar, Luana Parra, Pablo Ruan, Rafael Katalan
 
 ## Descrição
 
-📜 Descrição curta sobre o que seu projeto faz.
-<br><br>
-Meu projeto é um exemplo de como utilizar o github.
-<br><br>
-<p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
-
-💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
-<br><br>
-Meu projeto ajuda estudantes inteli a configurarem seus githubs.
-<br><br>
-May the force be with you!
-<br><br>
+O projeto proposto é desenvolver um robô capaz de se movimentar em ambientes de espaço confinado, coletar dados utilizando sensores (principalmente de oxigênio e outros gases) e utilizar filmagens para auxiliar na inspeção prévia da estrutura. O objetivo principal é melhorar a segurança nas operações da Gerdau, mitigando a exposição ao risco dos colaboradores. A utilização de tecnologia robótica proporcionará uma avaliação prévia do ambiente, reduzindo a necessidade de acesso humano a esses espaços e, consequentemente, diminuindo os riscos associados. A implementação dessa solução trará benefícios significativos em termos de segurança, preservando a vida dos colaboradores e melhorando os indicadores de segurança da empresa. Além disso, o projeto visa desenvolver futuros líderes que se preocupem com a saúde e segurança dos colaboradores, independentemente da área de atuação.
 
 ## 🛠 Estrutura de pastas
 ```bash

@@ -23,13 +23,22 @@ O projeto proposto é desenvolver um robô capaz de se movimentar em ambientes d
 .
 ├── LICENSE
 ├── README.md
+├── .vscode
+│   ├── c_cpp_properties.json
+│   └── settings.json
 ├── docs
-│   ├── README.md
+│   ├── assets
 │   ├── _config.yml
-│   └── index.md
-├── media
-│   └── README.md
+│   ├── index.md
+│   └── manual-splinters.docx.pdf
 └── src
+│   ├── .vscode
+│   ├── backend-ros
+        |── ai
+        └── controllers
+│   ├── backend
+│   ├── embedded
+│   ├── frontend
     └── README.md
 
 3 directories, 7 files

@@ -53,54 +53,20 @@ O projeto proposto é desenvolver um robô capaz de se movimentar em ambientes d
     └── README.md
 
 ```
-
-A seguir 
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
-
-Há também 4 pastas que seguem da seguinte forma:
-
-<b>docs</b>: Aqui está o arquivo index.md, que serve como o ponto principal da documentação do projeto. Note que, para este módulo, ele está vazio. Vocês tem liberdade total para definir a sua estrutura.
-
-<b>media</b>: Algumas imagens do sistema e logos prontos para serem utilizados e visualizados.
-
-<b>src</b>: Nesta pasta irá todo o código fonte do sistema, pronto para para ser baixado e modificado.
-
 ## 🛠 Instalação
 
-Coloque suas instruções de instalação aqui.
+Para instalar e configurar o sistema, siga as instruções detalhadas na pasta /docs.
 
-## 📈 Exemplo de uso
+### Tecnologias Utilizadas
 
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado.
-
-Adicione blocos de códigos e, se necessário, screenshots.
-
-Este modelo pode ser copiado e utilizado à vontade.
-
-Através da cópia/clone/ download do repositório, altere os dados do readme.md e carregue os arquivos de seu projeto.
-
-## 💻 Configuração para Desenvolvimento
-
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
-
-Para abrir este projeto você necessita das seguintes ferramentas:
-
-## 🗃 Histórico de lançamentos
-
-A cada atualização os detalhes devem ser lançados aqui.
-
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+- **Turtlebot3 Burguer:** Robô utilizado como AGV para realizar a inspeção dos espaços confinados, equipado com sensores de gás e câmera para captura de imagens.
+- **ROS2:** Middleware de comunicação utilizado para integrar o AGV e os sensores ao sistema.
+- **FastAPI:** Framework web utilizado para desenvolver a API que alimenta o dashboard e fornece os dados coletados pelo AGV.
+- **YoloV8:** Um modelo de rede neural utilizado para detecção e análise de objetos, nesse caso, rachaduras nas paredes do ambiente.
+- **React.js:** Biblioteca JavaScript para interfaces de usuário modernas e interativas.
+- **Next.js:** Framework de desenvolvimento web utilizado para criar o frontend do dashboard, proporcionando uma experiência de usuário moderna e responsiva.
+- **Supabase:** Banco de dados e serviço de armazenamento online de imagens utilizado para armazenar imagens capturadas pelo AGV durante a inspeção.
+- **NAV2:** Pacote de navegação para o ROS2, responsável pelo planejamento de rotas e movimentação do AGV no espaço confinado.
 
 ## 📋 Licença/License
 

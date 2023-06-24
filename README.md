@@ -34,18 +34,27 @@ O projeto proposto é desenvolver um robô capaz de se movimentar em ambientes d
 └── src
 │   ├── .vscode
 │   ├── backend-ros
-        |── ai
-        └── controllers
+|       |── ai
+|       └── controllers
 │   ├── backend
+|       |── config
+|       |── models
+|       |── routers
+|       └── services
 │   ├── embedded
+|       |── microcontroller
+|       └── robot
 │   ├── frontend
+|       |── .next
+|       |── components
+|       |── pages
+|       |── public
+|       └── styles
     └── README.md
 
-3 directories, 7 files
 ```
 
-A pasta raiz contem dois arquivos que devem ser alterados:
-
+A seguir 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
 Há também 4 pastas que seguem da seguinte forma:

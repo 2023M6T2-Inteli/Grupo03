@@ -1,12 +1,10 @@
-## Intruções para rodar o sistema integrado com ROS2 > websocket > HTML na ordem descrita:
+## Intruções para rodar o backend:
 
-- entre na pasta ```src/embedded```  e rode ``` python main.py``` ou ``` python3 main.py ``` para iniciar o publisher que coleta os frames da camera do robô e publica no frontend.
+- Entre na pasta ```src/backend```  e rode ``` make env_template``` para criar um modelo de arquivo de variáveis de ambiente, o qual deve ser preenchido com o conteúdo apontado.
 
-- entre na pasta ```src/backend``` e rode ```uvicorn app:app --reload``` para rodar o servidor com o websocket e acesse a porta http://localhost:8000/
+- Entre na pasta ```src/backend``` e rode ```python app.py``` para rodar o servidor.
 
-- entre na pasta ```src/backend/ros``` e rode ``` python main.py ``` ou ``` python3 main.py ``` para iniciar o subscriber do tópico "/camera" que está recebendo os frames do robô
-
-## Modelagem do Banco de Dados:
+## Modele o banco de dados no Supabase:
 
 ```
 CREATE TABLE reports (

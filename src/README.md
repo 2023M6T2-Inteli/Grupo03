@@ -10,4 +10,11 @@
 
 # Organização do diretório de arquivos fonte
 
-Este diretório é destinado para o armazenamento e versionamento dos arquivos fonte relacionados à aplicação desenvolvida pelos alunos. Preencha aqui explicando como está organizado seu diretório e resumindo o que faz cada um dos arquivos principais.
+Este repositório contém os scripts de controle do robô e aplicação web.  
+
+A pasta **backend-ros** contém o treinamento do modelo para detecção de rachaduras, conexão com o robô para saber a situação da bateria e recebe mensagens da camera. 
+
+A pasta **backend** permite a movimentação do robô para pontos específicos utilizando o Nav2.
+
+A pasta **frontend** tem toda a estrutura da aplicação web.
+

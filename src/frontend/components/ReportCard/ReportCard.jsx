@@ -1,29 +1,44 @@
-import React from 'react';
-import styles from 'components/ReportCard/ReportCard.module.scss'
-import Link from 'next/link';
-import { Modal,  Text , Input, Row, Column, Button} from "@nextui-org/react";
+import styles from "components/ReportCard/ReportCard.module.scss";
+import Link from "next/link";
+import { Modal, Text, Input, Row, Column, Button } from "@nextui-org/react";
+import { useState, useEffect } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
-function ReportCard({id, nome_local, data}) {
-  const [visible, setVisible] = React.useState(false);
+function ReportCard({ report }) {
+  const [visible, setVisible] = useState(false);
   const handler = () => setVisible(true);
+  const [url, setUrl] = useState("");
+  const { id, nome_local, endereco, data, gas } = report;
 
-  const submitHandler = async (event) =>{
-    const response = await fetch(f`http://127.0.0.1:8000/relatorios/${id}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-        body: JSON.stringify(relatorioData),
-      });
-  }
+  const handleDownloadPDF = () => {
+    const modalContent = document.getElementById("modal-content");
+
+    html2canvas(modalContent).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "PNG", 0, 0);
+      pdf.save("modal.pdf");
+    });
+  };
 
   const closeHandler = () => {
     setVisible(false);
     console.log("closed");
   };
-  const readableDate = new Date(data).toLocaleDateString('pt-BR')  
-  const readableHour = new Date(data).toLocaleTimeString('pt-BR')  
+
+  // useEffect(() => {
+  //   const fetchLink = async () => {
+  //     const response = await fetch(`http://0.0.0.0:8000/get-video-url/`);
+  //     const data = await response.json();
+  //     setUrl(data.data);
+  //   };
+
+  //   fetchLink();
+  // }, []);
+
+  const readableDate = new Date(data).toLocaleDateString("pt-BR");
+  const readableHour = new Date(data).toLocaleTimeString("pt-BR");
   return (
     <>
       <Modal
@@ -35,55 +50,41 @@ function ReportCard({id, nome_local, data}) {
       >
         <Modal.Header>
           <Text id="modal-title" size={18}>
-            
             <Text b size={18}>
-              Relatório<br/>Inteli - Usp
+              Relatório
+              <br />
+              {endereco}
             </Text>
           </Text>
         </Modal.Header>
         <Modal.Body>
-          
+          <div id="modal-content" className={styles.modalContent}>
+            <div>Id do relatório: {id}</div>
+            <div>Endereço do ambiente: {endereco}</div>
             <div>
-            Id do relatório: 1
+              Data: {readableDate} - {readableHour}
             </div>
-            <div>
-            Endereço do ambiente: Inteli - Usp
-            </div>
-            <div>
-              Data: 06/06/2023
-            </div>
-            <div>
-              Quantidade mínima de gás: 10%
-            </div>
-            <div>
-              Quantidade máxima de gás: 75%
-            </div>
-            <div>
-             Temperatura mínima: 27°
-            </div>
-            <div>
-             Temperatura máxima: 31°
-            </div>
-            <div>
-             Umidade: 20
-            </div>
-            <Button flat>Baixar PDF</Button>
-          
+            <div>Quantidade mínima de gás: 10%</div>
+            <div>Quantidade máxima de gás: 75%</div>
+            <div>Temperatura mínima: 27°</div>
+            <div>Temperatura máxima: 31°</div>
+            <div>Umidade: 20</div>
+            <div>Link para vídeo: {url.detail}</div>
+          </div>
+          <Button flat onClick={handleDownloadPDF}>Baixar PDF</Button>
         </Modal.Body>
       </Modal>
-   <div onClick={handler} className={styles.card}>
-   <div className={styles.titleCard}>
-    <h1>{id}</h1>
-    <p>{nome_local}</p>
-   </div>
-    <div className={styles.time}>
-    <p>{readableDate}</p>
-    <p> - {readableHour}</p>
-    </div>
-
-   </div>
+      <div onClick={handler} className={styles.card}>
+        <div className={styles.titleCard}>
+          <h1>{id}</h1>
+          <p>{nome_local}</p>
+        </div>
+        <div className={styles.time}>
+          <p>{readableDate}</p>
+          <p> - {readableHour}</p>
+        </div>
+      </div>
     </>
-
   );
 }
 
